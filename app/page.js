@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Mapa from '../components/map';
 import Image from 'next/image'
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 export default function Home() {
   return (
