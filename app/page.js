@@ -26,7 +26,7 @@ export default function Home() {
           {/* Menu - Desktop */}
           <div className="hidden lg:block">
             <ul className="inline-flex">
-              <li><a className="px-4 text-white" href="#">Datos</a></li>
+              <li><a className="px-4 text-white" href="#">Descargar datos</a></li>
               <li><a className="px-4 text-white" href="#">Conoce más</a></li>
             </ul>
           </div>
