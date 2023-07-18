@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from 'react';
-import Map, {Marker, Popup} from 'react-map-gl';
+import Map, { Marker, Popup } from 'react-map-gl';
 import { createClient } from '@supabase/supabase-js';
 
 // Create a single Supabase client for interacting with your database 
@@ -32,7 +32,7 @@ export default function Mapa() {
         zoom: 11
       }}
       mapStyle="mapbox://styles/edgargutgzz/climactgb00cn01qw7amo9bbd"
-      style={{width: "100vw", height: "100vh"}}
+      style={{ width: "100vw", height: "100vh" }}
     >
       {data.map(sensor => (
         <Marker
@@ -41,7 +41,13 @@ export default function Mapa() {
           latitude={sensor.lat}
         >
           <div
-            style={{backgroundColor: "red", width: "10px", height: "10px"}}
+            style={{
+              backgroundColor: "rgba(255, 0, 0, 0.8)",
+              width: "10px",
+              height: "10px",
+              borderRadius: "50%",
+              cursor: "pointer"
+            }}
             onClick={(e) => {
               e.stopPropagation();
               setSelectedMarker(sensor);
@@ -56,15 +62,32 @@ export default function Mapa() {
           longitude={selectedMarker.lon}
           onClose={() => setSelectedMarker(null)}
           closeOnClick={true}
+          tipSize={5}
+          anchor="top"
+          style={{
+            backgroundColor: "white",
+            padding: "10px",
+            borderRadius: "8px",
+            boxShadow: "0 2px 8px rgba(0, 0, 0, 0.15)"
+          }}
         >
-          <div>{selectedMarker.nombre}</div>
+          <div>
+            <h3>{selectedMarker.nombre}</h3>
+            <p>{selectedMarker.description}</p>
+          </div>
         </Popup>
-      ) : null
-      }
+      ) : null}
 
     </Map>
   );
 }
+
+
+
+
+
+
+
 
 
 
