@@ -7,6 +7,16 @@ import { createClient } from '@supabase/supabase-js';
 // Create a single Supabase client for interacting with your database 
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
 
+// Function to determine marker color based on PM2.5 value
+function getMarkerColor(pm25) {
+  if (pm25 <= 25) return "green";
+  if (pm25 > 25 && pm25 <= 45) return "yellow";
+  if (pm25 > 45 && pm25 <= 79) return "orange";
+  if (pm25 > 79 && pm25 <= 147) return "red";
+  if (pm25 > 147) return "purple";
+  return "gray";  // default color in case the value is null or undefined
+}
+
 export default function Mapa() {
   const [data, setData] = React.useState([]);
   const [selectedMarker, setSelectedMarker] = React.useState(null);
@@ -72,7 +82,7 @@ export default function Mapa() {
         >
           <div
             style={{
-              backgroundColor: "rgba(255, 0, 0, 0.8)",
+              backgroundColor: getMarkerColor(sensor.pm25),
               width: "10px",
               height: "10px",
               borderRadius: "50%",
@@ -112,6 +122,7 @@ export default function Mapa() {
     </Map>
   );
 }
+
 
 
 
