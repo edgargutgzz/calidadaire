@@ -17,10 +17,40 @@ export default function Mapa() {
   }, []);
 
   async function fetchData() {
-    let { data, error } = await supabase.from('sensores').select('*');
+    const { data: sensoresData, error: sensoresError } = await supabase.from('sensores').select('*');
+    const { data: calidadAireData, error: calidadAireError } = await supabase
+      .from('calidad_aire')
+      .select('*')
+      .order('time_stamp', { ascending: false });
 
-    if (error) console.error('Error loading data:', error);
-    else setData(data);
+    if (sensoresError) {
+      console.error('Error loading sensores data:', sensoresError);
+      return;
+    }
+
+    if (calidadAireError) {
+      console.error('Error loading calidad_aire data:', calidadAireError);
+      return;
+    }
+
+    // Create a mapping of sensor_id to the most recent "calidad_aire" record
+    const mostRecentData = calidadAireData.reduce((acc, record) => {
+      if (!acc[record.sensor_id]) {
+        acc[record.sensor_id] = record;
+      }
+      return acc;
+    }, {});
+
+    // Merge the data from sensores and calidad_aire tables based on sensor_id
+    const mergedData = sensoresData.map(sensor => {
+      const calidadAire = mostRecentData[sensor.sensor_id];
+      return {
+        ...sensor,
+        pm25: calidadAire ? calidadAire.pm25 : null,
+      };
+    });
+
+    setData(mergedData);
   }
 
   return (
@@ -74,6 +104,7 @@ export default function Mapa() {
           <div>
             <h3>{selectedMarker.nombre}</h3>
             <p>{selectedMarker.description}</p>
+            <p>PM2.5: {selectedMarker.pm25 != null ? selectedMarker.pm25.toFixed(2) : 'N/A'}</p>
           </div>
         </Popup>
       ) : null}
@@ -81,6 +112,15 @@ export default function Mapa() {
     </Map>
   );
 }
+
+
+
+
+
+
+
+
+
 
 
 
