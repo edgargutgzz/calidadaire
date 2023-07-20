@@ -12,19 +12,19 @@ export default function Index() {
 
           {/* Home */}
           <Link href="/" className="flex flex-col items-center text-xs text-white">
-            <Image src="/home_off.png" alt="Inicio" width={26} height={26} />
+            <Image src="/inicio_on.png" alt="Inicio" width={24} height={24} />
             <span className="mt-0 pt-1">Inicio</span>
           </Link>
 
           {/* Mapa */}
           <Link href="/mapa" className="flex flex-col items-center text-xs text-white">
-            <Image src="/home_off.png" alt="Mapa" width={26} height={26} />
+            <Image src="/mapa_off.png" alt="Mapa" width={26} height={26} />
             <span className="mt-0 pt-1">Mapa</span>
           </Link>
         
           {/* Datos */}
-          <Link href="/datos" className="flex flex-col items-center text-xs text-white">
-            <Image src="/home_off.png" alt="Datos" width={26} height={26} />
+          <Link href="/datos_1" className="flex flex-col items-center text-xs text-white">
+            <Image src="/datos_off.png" alt="Datos" width={26} height={26} />
             <span className="mt-0 pt-1">Datos</span>
           </Link>
 
