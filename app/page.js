@@ -15,7 +15,7 @@ export default function Home() {
 
           {/* Logo */}
           <a href="#">
-            <Image src="/datacomun.png" alt="Logo" width={180} height={52} />
+            <Image src="/home.png" alt="Logo" width={50} height={50} />
           </a>
 
           {/* Menu - Mobile */}
