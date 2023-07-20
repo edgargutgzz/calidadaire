@@ -5,7 +5,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 export default function Home() {
   return (
-    <div className="flex flex-col justify-between h-screen">
+    <div className="flex flex-col justify-between h-screen pb-4"> {/* Added pb-4 for padding bottom */}
       {/* Map */}
       <Mapa />
 
@@ -41,6 +41,7 @@ export default function Home() {
     </div>
   );
 }
+
 
 
 
