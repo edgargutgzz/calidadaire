@@ -11,8 +11,8 @@ export default function Index() {
         <div className="container mx-auto px-6 py-2 flex justify-between items-center">
 
           {/* Home */}
-          <Link href="/" className="flex flex-col items-center text-xs text-white border-b-4 pb-2 border-white">
-            <Image src="/inicio.png" alt="Inicio" width={40} height={40} />
+          <Link href="/" className="flex flex-col items-center text-xs text-white">
+            <Image src="/inicio.png" alt="Home" width={40} height={40} />
             <span className="mt-0">Inicio</span>
           </Link>
 
@@ -23,7 +23,7 @@ export default function Index() {
           </Link>
         
           {/* Datos */}
-          <Link href="/datos" className="flex flex-col items-center text-xs text-white">
+          <Link href="/datos" className="flex flex-col items-center text-xs text-white border-b-4 pb-2 border-white">
             <Image src="/datos.png" alt="Datos" width={30} height={30} />
             <span className="mt-2">Datos</span>
           </Link>
@@ -31,21 +31,10 @@ export default function Index() {
         </div>
       </nav>
       {/* Title */}
-      <h1 className="text-4xl text-center mt-20">Calidad del Aire</h1>
+      <h1 className="text-4xl text-center mt-20">Datos</h1>
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
