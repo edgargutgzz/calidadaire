@@ -5,12 +5,12 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 export default function Home() {
   return (
-    <div className="flex flex-col justify-between h-screen pb-4"> {/* Added pb-4 for padding bottom */}
+    <div className="relative h-screen">
       {/* Map */}
       <Mapa />
 
       {/* Navbar */}
-      <nav className="bg-black">
+      <nav className="bg-black absolute bottom-0 w-full">
         <div className="container mx-auto px-6 py-1 flex justify-between items-center">
 
           {/* Logo */}
@@ -41,6 +41,7 @@ export default function Home() {
     </div>
   );
 }
+
 
 
 
