@@ -5,9 +5,13 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 export default function Home() {
   return (
-    <div>
-      <nav className = "bg-black">
-        <div className="container mx-auto px-6 py-2 flex justify-between items-center">
+    <div className="flex flex-col justify-between h-screen">
+      {/* Map */}
+      <Mapa />
+
+      {/* Navbar */}
+      <nav className="bg-black">
+        <div className="container mx-auto px-6 py-1 flex justify-between items-center">
 
           {/* Logo */}
           <a href="#">
@@ -34,10 +38,10 @@ export default function Home() {
 
         </div>
       </nav>
-      <Mapa />
     </div>
   );
 }
+
 
 
 
