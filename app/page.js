@@ -11,7 +11,7 @@ export default function Home() {
 
       {/* Navbar */}
       <nav className="bg-black fixed bottom-0 w-full pb-safe">
-        <div className="container mx-auto px-6 py-1 flex justify-between items-center">
+        <div className="container mx-auto px-6 flex justify-between items-center">
 
           {/* Logo */}
           <a href="#">

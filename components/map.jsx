@@ -98,7 +98,7 @@ export default function Mapa() {
               setSelectedMarker(sensor);
             }}
           >
-            {sensor.pm25 != null ? sensor.pm25.toFixed(1) : 'N/A'} 
+            {sensor.pm25 != null ? Math.round(sensor.pm25) : 'N/A'} 
           </div>
         </Marker>
       ))}
@@ -121,7 +121,7 @@ export default function Mapa() {
           <div>
             <h3>{selectedMarker.nombre}</h3>
             <p>{selectedMarker.description}</p>
-            <p>PM2.5: {selectedMarker.pm25 != null ? selectedMarker.pm25.toFixed(1) : 'N/A'}</p>
+            <p>PM2.5: {selectedMarker.pm25 != null ? Math.round(selectedMarker.pm25) : 'N/A'}</p>
           </div>
         </Popup>
       ) : null}
@@ -129,6 +129,7 @@ export default function Mapa() {
     </Map>
   );
 }
+
 
 
 
