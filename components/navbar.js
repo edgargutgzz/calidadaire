@@ -11,7 +11,7 @@ function Navbar({ currentPage }) {
           <Link href="/">
             <div className="flex flex-col items-center text-xs text-white">
               <Image src={currentPage === 'inicio' ? "/inicio_on.png" : "/inicio_off.png"} alt="Inicio" width={24} height={24} />
-              <span className="mt-0 pt-1">Inicio</span>
+              <span className="mt-0 pt-2">Inicio</span>
             </div>
           </Link>
 
