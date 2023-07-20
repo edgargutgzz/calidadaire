@@ -31,7 +31,7 @@ export default function Index() {
         </div>
       </nav>
       {/* Title */}
-      <h1 className="text-4xl text-center mt-20">Calidad Aire</h1>
+      <h1 className="text-4xl text-center mt-20">Calidad del Aire</h1>
     </div>
   );
 }
