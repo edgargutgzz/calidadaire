@@ -9,11 +9,11 @@ const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.
 
 // Function to determine marker color based on PM2.5 value
 function getMarkerColor(pm25) {
-  if (pm25 <= 25) return "green";
-  if (pm25 > 25 && pm25 <= 45) return "yellow";
-  if (pm25 > 45 && pm25 <= 79) return "orange";
-  if (pm25 > 79 && pm25 <= 147) return "red";
-  if (pm25 > 147) return "purple";
+  if (pm25 <= 25) return "#00E400";  // green
+  if (pm25 > 25 && pm25 <= 45) return "#FFFF00";  // yellow
+  if (pm25 > 45 && pm25 <= 79) return "#FF7E00";  // orange
+  if (pm25 > 79 && pm25 <= 147) return "#FF0000";  // red
+  if (pm25 > 147) return "#8F3F97";  // purple
   return "gray";  // default color in case the value is null or undefined
 }
 
@@ -83,16 +83,23 @@ export default function Mapa() {
           <div
             style={{
               backgroundColor: getMarkerColor(sensor.pm25),
-              width: "10px",
-              height: "10px",
+              width: "30px",
+              height: "30px",
               borderRadius: "50%",
-              cursor: "pointer"
+              cursor: "pointer",
+              display: 'flex',   
+              justifyContent: 'center',  
+              alignItems: 'center',  
+              color: 'black',  
+              fontSize: '14px'
             }}
             onClick={(e) => {
               e.stopPropagation();
               setSelectedMarker(sensor);
             }}
-          ></div>
+          >
+            {sensor.pm25 != null ? sensor.pm25.toFixed(1) : 'N/A'} 
+          </div>
         </Marker>
       ))}
 
@@ -114,7 +121,7 @@ export default function Mapa() {
           <div>
             <h3>{selectedMarker.nombre}</h3>
             <p>{selectedMarker.description}</p>
-            <p>PM2.5: {selectedMarker.pm25 != null ? selectedMarker.pm25.toFixed(2) : 'N/A'}</p>
+            <p>PM2.5: {selectedMarker.pm25 != null ? selectedMarker.pm25.toFixed(1) : 'N/A'}</p>
           </div>
         </Popup>
       ) : null}
@@ -122,6 +129,8 @@ export default function Mapa() {
     </Map>
   );
 }
+
+
 
 
 
