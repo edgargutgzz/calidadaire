@@ -78,8 +78,8 @@ export default function Mapa() {
     <Map
       mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}
       initialViewState={{
-        longitude: -100.31655049441096,
-        latitude: 25.686464145285722,
+        longitude: -100.31513595674124,
+        latitude: 25.66289358057702,
         zoom: 10
       }}
       mapStyle="mapbox://styles/edgargutgzz/climactgb00cn01qw7amo9bbd"
