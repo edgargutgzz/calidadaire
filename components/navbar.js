@@ -10,7 +10,7 @@ function Navbar({ currentPage }) {
           {/* Home */}
           <Link href="/">
             <div className="flex flex-col items-center text-xs text-black mx-2">
-              <Image src={currentPage === 'inicio' ? "/inicio_on.png" : "/inicio_off.png"} alt="Inicio" width={25} height={25} />
+              <Image src={currentPage === 'inicio' ? "/inicio_on.png" : "/inicio_off.png"} alt="Inicio" width={26} height={26} />
               <span className={`mt-0 pt-1 ${currentPage === 'inicio' ? "font-bold" : ""}`}>Inicio</span>
             </div>
           </Link>
@@ -18,7 +18,7 @@ function Navbar({ currentPage }) {
           {/* Mapa */}
           <Link href="/mapa">
             <div className="flex flex-col items-center text-xs text-black mx-14">
-              <Image src={currentPage === 'mapa' ? "/mapa_on.png" : "/mapa_off.png"} alt="Mapa" width={25} height={25} />
+              <Image src={currentPage === 'mapa' ? "/mapa_on.png" : "/mapa_off.png"} alt="Mapa" width={26} height={26} />
               <span className={`mt-0 pt-1 ${currentPage === 'mapa' ? "font-bold" : ""}`}>Mapa</span>
             </div>
           </Link>
@@ -26,7 +26,7 @@ function Navbar({ currentPage }) {
           {/* Datos */}
           <Link href="/datos">
             <div className="flex flex-col items-center text-xs text-black mx-2">
-              <Image src={currentPage === 'datos' ? "/datos_on.png" : "/datos_off.png"} alt="Datos" width={25} height={25} />
+              <Image src={currentPage === 'datos' ? "/datos_on.png" : "/datos_off.png"} alt="Datos" width={26} height={26} />
               <span className={`mt-0 pt-1 ${currentPage === 'datos' ? "font-bold" : ""}`}>Datos</span>
             </div>
           </Link>
