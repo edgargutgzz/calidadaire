@@ -80,7 +80,7 @@ export default function Mapa() {
       initialViewState={{
         longitude: -100.31655049441096,
         latitude: 25.686464145285722,
-        zoom: 9
+        zoom: 10
       }}
       mapStyle="mapbox://styles/edgargutgzz/climactgb00cn01qw7amo9bbd"
       style={{ width: "100vw", height: "100vh" }}
