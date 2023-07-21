@@ -92,7 +92,7 @@ export default function Mapa() {
           latitude={sensor.lat}
         >
           <div
-            className={`border-2 border-white rounded-full cursor-pointer flex items-center justify-center text-black text-sm ${getMarkerColor(sensor.pm25)}`}
+            className={`border border-white rounded-full cursor-pointer flex items-center justify-center text-black text-sm ${getMarkerColor(sensor.pm25)}`}
             style={{
               width: "30px",
               height: "30px",
