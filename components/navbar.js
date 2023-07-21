@@ -17,7 +17,7 @@ function Navbar({ currentPage }) {
 
           {/* Mapa */}
           <Link href="/mapa">
-            <div className="flex flex-col items-center text-xs text-black mx-12">
+            <div className="flex flex-col items-center text-xs text-black mx-14">
               <Image src={currentPage === 'mapa' ? "/mapa_on.png" : "/mapa_off.png"} alt="Mapa" width={24} height={24} />
               <span className={`mt-0 pt-1 ${currentPage === 'mapa' ? "font-bold" : ""}`}>Mapa</span>
             </div>
