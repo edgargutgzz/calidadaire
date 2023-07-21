@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 function Navbar({ currentPage }) {
   return (
-    <nav className = "bg-white bg-opacity-75 z-10 fixed w-full bottom-0">
+    <nav className = "bg-white z-10 fixed w-full bottom-0">
         <div className="container mx-auto px-6 py-2 flex justify-around items-center">
 
           {/* Home */}
