@@ -10,8 +10,8 @@ function Navbar({ currentPage }) {
           {/* Home */}
           <Link href="/">
             <div className="flex flex-col items-center text-xs text-black">
-              <Image src={currentPage === 'inicio' ? "/inicio_on.png" : "/inicio_off.png"} alt="Inicio" width={25} height={25} />
-              <span className="mt-0 pt-1">Inicio</span>
+              <Image src={currentPage === 'inicio' ? "/inicio_on.png" : "/inicio_off.png"} alt="Inicio" width={26} height={26} />
+              <span className={`mt-0 pt-1 ${currentPage === 'inicio' ? "font-bold" : ""}`}>Inicio</span>
             </div>
           </Link>
 
@@ -19,7 +19,7 @@ function Navbar({ currentPage }) {
           <Link href="/mapa">
             <div className="flex flex-col items-center text-xs text-black">
               <Image src={currentPage === 'mapa' ? "/mapa_on.png" : "/mapa_off.png"} alt="Mapa" width={26} height={26} />
-              <span className="mt-0 pt-1">Mapa</span>
+              <span className={`mt-0 pt-1 ${currentPage === 'mapa' ? "font-bold" : ""}`}>Mapa</span>
             </div>
           </Link>
         
@@ -27,7 +27,7 @@ function Navbar({ currentPage }) {
           <Link href="/datos">
             <div className="flex flex-col items-center text-xs text-black">
               <Image src={currentPage === 'datos' ? "/datos_on.png" : "/datos_off.png"} alt="Datos" width={26} height={26} />
-              <span className="mt-0 pt-1">Datos</span>
+              <span className={`mt-0 pt-1 ${currentPage === 'datos' ? "font-bold" : ""}`}>Datos</span>
             </div>
           </Link>
 
@@ -37,5 +37,6 @@ function Navbar({ currentPage }) {
 }
 
 export default Navbar;
+
 
 
