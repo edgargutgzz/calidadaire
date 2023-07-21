@@ -9,12 +9,12 @@ const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.
 
 // Function to determine marker color based on PM2.5 value
 function getMarkerColor(pm25) {
-  if (pm25 <= 25) return "#00E400";  // green
-  if (pm25 > 25 && pm25 <= 45) return "#FFFF00";  // yellow
-  if (pm25 > 45 && pm25 <= 79) return "#FF7E00";  // orange
-  if (pm25 > 79 && pm25 <= 147) return "#FF0000";  // red
-  if (pm25 > 147) return "#8F3F97";  // purple
-  return "gray";  // default color in case the value is null or undefined
+  if (pm25 <= 25) return "bg-green-500";  
+  if (pm25 > 25 && pm25 <= 45) return "bg-yellow-500"; 
+  if (pm25 > 45 && pm25 <= 79) return "bg-orange-500";  
+  if (pm25 > 79 && pm25 <= 147) return "bg-red-500"; 
+  if (pm25 > 147) return "bg-purple-500";  
+  return "bg-gray-500";  // default color in case the value is null or undefined
 }
 
 export default function Mapa() {
@@ -92,17 +92,10 @@ export default function Mapa() {
           latitude={sensor.lat}
         >
           <div
+            className={`border-2 border-white rounded-full cursor-pointer flex items-center justify-center text-black text-sm ${getMarkerColor(sensor.pm25)}`}
             style={{
-              backgroundColor: getMarkerColor(sensor.pm25),
               width: "30px",
               height: "30px",
-              borderRadius: "50%",
-              cursor: "pointer",
-              display: 'flex',   
-              justifyContent: 'center',  
-              alignItems: 'center',  
-              color: 'black',  
-              fontSize: '14px'
             }}
             onClick={(e) => {
               e.stopPropagation();
@@ -119,7 +112,7 @@ export default function Mapa() {
           latitude={userLocation.latitude}
           longitude={userLocation.longitude}
         >
-          <div className="animate-pulse bg-blue-700 rounded-full w-4 h-4"></div>
+          <div className="animate-pulse bg-blue-700 rounded-full w-4 h-4 border-2 border-white"></div>
         </Marker>
       )}
 
@@ -131,12 +124,7 @@ export default function Mapa() {
           closeOnClick={true}
           tipSize={5}
           anchor="top"
-          style={{
-            backgroundColor: "white",
-            padding: "10px",
-            borderRadius: "8px",
-            boxShadow: "0 2px 8px rgba(0, 0, 0, 0.15)"
-          }}
+          className="bg-white p-2 rounded-lg shadow-md"
         >
           <div>
             <h3>{selectedMarker.nombre}</h3>
@@ -149,6 +137,7 @@ export default function Mapa() {
     </Map>
   );
 }
+
 
 
 
