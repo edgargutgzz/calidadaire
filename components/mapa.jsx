@@ -1,5 +1,3 @@
-"use client";
-
 import * as React from 'react';
 import Map, { Marker, Popup } from 'react-map-gl';
 import { createClient } from '@supabase/supabase-js';
@@ -20,10 +18,27 @@ function getMarkerColor(pm25) {
 export default function Mapa() {
   const [data, setData] = React.useState([]);
   const [selectedMarker, setSelectedMarker] = React.useState(null);
+  const [userLocation, setUserLocation] = React.useState(null);
 
   // Fetch data on component mount
   React.useEffect(() => {
     fetchData();
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setUserLocation({
+            lat: position.coords.latitude,
+            lon: position.coords.longitude,
+          });
+        },
+        (error) => {
+          console.error('Error getting user location:', error);
+        }
+      );
+    } else {
+      console.error('Geolocation is not supported by this browser.');
+    }
   }, []);
 
   async function fetchData() {
@@ -103,6 +118,30 @@ export default function Mapa() {
         </Marker>
       ))}
 
+      {userLocation && (
+        <Marker
+          longitude={userLocation.lon}
+          latitude={userLocation.lat}
+        >
+          <div
+            style={{
+              backgroundColor: 'blue',
+              width: "30px",
+              height: "30px",
+              borderRadius: "50%",
+              cursor: "pointer",
+              display: 'flex',   
+              justifyContent: 'center',  
+              alignItems: 'center',  
+              color: 'black',  
+              fontSize: '14px'
+            }}
+          >
+            You
+          </div>
+        </Marker>
+      )}
+
       {selectedMarker ? (
         <Popup
           latitude={selectedMarker.lat}
@@ -125,10 +164,10 @@ export default function Mapa() {
           </div>
         </Popup>
       ) : null}
-
     </Map>
   );
 }
+
 
 
 
