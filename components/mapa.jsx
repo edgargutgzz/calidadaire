@@ -122,8 +122,8 @@ export default function Mapa({ onNearestSensorChange }) {
     <Map
       mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}
       initialViewState={{
-        longitude: -100.30766551660051,
-        latitude: 25.72384913593666,
+        longitude: -100.31781776272842,
+        latitude: 25.697469243851423,
         zoom: 10
       }}
       mapStyle="mapbox://styles/edgargutgzz/climactgb00cn01qw7amo9bbd"
@@ -156,7 +156,7 @@ export default function Mapa({ onNearestSensorChange }) {
         </Marker>
       )}
 
-      <div className="absolute top-0 left-0 m-5 bg-white bg-opacity-50 pl-3 pr-3 pb-0 pt-3 rounded-lg">
+      <div className="absolute top-0 left-0 m-5 bg-white bg-opacity-80 pl-3 pr-3 pb-0 pt-2 rounded-lg">
         <h3 className="mb-1 font-bold">Calidad del Aire</h3>
         <div className="flex flex-col text-gray-500">
           <LegendItem color="bg-purple-500" text="Extremadamente Mala" />
