@@ -122,8 +122,8 @@ export default function Mapa({ onNearestSensorChange }) {
     <Map
       mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}
       initialViewState={{
-        longitude: -100.31781776272842,
-        latitude: 25.697469243851423,
+        longitude: -100.30958999633297,
+        latitude: 25.682108126585334,
         zoom: 10
       }}
       mapStyle="mapbox://styles/edgargutgzz/climactgb00cn01qw7amo9bbd"
