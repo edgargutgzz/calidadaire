@@ -1,14 +1,14 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import Map, { Marker, Popup } from 'react-map-gl';
+import Map, { Marker } from 'react-map-gl';
 import { createClient } from '@supabase/supabase-js';
 
 // Create a single Supabase client for interacting with your database 
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
 
 // Function to determine marker color based on PM2.5 value
-function getMarkerColor(pm25) {
+export function getMarkerColor(pm25) {
   if (pm25 <= 25) return "bg-green-500";  
   if (pm25 > 25 && pm25 <= 45) return "bg-yellow-500"; 
   if (pm25 > 45 && pm25 <= 79) return "bg-orange-500";  
@@ -17,10 +17,36 @@ function getMarkerColor(pm25) {
   return "bg-gray-500";  // default color in case the value is null or undefined
 }
 
-export default function Mapa() {
+function calculateDistance(location1, location2) {
+  const lat1 = location1.latitude;
+  const lon1 = location1.longitude;
+  const lat2 = location2.lat;
+  const lon2 = location2.lon;
+
+  if (lat1 == lat2 && lon1 == lon2) {
+    return 0;
+  }
+  else {
+    const radlat1 = Math.PI * lat1/180;
+    const radlat2 = Math.PI * lat2/180;
+    const theta = lon1-lon2;
+    const radtheta = Math.PI * theta/180;
+    let dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+    if (dist > 1) {
+      dist = 1;
+    }
+    dist = Math.acos(dist);
+    dist = dist * 180/Math.PI;
+    dist = dist * 60 * 1.1515;
+    dist = dist * 1.609344; // Convert to kilometers
+    return dist;
+  }
+}
+
+export default function Mapa({ onNearestSensorChange }) {
   const [data, setData] = useState([]);
-  const [selectedMarker, setSelectedMarker] = useState(null);
   const [userLocation, setUserLocation] = useState(null);
+  const [nearestSensor, setNearestSensor] = useState(null);
 
   // Fetch data on component mount
   useEffect(() => {
@@ -74,12 +100,30 @@ export default function Mapa() {
     });
   }
 
+  useEffect(() => {
+    if (userLocation && data.length > 0) {
+      let nearest = data[0];
+      let minDistance = calculateDistance(userLocation, nearest);
+
+      for (let i = 1; i < data.length; i++) {
+        const distance = calculateDistance(userLocation, data[i]);
+        if (distance < minDistance) {
+          minDistance = distance;
+          nearest = data[i];
+        }
+      }
+
+      setNearestSensor(nearest);
+      if (onNearestSensorChange) onNearestSensorChange(nearest);
+    }
+  }, [userLocation, data]);
+
   return (
     <Map
       mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}
       initialViewState={{
-        longitude: -100.32531575705309,
-        latitude: 25.64224660089653,
+        longitude: -100.30766551660051,
+        latitude: 25.72384913593666,
         zoom: 10
       }}
       mapStyle="mapbox://styles/edgargutgzz/climactgb00cn01qw7amo9bbd"
@@ -97,10 +141,6 @@ export default function Mapa() {
               width: "30px",
               height: "30px",
             }}
-            onClick={(e) => {
-              e.stopPropagation();
-              setSelectedMarker(sensor);
-            }}
           >
             {sensor.pm25 != null ? Math.round(sensor.pm25) : 'N/A'} 
           </div>
@@ -116,27 +156,142 @@ export default function Mapa() {
         </Marker>
       )}
 
-      {selectedMarker ? (
-        <Popup
-          latitude={selectedMarker.lat}
-          longitude={selectedMarker.lon}
-          onClose={() => setSelectedMarker(null)}
-          closeOnClick={true}
-          tipSize={5}
-          anchor="top"
-          className="bg-white p-2 rounded-lg shadow-md"
-        >
-          <div>
-            <h3>{selectedMarker.nombre}</h3>
-            <p>{selectedMarker.description}</p>
-            <p>PM2.5: {selectedMarker.pm25 != null ? Math.round(selectedMarker.pm25) : 'N/A'}</p>
-          </div>
-        </Popup>
-      ) : null}
+      <div className="absolute top-0 left-0 m-5 bg-white bg-opacity-50 pl-3 pr-3 pb-0 pt-3 rounded-lg">
+        <h3 className="mb-1 font-bold">Calidad del Aire</h3>
+        <div className="flex flex-col text-gray-500">
+          <LegendItem color="bg-purple-500" text="Extremadamente Mala" />
+          <LegendItem color="bg-red-500" text="Muy Mala" />
+          <LegendItem color="bg-orange-500" text="Mala" />
+          <LegendItem color="bg-yellow-500" text="Aceptable" />
+          <LegendItem color="bg-green-500" text="Buena" />
+        </div>
+      </div>
 
     </Map>
   );
 }
+
+function LegendItem({ color, text }) {
+  return (
+    <div className="flex items-center mb-1">
+      <div className={`${color} w-1 h-3 mr-1 rounded`} />
+      <p className="text-gray-500">{text}</p>
+    </div>
+  );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
