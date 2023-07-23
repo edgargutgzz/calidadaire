@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 function Navbar({ currentPage }) {
   return (
-    <nav className = "bg-white z-10 fixed w-full bottom-0">
+    <nav className = "bg-gray-100 bg-opacity-90 z-10 fixed w-full bottom-0">
         <div className="container mx-auto px-6 pt-3 pb-2 flex justify-around items-center">
 
           {/* Home */}
@@ -17,7 +17,7 @@ function Navbar({ currentPage }) {
 
           {/* Mapa */}
           <Link href="/mapa">
-            <div className="flex flex-col items-center text-xs text-black mx-14">
+            <div className="flex flex-col items-center text-xs text-black mx-16">
               <Image src={currentPage === 'mapa' ? "/mapa_on.png" : "/mapa_off.png"} alt="Mapa" width={24} height={24} />
               <span className={`mt-0 pt-1 ${currentPage === 'mapa' ? "font-bold" : ""}`}>Mapa</span>
             </div>
