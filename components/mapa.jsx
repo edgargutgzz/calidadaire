@@ -127,7 +127,7 @@ export default function Mapa({ onNearestSensorChange }) {
         zoom: 10
       }}
       // mapStyle="mapbox://styles/edgargutgzz/climactgb00cn01qw7amo9bbd"
-      mapStyle="mapbox://styles/mapbox/light-v11"
+      mapStyle="mapbox://styles/mapbox/dark-v11"
       style={{ width: "100vw", height: "100vh" }}
     >
       {data.map(sensor => (
