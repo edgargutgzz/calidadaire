@@ -13,8 +13,8 @@ export default function Index() {
 
       {/* Page's title */}
       <div className="flex items-center justify-center mt-5">
-        <img src="/logo.png" width={24} height={24} alt="Logo" className="mr-2" /> {/* Adjust the class as needed */}
-        <h1 className="text-2xl">Respira Claro</h1>
+        <img src="/logo.png" width={18} height={18} alt="Logo" className="mr-2" /> {/* Adjust the class as needed */}
+        <h1 className="text-1xl">Respira Claro</h1>
       </div>
       
       {/* Hidden Mapa component to fetch the nearest sensor data */}
