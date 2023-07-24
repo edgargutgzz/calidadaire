@@ -14,21 +14,35 @@ function QualityBar({ pm25 }) {
     return 100; // for PM2.5 > 147
   };
 
+  // Function to determine quality text based on PM2.5 value
+  const getQualityText = () => {
+    if (pm25 <= 25) return "Buena";
+    if (pm25 > 25 && pm25 <= 45) return "Aceptable";
+    if (pm25 > 45 && pm25 <= 79) return "Mala";
+    if (pm25 > 79 && pm25 <= 147) return "Muy Mala";
+    if (pm25 > 147) return "Extremadamente Mala";
+    return "N/A";  // default text in case the value is null or undefined
+  };
+
   return (
-    <div className="relative flex min-h-[10px] rounded-lg overflow-hidden">
-      <div style={{ flexBasis: "15%" }} className="bg-custom-green" />
-      <div style={{ flexBasis: "10%" }} className="bg-gradient-to-r from-custom-green to-custom-yellow" />
-      <div style={{ flexBasis: "10%" }} className="bg-custom-yellow" />
-      <div style={{ flexBasis: "10%" }} className="bg-gradient-to-r from-custom-yellow to-custom-orange" />
-      <div style={{ flexBasis: "10%" }} className="bg-custom-orange" />
-      <div style={{ flexBasis: "10%" }} className="bg-gradient-to-r from-custom-orange to-custom-red" />
-      <div style={{ flexBasis: "10%" }} className="bg-custom-red" />
-      <div style={{ flexBasis: "10%" }} className="bg-gradient-to-r from-custom-red to-custom-purple" />
-      <div style={{ flexBasis: "15%" }} className="bg-custom-purple" />
-      <div style={{ left: `${calculateLeft()}%`, borderColor: 'rgb(249, 250, 251)' }} className="absolute w-3 h-3 bg-white rounded-full border-2 transform -translate-y-1/2 top-1/2"></div>
+    <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
+      <div className="text-left text-3xl my-4">{getQualityText()}</div>
+      <div className="relative my-4 flex min-h-[10px] rounded-lg overflow-hidden">
+        <div style={{ flexBasis: "15%" }} className="bg-custom-green" />
+        <div style={{ flexBasis: "10%" }} className="bg-gradient-to-r from-custom-green to-custom-yellow" />
+        <div style={{ flexBasis: "10%" }} className="bg-custom-yellow" />
+        <div style={{ flexBasis: "10%" }} className="bg-gradient-to-r from-custom-yellow to-custom-orange" />
+        <div style={{ flexBasis: "10%" }} className="bg-custom-orange" />
+        <div style={{ flexBasis: "10%" }} className="bg-gradient-to-r from-custom-orange to-custom-red" />
+        <div style={{ flexBasis: "10%" }} className="bg-custom-red" />
+        <div style={{ flexBasis: "10%" }} className="bg-gradient-to-r from-custom-red to-custom-purple" />
+        <div style={{ flexBasis: "15%" }} className="bg-custom-purple" />
+        <div style={{ left: `${calculateLeft()}%`, borderColor: 'rgb(249, 250, 251)' }} className="absolute w-3 h-3 bg-white rounded-full border-2 transform -translate-y-1/2 top-1/2"></div>
+      </div>
     </div>
   );
 }
+
 
 
 // Index
