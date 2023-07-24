@@ -10,7 +10,10 @@ export default function Index() {
   return (
     <div>
       <Navbar currentPage="inicio" />
-      <h1 className="text-4xl text-center mt-20">Calidad del Aire</h1>
+      <div className="flex items-center justify-center mt-20">
+        <img src="/logo.png" width={24} height={24} alt="Logo" className="mr-2" /> {/* Adjust the class as needed */}
+        <h1 className="text-2xl">Respira Claro</h1>
+      </div>
       
       {/* Hidden Mapa component to fetch the nearest sensor data */}
       <div style={{ display: 'none' }}>
