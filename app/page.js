@@ -48,9 +48,9 @@ export default function Index() {
       {/* Calidad del Aire */}
       {nearestSensor && (
         <>
-          {/* <div className={`mx-4 p-4 mb-10 rounded-lg text-white ${getMarkerColor(nearestSensor.pm25)}`}>
+          <div className={`mx-4 p-4 mb-10 rounded-lg text-white ${getMarkerColor(nearestSensor.pm25)}`}>
             <p>Nearest Sensor PM2.5: {nearestSensor.pm25 != null ? Math.round(nearestSensor.pm25) : 'N/A'}</p>
-          </div> */}
+          </div>
           <div className="mx-4 mb-2 pt-10">
           <QualityBar pm25={nearestSensor.pm25} />
           </div>

@@ -9,7 +9,7 @@ const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.
 
 // Function to determine marker color based on PM2.5 value
 export function getMarkerColor(pm25) {
-  if (pm25 <= 25) return "bg-green-500";  
+  if (pm25 <= 25) return "bg-custom-green";  
   if (pm25 > 25 && pm25 <= 45) return "bg-yellow-500"; 
   if (pm25 > 45 && pm25 <= 79) return "bg-orange-500";  
   if (pm25 > 79 && pm25 <= 147) return "bg-red-500"; 
@@ -163,7 +163,7 @@ export default function Mapa({ onNearestSensorChange }) {
           <LegendItem color="bg-red-500" text="Muy Mala" />
           <LegendItem color="bg-orange-500" text="Mala" />
           <LegendItem color="bg-yellow-500" text="Aceptable" />
-          <LegendItem color="bg-green-500" text="Buena" />
+          <LegendItem color="bg-custom-green" text="Buena" />
         </div>
       </div>
 
