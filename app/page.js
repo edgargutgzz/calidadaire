@@ -10,7 +10,9 @@ export default function Index() {
   return (
     <div>
       <Navbar currentPage="inicio" />
-      <div className="flex items-center justify-center mt-20">
+
+      {/* Page's title */}
+      <div className="flex items-center justify-center mt-5">
         <img src="/logo.png" width={24} height={24} alt="Logo" className="mr-2" /> {/* Adjust the class as needed */}
         <h1 className="text-2xl">Respira Claro</h1>
       </div>
@@ -20,8 +22,9 @@ export default function Index() {
         <Mapa onNearestSensorChange={setNearestSensor} />
       </div>
       
+      {/* Calidad del Aire */}
       {nearestSensor && (
-        <div className={`m-4 p-4 rounded-lg text-white ${getMarkerColor(nearestSensor.pm25)}`}>
+        <div className={`mx-4 p-4 my-10 rounded-lg text-white ${getMarkerColor(nearestSensor.pm25)}`}>
           <p>Nearest Sensor PM2.5: {nearestSensor.pm25 != null ? Math.round(nearestSensor.pm25) : 'N/A'}</p>
         </div>
       )}
