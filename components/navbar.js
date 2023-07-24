@@ -5,7 +5,7 @@ import Image from 'next/image'
 function Navbar({ currentPage }) {
   return (
     <nav className = "bg-white z-10 fixed w-full bottom-0">
-        <div className="container mx-auto px-6 pt-2 pb-1 flex justify-around items-center">
+        <div className="container mx-auto px-6 pt-3 pb-2 flex justify-around items-center">
 
           {/* Home */}
           <Link href="/">
