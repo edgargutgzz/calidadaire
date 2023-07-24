@@ -14,7 +14,7 @@ export default function Index() {
       {/* Page's title */}
       <div className="flex items-center justify-center mt-5">
         <img src="/logo.png" width={22} height={22} alt="Logo" className="mr-2" /> {/* Adjust the class as needed */}
-        <h1 className="text-2xl font-semibold">Respira Claro</h1>
+        <h1 className="text-1xl font-semibold">Respira Claro</h1>
       </div>
       
       {/* Hidden Mapa component to fetch the nearest sensor data */}
