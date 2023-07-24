@@ -10,10 +10,10 @@ const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.
 // Function to determine marker color based on PM2.5 value
 export function getMarkerColor(pm25) {
   if (pm25 <= 25) return "bg-custom-green";  
-  if (pm25 > 25 && pm25 <= 45) return "bg-yellow-500"; 
-  if (pm25 > 45 && pm25 <= 79) return "bg-orange-500";  
-  if (pm25 > 79 && pm25 <= 147) return "bg-red-500"; 
-  if (pm25 > 147) return "bg-purple-500";  
+  if (pm25 > 25 && pm25 <= 45) return "bg-custom-yellow"; 
+  if (pm25 > 45 && pm25 <= 79) return "bg-custom-orange";  
+  if (pm25 > 79 && pm25 <= 147) return "bg-custom-red"; 
+  if (pm25 > 147) return "bg-custom-purple";  
   return "bg-gray-500";  // default color in case the value is null or undefined
 }
 
@@ -159,10 +159,10 @@ export default function Mapa({ onNearestSensorChange }) {
       <div className="absolute top-0 left-0 ml-2 mt-2 mr-5 mb-5 bg-gray-100 bg-opacity-90 pl-3 pr-3 pb-0 pt-2 rounded-lg">
         <h3 className="mb-1 font-bold">Calidad del Aire</h3>
         <div className="flex flex-col text-gray-500">
-          <LegendItem color="bg-purple-500" text="Extremadamente Mala" />
-          <LegendItem color="bg-red-500" text="Muy Mala" />
-          <LegendItem color="bg-orange-500" text="Mala" />
-          <LegendItem color="bg-yellow-500" text="Aceptable" />
+          <LegendItem color="bg-custom-purple" text="Extremadamente Mala" />
+          <LegendItem color="bg-custom-red" text="Muy Mala" />
+          <LegendItem color="bg-custom-orange" text="Mala" />
+          <LegendItem color="bg-custom-yellow" text="Aceptable" />
           <LegendItem color="bg-custom-green" text="Buena" />
         </div>
       </div>
