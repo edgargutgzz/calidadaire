@@ -126,10 +126,11 @@ export default function Mapa({ onNearestSensorChange }) {
         latitude: 25.682108126585334,
         zoom: 10
       }}
-      // mapStyle="mapbox://styles/edgargutgzz/climactgb00cn01qw7amo9bbd"
-      mapStyle="mapbox://styles/mapbox/dark-v11"
+      mapStyle="mapbox://styles/edgargutgzz/climactgb00cn01qw7amo9bbd"
       style={{ width: "100vw", height: "100vh" }}
     >
+
+      {/* Markers on map */}
       {data.map(sensor => (
         <Marker
           key={sensor.sensor_id}
@@ -137,14 +138,14 @@ export default function Mapa({ onNearestSensorChange }) {
           latitude={sensor.lat}
         >
           <div
-            className={`rounded-full cursor-pointer flex items-center justify-center text-xs ${getMarkerColor(sensor.pm25)}`}
+            className={`border border-white rounded-full cursor-pointer flex items-center justify-center text-xs text-white ${getMarkerColor(sensor.pm25)}`}
             style={{
-              width: "26px",
-              height: "26px",
-              opacity: 0.8
+              width: "30px",
+              height: "30px",
+              // opacity: 0.9
             }}
           >
-            {/* {sensor.pm25 != null ? Math.round(sensor.pm25) : 'N/A'}  */}
+            {sensor.pm25 != null ? Math.round(sensor.pm25) : 'N/A'} 
           </div>
         </Marker>
       ))}
