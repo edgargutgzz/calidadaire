@@ -136,7 +136,7 @@ export default function Mapa({ onNearestSensorChange }) {
           latitude={sensor.lat}
         >
           <div
-            className={`animate-pulse rounded-full cursor-pointer flex items-center justify-center text-xs ${getMarkerColor(sensor.pm25)}`}
+            className={`rounded-full cursor-pointer flex items-center justify-center text-xs ${getMarkerColor(sensor.pm25)}`}
             style={{
               width: "20px",
               height: "20px",
