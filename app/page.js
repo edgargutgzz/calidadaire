@@ -24,9 +24,20 @@ function QualityBar({ pm25 }) {
     return "N/A";  // default text in case the value is null or undefined
   };
 
+  // Function to determine quality recommendations based on PM2.5 value
+  const getQualityRecommendations = () => {
+    if (pm25 <= 25) return "Disfruta las actividades al aire libre.";
+    if (pm25 > 25 && pm25 <= 45) return "Disfruta las actividades al aire libre.";
+    if (pm25 > 45 && pm25 <= 79) return "Reduce las actividades físicas vigorosas al aire libre.";
+    if (pm25 > 79 && pm25 <= 147) return "Evita las actividades físicas moderadas y vigorosas al aire libre.";
+    if (pm25 > 147) return "Permanece en espacios interiores. Acudir al médico si se presentan síntomas respiratorios o cardiacos.";
+    return "N/A";  // default text in case the value is null or undefined
+  };
+
   return (
     <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
-      <div className="text-left text-3xl my-4">{getQualityText()}</div>
+      <div className="text-left text-4xl my-2">{getQualityText()}</div>
+      <div className="text-left text-sm pb-4">{getQualityRecommendations()}</div>
       <div className="relative my-4 flex min-h-[10px] rounded-lg overflow-hidden">
         <div style={{ flexBasis: "15%" }} className="bg-custom-green" />
         <div style={{ flexBasis: "10%" }} className="bg-gradient-to-r from-custom-green to-custom-yellow" />
@@ -42,8 +53,6 @@ function QualityBar({ pm25 }) {
     </div>
   );
 }
-
-
 
 // Index
 export default function Index() {
@@ -67,17 +76,24 @@ export default function Index() {
       {/* Calidad del Aire */}
       {nearestSensor && (
         <>
-          {/* <div className={`mx-4 p-4 mb-10 rounded-lg text-white ${getMarkerColor(nearestSensor.pm25)}`}>
-            <p>Nearest Sensor PM2.5: {nearestSensor.pm25 != null ? Math.round(nearestSensor.pm25) : 'N/A'}</p>
-          </div> */}
           <div className="mx-4 mb-2 pt-10">
-          <QualityBar pm25={nearestSensor.pm25} />
+            <QualityBar pm25={nearestSensor.pm25} />
+            <div className="text-left text-xs my-2">Calidad de aire en {nearestSensor.address}</div>
+            <div className="text-left text-xs my-2">Última actualización: {nearestSensor.lastUpdated}</div>
+            <div className="text-left text-xs my-2">
+              Datos de calidad de aire proporcionados por{' '} 
+              <a href="https://www2.purpleair.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+                Purple Air
+              </a>.
+            </div>
           </div>
         </>
       )}
     </div>
   );
 }
+
+
 
 
 

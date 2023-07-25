@@ -3,9 +3,13 @@
 import React, { useState, useEffect } from 'react';
 import Map, { Marker } from 'react-map-gl';
 import { createClient } from '@supabase/supabase-js';
+import mbxGeocoding from '@mapbox/mapbox-sdk/services/geocoding';
 
 // Create a single Supabase client for interacting with your database 
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
+
+// Create a Mapbox Geocoding client
+const geocodingClient = mbxGeocoding({ accessToken: process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN });
 
 // Function to determine marker color based on PM2.5 value
 export function getMarkerColor(pm25) {
@@ -47,6 +51,12 @@ export default function Mapa({ onNearestSensorChange }) {
   const [data, setData] = useState([]);
   const [userLocation, setUserLocation] = useState(null);
   const [nearestSensor, setNearestSensor] = useState(null);
+  const [userAddress, setUserAddress] = useState(null);
+
+  const formatHour = (date) => {
+    let hour = date.getHours();
+    return hour < 10 ? `0${hour}:00` : `${hour}:00`;
+  };
 
   // Fetch data on component mount
   useEffect(() => {
@@ -85,6 +95,7 @@ export default function Mapa({ onNearestSensorChange }) {
       return {
         ...sensor,
         pm25: calidadAire ? calidadAire.pm25 : null,
+        timestamp: calidadAire ? calidadAire.time_stamp : null,
       };
     });
 
@@ -100,6 +111,24 @@ export default function Mapa({ onNearestSensorChange }) {
     });
   }
 
+  function reverseGeocode(location) {
+    geocodingClient.reverseGeocode({
+      query: [location.longitude, location.latitude],
+      limit: 1
+    })
+    .send()
+    .then(response => {
+      const match = response.body;
+      setUserAddress(match.features[0].place_name);
+    });
+  }
+
+  useEffect(() => {
+    if (userLocation) {
+      reverseGeocode(userLocation);
+    }
+  }, [userLocation]);
+
   useEffect(() => {
     if (userLocation && data.length > 0) {
       let nearest = data[0];
@@ -114,9 +143,13 @@ export default function Mapa({ onNearestSensorChange }) {
       }
 
       setNearestSensor(nearest);
-      if (onNearestSensorChange) onNearestSensorChange(nearest);
+      if (onNearestSensorChange) onNearestSensorChange({ 
+        ...nearest, 
+        address: userAddress, 
+        lastUpdated: nearest.timestamp ? formatHour(new Date(nearest.timestamp)) : 'Unknown' 
+      });
     }
-  }, [userLocation, data]);
+  }, [userLocation, data, userAddress]);
 
   return (
     <Map
@@ -129,7 +162,6 @@ export default function Mapa({ onNearestSensorChange }) {
       mapStyle="mapbox://styles/edgargutgzz/climactgb00cn01qw7amo9bbd"
       style={{ width: "100vw", height: "100vh" }}
     >
-
       {/* Markers on map */}
       {data.map(sensor => (
         <Marker
@@ -182,12 +214,6 @@ function LegendItem({ color, text }) {
     </div>
   );
 }
-
-
-
-
-
-
 
 
 
