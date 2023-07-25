@@ -35,8 +35,8 @@ function QualityBar({ pm25 }) {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
-      <div className="text-left text-4xl my-2">{getQualityText()}</div>
+    <>
+      <div className="text-left text-3xl my-2">{getQualityText()}</div>
       <div className="text-left text-sm pb-4">{getQualityRecommendations()}</div>
       <div className="relative my-4 flex min-h-[10px] rounded-lg overflow-hidden">
         <div style={{ flexBasis: "15%" }} className="bg-custom-green" />
@@ -50,7 +50,7 @@ function QualityBar({ pm25 }) {
         <div style={{ flexBasis: "15%" }} className="bg-custom-purple" />
         <div style={{ left: `${calculateLeft()}%`, borderColor: 'rgb(249, 250, 251)' }} className="absolute w-3 h-3 bg-white rounded-full border-2 transform -translate-y-1/2 top-1/2"></div>
       </div>
-    </div>
+    </>
   );
 }
 
@@ -75,23 +75,26 @@ export default function Index() {
       
       {/* Calidad del Aire */}
       {nearestSensor && (
-        <>
-          <div className="mx-4 mb-2 pt-10">
+        <div className="mx-4 mb-2 pt-10">
+          <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
             <QualityBar pm25={nearestSensor.pm25} />
-            <div className="text-left text-xs my-2">Calidad de aire en {nearestSensor.address}</div>
-            <div className="text-left text-xs my-2">Última actualización: {nearestSensor.lastUpdated}</div>
-            <div className="text-left text-xs my-2">
-              Datos de calidad de aire proporcionados por{' '} 
-              <a href="https://www2.purpleair.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
-                Purple Air
-              </a>.
-            </div>
+            <div className="text-left text-xs my-2 pt-4">Calidad de aire a las {nearestSensor.lastUpdated} en {nearestSensor.address}.</div>
           </div>
-        </>
+          <div className="text-left text-xs my-2">
+            Datos de calidad de aire proporcionados por{' '} 
+            <a href="https://www2.purpleair.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+              Purple Air
+            </a>.
+          </div>
+        </div>
       )}
     </div>
   );
 }
+
+
+
+
 
 
 
