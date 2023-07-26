@@ -104,7 +104,7 @@ export default function Index() {
               <div className="flex items-center space-x-2">
                 <img src="/baby.png" width={28} height={28} alt="Correr Icon" />
               </div>
-              <p className="mt-2 text-sm">Bebess y adultos mayores pueden salir sin problema.</p>
+              <p className="mt-2 text-sm">Bebes y adultos mayores pueden salir sin problema.</p>
             </div>
             {/* Parques */}
             <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2">
