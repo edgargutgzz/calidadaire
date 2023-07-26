@@ -109,9 +109,9 @@ export default function Index() {
             {/* Parques */}
             <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2">
               <div className="flex items-center space-x-2">
-                <img src="/baby2.png" width={28} height={28} alt="Correr Icon" />
+                <img src="/picnic.png" width={28} height={28} alt="Correr Icon" />
               </div>
-              <p className="mt-2 text-sm">Bebes y adultos mayores pueden salir sin problema.</p>
+              <p className="mt-2 text-sm">Puedes realizar picnics o salir a terrazas sin problema.</p>
             </div>
           </div>
           <div className="text-left text-xs my-2">Última Actualización: {nearestSensor.lastUpdated}</div>
