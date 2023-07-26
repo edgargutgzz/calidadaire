@@ -106,7 +106,7 @@ export default function Index() {
               <div className="flex items-center space-x-2">
                 <img src="/picnic.png" width={28} height={28} alt="Correr Icon" />
               </div>
-              <p className="mt-2 text-sm">Puedes realizar picnics o salir a terrazas sin problema.</p>
+              <p className="mt-2 text-sm">Puedes realizar picnics sin problema.</p>
             </div>
           </div>
           {/* <div className="text-left text-xs my-2">Última Actualización: {nearestSensor.lastUpdated}</div> */}
@@ -120,10 +120,10 @@ export default function Index() {
       )}
 
       {/* Page's title */}
-      <div className="flex items-center justify-center mt-5 pt-20">
+      {/* <div className="flex items-center justify-center mt-5 pt-20">
         <img src="/logo.png" width={20} height={20} alt="Logo" className="mr-2" />
         <h1 className="text-1xl font-semibold">Respira Claro</h1>
-      </div>
+      </div> */}
 
     </div>
   );
