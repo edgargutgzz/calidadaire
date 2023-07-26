@@ -64,7 +64,7 @@ export default function Index() {
 
       {/* Page's title */}
       <div className="flex items-center justify-center mt-5 pb-0">
-        <img src="/logo.png" width={20} height={20} alt="Logo" className="mr-2" /> {/* Adjust the class as needed */}
+        <img src="/logo.png" width={20} height={20} alt="Logo" className="mr-2" />
         <h1 className="text-1xl font-semibold">Respira Claro</h1>
       </div>
       
@@ -79,14 +79,23 @@ export default function Index() {
           <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
             <QualityBar pm25={nearestSensor.pm25} />
             <div className="text-left text-xs my-2 pt-4">Calidad de aire en {nearestSensor.address}.</div>
+            <div className="text-left text-xs my-2">Última Actualización: {nearestSensor.lastUpdated}</div>
           </div>
-          {/* Two blank cards */}
+          {/* Running and Cycling */}
           <div className="flex justify-between mt-8">
+            {/* Running */}
             <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2">
-              {/* Content of the first card */}
+              <div className="flex items-center space-x-2">
+                <img src="/run.png" width={30} height={30} alt="Correr Icon" />
+              </div>
+              <p className="mt-2">Puedes salir a correr sin problema.</p>
             </div>
+            {/* Cycling */}
             <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2">
-              {/* Content of the second card */}
+              <div className="flex items-center space-x-2">
+                <img src="/cycling.png" width={30} height={30} alt="Correr Icon" />
+              </div>
+              <p className="mt-2">Puedes salir a andar en bici sin problema.</p>
             </div>
           </div>
           {/* Two blank cards */}
@@ -98,7 +107,6 @@ export default function Index() {
               {/* Content of the second card */}
             </div>
           </div>
-          <div className="text-left text-xs my-2">Última Actualización: {nearestSensor.lastUpdated}</div>
           <div className="text-left text-xs my-2">
             Datos de calidad de aire proporcionados por{' '} 
             <a href="https://www2.purpleair.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
