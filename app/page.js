@@ -115,7 +115,7 @@ export default function Index() {
               <p className="mt-2 text-sm">Puedess realizar picnics o salir a terrazas sin problema.</p>
             </div>
           </div>
-          <div className="text-left text-xs my-2">Última Actualización: {nearestSensor.lastUpdated}</div>
+          {/* <div className="text-left text-xs my-2">Última Actualización: {nearestSensor.lastUpdated}</div> */}
           <div className="text-left text-xs my-2">
             Datos de calidad de aire proporcionados por{' '} 
             <a href="https://www2.purpleair.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
