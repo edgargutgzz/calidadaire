@@ -111,7 +111,7 @@ export default function Index() {
               <div className="flex items-center space-x-2">
                 <img src="/picnic.png" width={28} height={28} alt="Correr Icon" />
               </div>
-              <p className="mt-2 text-sm">Puedes realizar picnics o salir a terrazas sin problema.</p>
+              <p className="mt-2 text-sm">Puedess realizar picnics o salir a terrazas sin problema.</p>
             </div>
           </div>
           <div className="text-left text-xs my-2">Última Actualización: {nearestSensor.lastUpdated}</div>
