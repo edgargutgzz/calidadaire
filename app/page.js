@@ -62,12 +62,6 @@ export default function Index() {
   return (
     <div className="pb-20"> {/* Added padding-bottom */}
       <Navbar currentPage="inicio" />
-
-      {/* Page's title */}
-      <div className="flex items-center justify-center mt-5 pb-0">
-        <img src="/logo.png" width={20} height={20} alt="Logo" className="mr-2" />
-        <h1 className="text-1xl font-semibold">Respira Claro</h1>
-      </div>
       
       {/* Hidden Mapa component to fetch the nearest sensor data */}
       <div style={{ display: 'none' }}>
@@ -76,7 +70,7 @@ export default function Index() {
       
       {/* Calidad del Aire */}
       {nearestSensor && (
-        <div className="mx-4 mb-2 pt-8">
+        <div className="mx-4 mb-2 pt-4">
           <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
             <QualityBar pm25={nearestSensor.pm25} />
             <div className="text-left text-xs my-2 pt-4">Calidad de aire en {nearestSensor.address}.</div>
@@ -124,6 +118,13 @@ export default function Index() {
           </div>
         </div>
       )}
+
+      {/* Page's title */}
+      <div className="flex items-center justify-center mt-5 pt-20">
+        <img src="/logo.png" width={20} height={20} alt="Logo" className="mr-2" />
+        <h1 className="text-1xl font-semibold">Respira Claro</h1>
+      </div>
+
     </div>
   );
 }
