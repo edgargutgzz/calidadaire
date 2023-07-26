@@ -38,7 +38,7 @@ function QualityBar({ pm25 }) {
   return (
     <>
       <div className="text-left text-3xl my-2">{getQualityText()}</div>
-      <div className="text-left text-sm pb-4">{getQualityRecommendations()}</div>
+      <div className="text-left text-sm pb-2">{getQualityRecommendations()}</div>
       <div className="relative my-4 flex min-h-[10px] rounded-lg overflow-hidden">
         <div style={{ flexBasis: "12%" }} className="bg-custom-green" />
         <div style={{ flexBasis: "10%" }} className="bg-gradient-to-r from-custom-green to-custom-yellow" />
@@ -49,7 +49,7 @@ function QualityBar({ pm25 }) {
         <div style={{ flexBasis: "12%" }} className="bg-custom-red" />
         <div style={{ flexBasis: "10%" }} className="bg-gradient-to-r from-custom-red to-custom-purple" />
         <div style={{ flexBasis: "12%" }} className="bg-custom-purple" />
-        <div style={{ left: `${calculateLeft()}%`, borderColor: "white" }} className="absolute w-3 h-3 bg-gray-200 rounded-full border-2 transform -translate-y-1/2 top-1/2"></div>
+        <div style={{ left: `${calculateLeft()}%`, borderColor: "white" }} className="absolute w-3 h-3 bg-gray-100 rounded-full border-2 transform -translate-y-1/2 top-1/2"></div>
       </div>
     </>
   );
@@ -112,7 +112,7 @@ export default function Index() {
               <div className="flex items-center space-x-2">
                 <img src="/picnic.png" width={28} height={28} alt="Correr Icon" />
               </div>
-              <p className="mt-2 text-sm">Puedess realizar picnics o salir a terrazas sin problema.</p>
+              <p className="mt-2 text-sm">Puedes realizar picnics o salir a terrazas sin problema.</p>
             </div>
           </div>
           {/* <div className="text-left text-xs my-2">Última Actualización: {nearestSensor.lastUpdated}</div> */}
