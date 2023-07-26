@@ -49,7 +49,7 @@ function QualityBar({ pm25 }) {
         <div style={{ flexBasis: "12%" }} className="bg-custom-red" />
         <div style={{ flexBasis: "10%" }} className="bg-gradient-to-r from-custom-red to-custom-purple" />
         <div style={{ flexBasis: "12%" }} className="bg-custom-purple" />
-        <div style={{ left: `${calculateLeft()}%`, borderColor: 'rgb(249, 250, 251)' }} className="absolute w-3 h-3 bg-white rounded-full border-2 transform -translate-y-1/2 top-1/2"></div>
+        <div style={{ left: `${calculateLeft()}%`, borderColor: "white" }} className="absolute w-3 h-3 bg-gray-200 rounded-full border-2 transform -translate-y-1/2 top-1/2"></div>
       </div>
     </>
   );
