@@ -7,12 +7,13 @@ import Mapa, {getMarkerColor} from '../components/mapa';
 // QualityBar
 function QualityBar({ pm25 }) {
   const calculateLeft = () => {
-    if (pm25 <= 25) return ((pm25 / 25) * 16) + 8;  // 0-25 range is 16% of total
-    if (pm25 <= 45) return 20 + ((pm25 - 26) / 20) * 16 + 8;  // 26-45 range is 16% of total
-    if (pm25 <= 79) return 40 + ((pm25 - 46) / 34) * 16 + 8;  // 46-79 range is 16% of total
-    if (pm25 <= 147) return 60 + ((pm25 - 80) / 68) * 16 + 8;  // 80-147 range is 16% of total
-    return 100; // for PM2.5 > 147
+    if (pm25 <= 25) return ((pm25 / 25) * 12) + 6;  // 0-25 range is 12% of total, shifted by half (6%)
+    if (pm25 <= 45) return 22 + ((pm25 - 26) / 20) * 12 + 6;  // 26-45 range is 12% of total, shifted by half (6%)
+    if (pm25 <= 79) return 44 + ((pm25 - 46) / 34) * 12 + 6;  // 46-79 range is 12% of total, shifted by half (6%)
+    if (pm25 <= 147) return 66 + ((pm25 - 80) / 68) * 12 + 6;  // 80-147 range is 12% of total, shifted by half (6%)
+    return 88 + 6; // for PM2.5 > 147, shifted by half (6%)
   };
+  
 
   // Function to determine quality text based on PM2.5 value
   const getQualityText = () => {
@@ -39,15 +40,15 @@ function QualityBar({ pm25 }) {
       <div className="text-left text-3xl my-2">{getQualityText()}</div>
       <div className="text-left text-sm pb-4">{getQualityRecommendations()}</div>
       <div className="relative my-4 flex min-h-[10px] rounded-lg overflow-hidden">
-        <div style={{ flexBasis: "16%" }} className="bg-custom-green" />
-        <div style={{ flexBasis: "5%" }} className="bg-gradient-to-r from-custom-green to-custom-yellow" />
-        <div style={{ flexBasis: "16%" }} className="bg-custom-yellow" />
-        <div style={{ flexBasis: "5%" }} className="bg-gradient-to-r from-custom-yellow to-custom-orange" />
-        <div style={{ flexBasis: "16%" }} className="bg-custom-orange" />
-        <div style={{ flexBasis: "5%" }} className="bg-gradient-to-r from-custom-orange to-custom-red" />
-        <div style={{ flexBasis: "16%" }} className="bg-custom-red" />
-        <div style={{ flexBasis: "5%" }} className="bg-gradient-to-r from-custom-red to-custom-purple" />
-        <div style={{ flexBasis: "16%" }} className="bg-custom-purple" />
+        <div style={{ flexBasis: "12%" }} className="bg-custom-green" />
+        <div style={{ flexBasis: "10%" }} className="bg-gradient-to-r from-custom-green to-custom-yellow" />
+        <div style={{ flexBasis: "12%" }} className="bg-custom-yellow" />
+        <div style={{ flexBasis: "10%" }} className="bg-gradient-to-r from-custom-yellow to-custom-orange" />
+        <div style={{ flexBasis: "12%" }} className="bg-custom-orange" />
+        <div style={{ flexBasis: "10%" }} className="bg-gradient-to-r from-custom-orange to-custom-red" />
+        <div style={{ flexBasis: "12%" }} className="bg-custom-red" />
+        <div style={{ flexBasis: "10%" }} className="bg-gradient-to-r from-custom-red to-custom-purple" />
+        <div style={{ flexBasis: "12%" }} className="bg-custom-purple" />
         <div style={{ left: `${calculateLeft()}%`, borderColor: 'rgb(249, 250, 251)' }} className="absolute w-3 h-3 bg-white rounded-full border-2 transform -translate-y-1/2 top-1/2"></div>
       </div>
     </>
