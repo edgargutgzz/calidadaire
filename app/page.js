@@ -97,13 +97,17 @@ export default function Index() {
               <p className="mt-2 text-sm">Puedes salir a andar en bici sin problema.</p>
             </div>
           </div>
-          {/* Two blank cards */}
+          {/* Personas vulnerables y parques */}
           <div className="flex justify-between mt-4">
+            {/* Personas vulnerables */}
             <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2">
-              {/* Content of the first card */}
+              <div className="flex items-center space-x-2">
+                <img src="/baby.png" width={28} height={28} alt="Correr Icon" />
+              </div>
+              <p className="mt-2 text-sm">Bebes y adultos mayores pueden salir sin problema.</p>
             </div>
+            {/* Parques */}
             <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2">
-              {/* Content of the second card */}
             </div>
           </div>
           <div className="text-left text-xs my-2">Última Actualización: {nearestSensor.lastUpdated}</div>
