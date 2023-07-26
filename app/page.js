@@ -59,7 +59,7 @@ export default function Index() {
   const [nearestSensor, setNearestSensor] = useState(null);
 
   return (
-    <div>
+    <div className="pb-20"> {/* Added padding-bottom */}
       <Navbar currentPage="inicio" />
 
       {/* Page's title */}
@@ -79,23 +79,22 @@ export default function Index() {
           <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
             <QualityBar pm25={nearestSensor.pm25} />
             <div className="text-left text-xs my-2 pt-4">Calidad de aire en {nearestSensor.address}.</div>
-            <div className="text-left text-xs my-2">Última Actualización: {nearestSensor.lastUpdated}</div>
           </div>
           {/* Running and Cycling */}
           <div className="flex justify-between mt-8">
             {/* Running */}
             <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2">
               <div className="flex items-center space-x-2">
-                <img src="/run.png" width={30} height={30} alt="Correr Icon" />
+                <img src="/run.png" width={28} height={28} alt="Correr Icon" />
               </div>
-              <p className="mt-2">Puedes salir a correr sin problema.</p>
+              <p className="mt-2 text-sm">Puedes salir a correr sin problema.</p>
             </div>
             {/* Cycling */}
             <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2">
               <div className="flex items-center space-x-2">
-                <img src="/cycling.png" width={30} height={30} alt="Correr Icon" />
+                <img src="/cycling.png" width={28} height={28} alt="Correr Icon" />
               </div>
-              <p className="mt-2">Puedes salir a andar en bici sin problema.</p>
+              <p className="mt-2 text-sm">Puedes salir a andar en bici sin problema.</p>
             </div>
           </div>
           {/* Two blank cards */}
@@ -107,6 +106,7 @@ export default function Index() {
               {/* Content of the second card */}
             </div>
           </div>
+          <div className="text-left text-xs my-2">Última Actualización: {nearestSensor.lastUpdated}</div>
           <div className="text-left text-xs my-2">
             Datos de calidad de aire proporcionados por{' '} 
             <a href="https://www2.purpleair.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
@@ -118,6 +118,7 @@ export default function Index() {
     </div>
   );
 }
+
 
 
 
