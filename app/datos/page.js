@@ -4,28 +4,79 @@ import { useState } from 'react';
 import Navbar from '../../components/navbar';
 
 export default function Index() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleOpen = () => {
-    setIsOpen(!isOpen);
-  };
+  const [isOpen1, setIsOpen1] = useState(false);
+  const [isOpen2, setIsOpen2] = useState(false);
+  const [isOpen3, setIsOpen3] = useState(false);
+  const [isOpen4, setIsOpen4] = useState(false);
 
   return (
     <div>
       <Navbar currentPage="datos" />
       <div className="mx-4 mb-2 pt-4">
+        {/* Pregunta 1 */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
-          <div onClick={toggleOpen} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
+          <div onClick={() => setIsOpen1(!isOpen1)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p>¿Por qué utilizar esta app sobre las otras?</p>
             <img 
-              src={isOpen ? "/up-arrow.png" : "/down-arrow.png"} 
+              src={isOpen1 ? "/up-arrow.png" : "/down-arrow.png"} 
               alt="toggle" 
               className="h-4 w-4" 
             />
           </div>
-          {isOpen && (
+          {isOpen1 && (
             <p className="mt-2 text-sm">
               Esta app es la única que te permite saber si puedes salir a correr o andar en bici, si puedes llevar a tus hijos o a tus padres a un parque, o si puedes hacer un picnic en el parque. Todo esto basado en la calidad del aire en tu ciudad.
+            </p>
+          )}
+        </div>
+
+        {/* Pregunta 2 */}
+        <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
+          <div onClick={() => setIsOpen2(!isOpen2)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
+            <p>Question 2</p>
+            <img 
+              src={isOpen2 ? "/up-arrow.png" : "/down-arrow.png"} 
+              alt="toggle" 
+              className="h-4 w-4" 
+            />
+          </div>
+          {isOpen2 && (
+            <p className="mt-2 text-sm">
+              Answer 2
+            </p>
+          )}
+        </div>
+
+        {/* Pregunta 3 */}
+        <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
+          <div onClick={() => setIsOpen3(!isOpen3)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
+            <p>Question 3</p>
+            <img 
+              src={isOpen3 ? "/up-arrow.png" : "/down-arrow.png"} 
+              alt="toggle" 
+              className="h-4 w-4" 
+            />
+          </div>
+          {isOpen3 && (
+            <p className="mt-2 text-sm">
+              Answer 3
+            </p>
+          )}
+        </div>
+
+        {/* Pregunta 4 */}
+        <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
+          <div onClick={() => setIsOpen4(!isOpen4)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
+            <p>Question 4</p>
+            <img 
+              src={isOpen4 ? "/up-arrow.png" : "/down-arrow.png"} 
+              alt="toggle" 
+              className="h-4 w-4" 
+            />
+          </div>
+          {isOpen4 && (
+            <p className="mt-2 text-sm">
+              Answer 4
             </p>
           )}
         </div>
@@ -33,6 +84,8 @@ export default function Index() {
     </div>
   );
 }
+
+
 
 
 
