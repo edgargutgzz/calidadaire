@@ -20,7 +20,7 @@ export default function Index() {
             <img 
               src={isOpen1 ? "/up-arrow.png" : "/down-arrow.png"} 
               alt="toggle" 
-              className="h-4 w-4" 
+              className="h-3 w-3" 
             />
           </div>
           {isOpen1 && (
@@ -37,7 +37,7 @@ export default function Index() {
             <img 
               src={isOpen2 ? "/up-arrow.png" : "/down-arrow.png"} 
               alt="toggle" 
-              className="h-4 w-4" 
+              className="h-3 w-3" 
             />
           </div>
           {isOpen2 && (
@@ -54,7 +54,7 @@ export default function Index() {
             <img 
               src={isOpen3 ? "/up-arrow.png" : "/down-arrow.png"} 
               alt="toggle" 
-              className="h-4 w-4" 
+              className="h-3 w-3" 
             />
           </div>
           {isOpen3 && (
@@ -71,7 +71,7 @@ export default function Index() {
             <img 
               src={isOpen4 ? "/up-arrow.png" : "/down-arrow.png"} 
               alt="toggle" 
-              className="h-4 w-4" 
+              className="h-3 w-3" 
             />
           </div>
           {isOpen4 && (
