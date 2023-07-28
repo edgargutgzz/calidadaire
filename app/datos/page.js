@@ -80,10 +80,29 @@ export default function Index() {
             </p>
           )}
         </div>
+
+        <div className="text-center mt-8">
+          <p className='text-xs'>Un desarrollo de </p>
+          <img 
+            src="/datacomun.png" 
+            alt="Logo" 
+            className="mx-auto h-16 w-auto" 
+          />
+        </div>
+        <div className="text-center mt-8">
+          <p className='text-xs py-8'>en colaboración con </p>
+          <img 
+            src="/occamm.png" 
+            alt="Logo" 
+            className="mx-auto h-16 w-auto" 
+          />
+        </div>
       </div>
     </div>
   );
 }
+
+
 
 
 
