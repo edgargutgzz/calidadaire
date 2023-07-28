@@ -82,17 +82,20 @@ export default function Index() {
         </div>
       </div>
 
-      <div className="text-center mb-16">
+      <div className="text-center mb-4">
         <p className='text-xs'>Un desarrollo de </p>
-        <img 
-          src="/datacomun.png" 
-          alt="Logo" 
-          className="mx-auto h-16 w-auto" 
-        />
+        <a href="https://www.datacomun.org/" target="_blank" rel="noreferrer">
+          <img 
+            src="/datacomun.png" 
+            alt="Logo" 
+            className="mx-auto h-16 w-auto" 
+          />
+        </a>
       </div>
     </div>
   );
 }
+
 
 
 
