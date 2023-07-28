@@ -81,7 +81,7 @@ export default function Index() {
           )}
         </div>
 
-        <div className="text-center mt-8">
+        <div className="text-center mt-16">
           <p className='text-xs'>Un desarrollo de </p>
           <img 
             src="/datacomun.png" 
@@ -89,8 +89,8 @@ export default function Index() {
             className="mx-auto h-16 w-auto" 
           />
         </div>
-        <div className="text-center mt-8">
-          <p className='text-xs py-8'>en colaboración con </p>
+        <div className="text-center mt-6">
+          <p className='text-xs pb-6'>en colaboración con </p>
           <img 
             src="/occamm.png" 
             alt="Logo" 
