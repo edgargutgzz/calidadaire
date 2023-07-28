@@ -10,7 +10,7 @@ export default function Index() {
   const [isOpen4, setIsOpen4] = useState(false);
 
   return (
-    <div className="flex flex-col justify-between h-screen">
+    <div className="flex flex-col h-screen pb-20"> {/* Added padding-bottom */}
       <Navbar currentPage="datos" />
       <div className="mx-4 pt-4 flex-grow overflow-auto">
         {/* Pregunta 1 */}
@@ -93,6 +93,7 @@ export default function Index() {
     </div>
   );
 }
+
 
 
 
