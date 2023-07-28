@@ -10,9 +10,9 @@ export default function Index() {
   const [isOpen4, setIsOpen4] = useState(false);
 
   return (
-    <div>
+    <div className="flex flex-col justify-between h-screen">
       <Navbar currentPage="datos" />
-      <div className="mx-4 mb-2 pt-4">
+      <div className="mx-4 pt-4 flex-grow overflow-auto">
         {/* Pregunta 1 */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
           <div onClick={() => setIsOpen1(!isOpen1)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
@@ -80,27 +80,22 @@ export default function Index() {
             </p>
           )}
         </div>
+      </div>
 
-        <div className="text-center mt-16">
-          <p className='text-xs'>Un desarrollo de </p>
-          <img 
-            src="/datacomun.png" 
-            alt="Logo" 
-            className="mx-auto h-16 w-auto" 
-          />
-        </div>
-        <div className="text-center mt-6">
-          <p className='text-xs pb-6'>en colaboración con </p>
-          <img 
-            src="/occamm.png" 
-            alt="Logo" 
-            className="mx-auto h-16 w-auto" 
-          />
-        </div>
+      <div className="text-center mb-4">
+        <p className='text-xs'>Un desarrollo de </p>
+        <img 
+          src="/datacomun.png" 
+          alt="Logo" 
+          className="mx-auto h-16 w-auto" 
+        />
       </div>
     </div>
   );
 }
+
+
+
 
 
 
