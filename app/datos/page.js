@@ -82,7 +82,7 @@ export default function Index() {
         </div>
       </div>
 
-      <div className="text-center mb-4">
+      {/* <div className="text-center mb-4">
         <p className='text-xs'>Un desarrollo de </p>
         <a href="https://www.datacomun.org/" target="_blank" rel="noreferrer">
           <img 
@@ -91,7 +91,7 @@ export default function Index() {
             className="mx-auto h-16 w-auto" 
           />
         </a>
-      </div>
+      </div> */}
     </div>
   );
 }
