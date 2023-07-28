@@ -82,7 +82,7 @@ export default function Index() {
         </div>
       </div>
 
-      <div className="text-center mb-4">
+      <div className="text-center mb-16">
         <p className='text-xs'>Un desarrollo de </p>
         <img 
           src="/datacomun.png" 
