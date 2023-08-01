@@ -117,14 +117,14 @@ export default function Index() {
             </div>
           </div>
           {/* Hora */}
-          <div className="bg-white rounded-lg shadow-lg p-4 mb-4 mt-2">
+          <div className="bg-white rounded-lg shadow-lg p-4 mb-4 mt-6">
             <div className="flex items-center">
               <img src="/clock.png" className="w-4 h-4" alt="Correr Icon" />
               <p className="ml-2 text-xs">Última actualización a las {nearestSensor.lastUpdated}.</p>
             </div>
           </div>
           {/* Source */}
-          <div className="text-left text-xs my-2">
+          <div className="text-left text-xs my-2 text-gray-400">
             Datos de calidad de aire proporcionados por{' '} 
             <a href="https://www2.purpleair.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
               Purple Air
@@ -133,7 +133,6 @@ export default function Index() {
               Observatorio Ciudadano de la Calidad del Aire.
             </a>
           </div>
-
         </div>
       )}
     </div>
