@@ -76,7 +76,7 @@ export default function Index() {
             <QualityBar pm25={nearestSensor.pm25} />
           </div>
           {/* Running and Cycling */}
-          <div className="flex justify-between mt-8">
+          <div className="flex justify-between mt-6">
             {/* Running */}
             <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2">
               <div className="flex items-center space-x-2">
@@ -93,7 +93,7 @@ export default function Index() {
             </div>
           </div>
           {/* Personas vulnerables y parques */}
-          <div className="flex justify-between mt-4">
+          <div className="flex justify-between mt-2">
             {/* Personas vulnerables */}
             <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2">
               <div className="flex items-center space-x-2">
@@ -132,7 +132,7 @@ export default function Index() {
 
 
           {/* Location */}
-          <div className="bg-white rounded-lg shadow-lg p-4 mb-4 mt-4">
+          <div className="bg-white rounded-lg shadow-lg p-4 mb-4 mt-2">
             {/* <div className="flex items-center space-x-2">
               <img src="/navigation.png" width={28} height={28} alt="Correr Icon" />
             </div> */}
