@@ -174,8 +174,7 @@ export default function Mapa({ onNearestSensorChange }) {
             className={`marker relative border border-white rounded-full cursor-pointer flex items-center justify-center text-xs text-white ${getMarkerColor(sensor.pm25)}`}
             style={{
               width: "32px",
-              height: "28px",
-              // opacity: 0.9
+              height: "28px"
             }}
           >
             {sensor.pm25 != null ? Math.round(sensor.pm25) : 'N/A'}
