@@ -37,9 +37,9 @@ function QualityBar({ pm25 }) {
 
   return (
     <>
-      <div className="text-left text-3xl my-2">{getQualityText()}</div>
-      <div className="text-left text-sm pb-1">{getQualityRecommendations()}</div>
-      <div className="relative my-4 flex min-h-[12px] rounded-lg overflow-hidden">
+      <div className="text-left text-3xl">{getQualityText()}</div>
+      <div className="text-left text-sm pt-2">{getQualityRecommendations()}</div>
+      <div className="relative flex min-h-[12px] rounded-lg overflow-hidden mt-4">
         <div style={{ flexBasis: "12%" }} className="bg-custom-green" />
         <div style={{ flexBasis: "10%" }} className="bg-gradient-to-r from-custom-green to-custom-yellow" />
         <div style={{ flexBasis: "12%" }} className="bg-custom-yellow" />
@@ -70,7 +70,7 @@ export default function Index() {
       
       {/* Calidad del Aire */}
       {nearestSensor && (
-        <div className="mx-4 mb-0 mt-0 pt-2 pb-2">
+        <div className="mx-4 mb-0 mt-0 pt-4 pb-4">
           {/* Quality Bar */}
           <div className="bg-white rounded-lg shadow-lg p-4">
             <QualityBar pm25={nearestSensor.pm25} />
