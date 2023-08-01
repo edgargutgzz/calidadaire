@@ -174,7 +174,7 @@ export default function Mapa({ onNearestSensorChange }) {
             style={{
               width: "30px",
               height: "30px",
-              // opacity: 0.9
+              opacity: 0.8
             }}
           >
             {sensor.pm25 != null ? Math.round(sensor.pm25) : 'N/A'} 
