@@ -82,14 +82,14 @@ export default function Index() {
               <div className="flex items-center space-x-2">
                 <img src="/run.png" width={24} height={24} alt="Correr Icon" />
               </div>
-              <p className="mt-2 text-sm">Puedes salir a correr sin problema.</p>
+              <p className="mt-2 text-sm">Es seguro salir a correr.</p>
             </div>
             {/* Cycling */}
             <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2">
               <div className="flex items-center space-x-2">
                 <img src="/cycling.png" width={24} height={24} alt="Correr Icon" />
               </div>
-              <p className="mt-2 text-sm">Puedes salir a andar en bici sin problema.</p>
+              <p className="mt-2 text-sm">Es seguro andar en bici.</p>
             </div>
           </div>
           {/* Personas vulnerables y parques */}
@@ -99,14 +99,14 @@ export default function Index() {
               <div className="flex items-center space-x-2">
                 <img src="/baby.png" width={24} height={24} alt="Correr Icon" />
               </div>
-              <p className="mt-2 text-sm">Bebes y adultos mayores pueden salir sin problema.</p>
+              <p className="mt-2 text-sm">Bebes y adultos mayores pueden salir con seguridad.</p>
             </div>
             {/* Parques */}
             <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2">
               <div className="flex items-center space-x-2">
                 <img src="/picnic.png" width={24} height={24} alt="Correr Icon" />
               </div>
-              <p className="mt-2 text-sm">Puedes realizar picnics sin problema.</p>
+              <p className="mt-2 text-sm">Es seguro realizar picnics al aire libre.</p>
             </div>
           </div>
           {/* Location */}
