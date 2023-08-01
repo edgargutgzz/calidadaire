@@ -49,7 +49,7 @@ function QualityBar({ pm25 }) {
         <div style={{ flexBasis: "12%" }} className="bg-custom-red" />
         <div style={{ flexBasis: "10%" }} className="bg-gradient-to-r from-custom-red to-custom-purple" />
         <div style={{ flexBasis: "12%" }} className="bg-custom-purple" />
-        <div style={{ left: `${calculateLeft()}%`, borderColor: "white" }} className="absolute w-4 h-4 bg-gray-100 rounded-full border-4 transform -translate-y-1/2 top-1/2"></div>
+        <div style={{ left: `${calculateLeft()}%`, borderColor: "white" }} className="absolute w-4 h-4 bg-black rounded-full border-4 transform -translate-y-1/2 top-1/2"></div>
       </div>
     </>
   );
@@ -70,7 +70,7 @@ export default function Index() {
       
       {/* Calidad del Aire */}
       {nearestSensor && (
-        <div className="mx-4 mb-0 mt-0 pt-4 pb-4">
+        <div className="mx-4 mb-2 mt-2 pt-4 pb-4">
           {/* Quality Bar */}
           <div className="bg-white rounded-lg shadow-lg p-4">
             <QualityBar pm25={nearestSensor.pm25} />
