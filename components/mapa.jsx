@@ -173,8 +173,8 @@ export default function Mapa({ onNearestSensorChange }) {
             id={`marker-${sensor.sensor_id}`}
             className={`marker relative border border-white rounded-full cursor-pointer flex items-center justify-center text-xs text-white ${getMarkerColor(sensor.pm25)}`}
             style={{
-              width: "34px",
-              height: "30px",
+              width: "32px",
+              height: "28px",
               // opacity: 0.9
             }}
           >
