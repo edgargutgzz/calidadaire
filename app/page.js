@@ -124,7 +124,7 @@ export default function Index() {
             </div>
           </div>
           {/* Source */}
-          <div className="text-left text-xs my-2 text-gray-400">
+          <div className="text-left text-xs pt-2 text-gray-500">
             Datos de calidad de aire proporcionados por{' '} 
             <a href="https://www2.purpleair.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
               Purple Air
