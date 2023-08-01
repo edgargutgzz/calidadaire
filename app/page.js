@@ -128,10 +128,10 @@ export default function Index() {
             Datos de calidad de aire proporcionados por{' '} 
             <a href="https://www2.purpleair.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
               Purple Air
-            </a> y evaluados por el {' '}
+            </a> y evaluados por el{' '}
             <a href="https://observatoriodelaire.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
-              Observatorio Ciudadano de la Calidad del Aire.
-            </a>
+              Observatorio Ciudadano de la Calidad del Aire
+            </a>.
           </div>
         </div>
       )}
