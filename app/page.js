@@ -49,7 +49,7 @@ function QualityBar({ pm25 }) {
         <div style={{ flexBasis: "12%" }} className="bg-custom-red" />
         <div style={{ flexBasis: "10%" }} className="bg-gradient-to-r from-custom-red to-custom-purple" />
         <div style={{ flexBasis: "12%" }} className="bg-custom-purple" />
-        <div style={{ left: `${calculateLeft()}%`, borderColor: "white" }} className="absolute w-4 h-4 bg-gray-500 rounded-full border-4 transform -translate-y-1/2 top-1/2"></div>
+        <div style={{ left: `${calculateLeft()}%`, borderColor: "white" }} className="absolute w-4 h-4 bg-gray-400 rounded-full border-4 transform -translate-y-1/2 top-1/2"></div>
       </div>
     </>
   );
@@ -109,6 +109,28 @@ export default function Index() {
               <p className="mt-2 text-sm">Puedes realizar picnics sin problema.</p>
             </div>
           </div>
+          {/* Location y Tiempo */}
+          <div className="flex justify-between mt-4">
+            {/* Location */}
+            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2">
+              <div className="flex items-center space-x-2">
+                <img src="/navigation.png" width={28} height={28} alt="Correr Icon" />
+              </div>
+              <p className="mt-2 text-sm">Calidad de aire en {nearestSensor.address}.</p>
+            </div>
+            {/* Tiempo */}
+            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2">
+              <div className="flex items-center space-x-2">
+                <img src="/clock.png" width={28} height={28} alt="Correr Icon" />
+              </div>
+              <p className="mt-2 text-sm">Puedes realizar picnics sin problema.</p>
+            </div>
+          </div>
+
+
+
+
+
           {/* Location */}
           <div className="bg-white rounded-lg shadow-lg p-4 mb-4 mt-4">
             <div className="flex items-center space-x-2">
