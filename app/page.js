@@ -70,10 +70,10 @@ export default function Index() {
       
       {/* Calidad del Aire */}
       {nearestSensor && (
-        <div className="mx-4 mb-2 pt-4">
-          <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
+        <div className="mx-4 mb-0 mt-0 pt-2 pb-2">
+          {/* Quality Bar */}
+          <div className="bg-white rounded-lg shadow-lg p-4">
             <QualityBar pm25={nearestSensor.pm25} />
-            {/* <div className="text-left text-xs my-2 pt-4">Calidad de aire en {nearestSensor.address}.</div> */}
           </div>
           {/* Running and Cycling */}
           <div className="flex justify-between mt-8">
