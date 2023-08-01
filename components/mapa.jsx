@@ -170,14 +170,16 @@ export default function Mapa({ onNearestSensorChange }) {
           latitude={sensor.lat}
         >
           <div
-            className={`border border-white rounded-full cursor-pointer flex items-center justify-center text-xs text-white ${getMarkerColor(sensor.pm25)}`}
+            id={`marker-${sensor.sensor_id}`}
+            className={`marker relative border border-white rounded-full cursor-pointer flex items-center justify-center text-xs text-white ${getMarkerColor(sensor.pm25)}`}
             style={{
               width: "30px",
               height: "30px",
-              opacity: 0.8
+              opacity: 0.9
             }}
           >
-            {sensor.pm25 != null ? Math.round(sensor.pm25) : 'N/A'} 
+            {sensor.pm25 != null ? Math.round(sensor.pm25) : 'N/A'}
+            <div className="triangle absolute w-0 h-0" />
           </div>
         </Marker>
       ))}
