@@ -116,14 +116,24 @@ export default function Index() {
               <p className="ml-2 text-xs">Calidad de aire en {nearestSensor.address}.</p>
             </div>
           </div>
-          {/* <div className="text-left text-xs my-2 pt-4">Calidad de aire en {nearestSensor.address}.</div> */}
-          {/* <div className="text-left text-xs my-2">Última Actualización: {nearestSensor.lastUpdated}</div> */}
+          {/* Hora */}
+          <div className="bg-white rounded-lg shadow-lg p-4 mb-4 mt-2">
+            <div className="flex items-center">
+              <img src="/clock.png" className="w-4 h-4" alt="Correr Icon" />
+              <p className="ml-2 text-xs">Última actualización a las {nearestSensor.lastUpdated}.</p>
+            </div>
+          </div>
+          {/* Source */}
           <div className="text-left text-xs my-2">
             Datos de calidad de aire proporcionados por{' '} 
             <a href="https://www2.purpleair.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
               Purple Air
-            </a>.
+            </a> y evaluados por el {' '}
+            <a href="https://observatoriodelaire.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+              Observatorio Ciudadano de la Calidad del Aire.
+            </a>
           </div>
+
         </div>
       )}
     </div>
