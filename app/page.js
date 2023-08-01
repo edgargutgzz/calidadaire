@@ -37,7 +37,7 @@ function QualityBar({ pm25 }) {
 
   return (
     <>
-      <div className="text-left font-bold text-4xl">{getQualityText()}</div>
+      <div className="text-left font-semibold text-4xl">{getQualityText()}</div>
       <div className="text-left text-sm pt-2">{getQualityRecommendations()}</div>
       <div className="relative flex min-h-[12px] rounded-lg overflow-hidden mt-4 mb-2">
         <div style={{ flexBasis: "12%" }} className="bg-custom-green" />
