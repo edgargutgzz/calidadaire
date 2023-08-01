@@ -39,7 +39,7 @@ function QualityBar({ pm25 }) {
     <>
       <div className="text-left text-3xl my-2">{getQualityText()}</div>
       <div className="text-left text-sm pb-1">{getQualityRecommendations()}</div>
-      <div className="relative my-4 flex min-h-[10px] rounded-lg overflow-hidden">
+      <div className="relative my-4 flex min-h-[12px] rounded-lg overflow-hidden">
         <div style={{ flexBasis: "12%" }} className="bg-custom-green" />
         <div style={{ flexBasis: "10%" }} className="bg-gradient-to-r from-custom-green to-custom-yellow" />
         <div style={{ flexBasis: "12%" }} className="bg-custom-yellow" />
@@ -49,7 +49,7 @@ function QualityBar({ pm25 }) {
         <div style={{ flexBasis: "12%" }} className="bg-custom-red" />
         <div style={{ flexBasis: "10%" }} className="bg-gradient-to-r from-custom-red to-custom-purple" />
         <div style={{ flexBasis: "12%" }} className="bg-custom-purple" />
-        <div style={{ left: `${calculateLeft()}%`, borderColor: "white" }} className="absolute w-3 h-3 bg-gray-100 rounded-full border-2 transform -translate-y-1/2 top-1/2"></div>
+        <div style={{ left: `${calculateLeft()}%`, borderColor: "white" }} className="absolute w-4 h-4 bg-gray-100 rounded-full border-2 transform -translate-y-1/2 top-1/2"></div>
       </div>
     </>
   );
@@ -73,7 +73,7 @@ export default function Index() {
         <div className="mx-4 mb-2 pt-4">
           <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
             <QualityBar pm25={nearestSensor.pm25} />
-            <div className="text-left text-xs my-2 pt-4">Calidad de aire en {nearestSensor.address}.</div>
+            {/* <div className="text-left text-xs my-2 pt-4">Calidad de aire en {nearestSensor.address}.</div> */}
           </div>
           {/* Running and Cycling */}
           <div className="flex justify-between mt-8">
@@ -109,6 +109,15 @@ export default function Index() {
               <p className="mt-2 text-sm">Puedes realizar picnics sin problema.</p>
             </div>
           </div>
+          {/* Location */}
+          <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
+            <div className="flex items-center space-x-2">
+              <img src="/navigation.png" width={28} height={28} alt="Correr Icon" />
+            </div>
+            <p className="mt-2 text-sm">Calidad de aire en {nearestSensor.address}.</p>
+            {/* <div className="text-left text-xs my-2 pt-4">Calidad de aire en {nearestSensor.address}.</div> */}
+          </div>
+          {/* <div className="text-left text-xs my-2 pt-4">Calidad de aire en {nearestSensor.address}.</div> */}
           {/* <div className="text-left text-xs my-2">Última Actualización: {nearestSensor.lastUpdated}</div> */}
           <div className="text-left text-xs my-2">
             Datos de calidad de aire proporcionados por{' '} 
