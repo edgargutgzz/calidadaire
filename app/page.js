@@ -133,10 +133,10 @@ export default function Index() {
 
           {/* Location */}
           <div className="bg-white rounded-lg shadow-lg p-4 mb-4 mt-4">
-            <div className="flex items-center space-x-2">
+            {/* <div className="flex items-center space-x-2">
               <img src="/navigation.png" width={28} height={28} alt="Correr Icon" />
-            </div>
-            <p className="mt-2 text-sm">Calidad de aire en {nearestSensor.address}.</p>
+            </div> */}
+            <p className="mt-2 text-xs">Calidad de aire en {nearestSensor.address}.</p>
             {/* <div className="text-left text-xs my-2 pt-4">Calidad de aire en {nearestSensor.address}.</div> */}
           </div>
           {/* <div className="text-left text-xs my-2 pt-4">Calidad de aire en {nearestSensor.address}.</div> */}
