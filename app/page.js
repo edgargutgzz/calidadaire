@@ -110,22 +110,22 @@ export default function Index() {
             </div>
           </div>
           {/* Location y Tiempo */}
-          <div className="flex justify-between mt-4">
+          {/* <div className="flex justify-between mt-4"> */}
             {/* Location */}
-            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2">
+            {/* <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2">
               <div className="flex items-center space-x-2">
                 <img src="/navigation.png" width={28} height={28} alt="Correr Icon" />
               </div>
               <p className="mt-2 text-sm">Calidad de aire en {nearestSensor.address}.</p>
-            </div>
+            </div> */}
             {/* Tiempo */}
-            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2">
+            {/* <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2">
               <div className="flex items-center space-x-2">
                 <img src="/clock.png" width={28} height={28} alt="Correr Icon" />
               </div>
-              <p className="mt-2 text-sm">Puedes realizar picnics sin problema.</p>
-            </div>
-          </div>
+              <p className="mt-2 text-sm">Última Actualización: {nearestSensor.lastUpdated}.</p>
+            </div> */}
+          {/* </div> */}
 
 
 
