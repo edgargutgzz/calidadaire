@@ -60,7 +60,7 @@ export default function Index() {
   const [nearestSensor, setNearestSensor] = useState(null);
 
   return (
-    <div className="pb-20"> {/* Added padding-bottom */}
+    <div className="pb-20 lg:pl-1/4"> {/* Added padding-bottom */}
       <Navbar currentPage="inicio" />
       
       {/* Hidden Mapa component to fetch the nearest sensor data */}
