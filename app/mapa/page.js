@@ -4,10 +4,12 @@ import Mapa from '../../components/mapa';
 
 export default function Index() {
   return (
-    <div>
+    <div className="flex flex-col lg:flex-row">
       <Navbar currentPage="mapa" />
       {/* Mapa */}
-      <Mapa />
+      <div className="lg:w-9/12 lg:flex-grow">
+        <Mapa />
+      </div>
     </div>
   );
 }

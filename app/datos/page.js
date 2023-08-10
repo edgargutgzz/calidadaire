@@ -10,9 +10,9 @@ export default function Index() {
   const [isOpen4, setIsOpen4] = useState(false);
 
   return (
-    <div className="flex flex-col h-screen pb-20"> {/* Added padding-bottom */}
+    <div className="flex flex-col lg:flex-row h-screen">
       <Navbar currentPage="datos" />
-      <div className="mx-4 pt-4 flex-grow overflow-auto">
+      <div className="mx-4 pt-4 flex-grow overflow-auto lg:w-9/12 lg:flex-grow lg:pl-4">
         {/* Pregunta 1 */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
           <div onClick={() => setIsOpen1(!isOpen1)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
@@ -81,20 +81,10 @@ export default function Index() {
           )}
         </div>
       </div>
-
-      {/* <div className="text-center mb-4">
-        <p className='text-xs'>Un desarrollo de </p>
-        <a href="https://www.datacomun.org/" target="_blank" rel="noreferrer">
-          <img 
-            src="/datacomun.png" 
-            alt="Logo" 
-            className="mx-auto h-16 w-auto" 
-          />
-        </a>
-      </div> */}
     </div>
   );
 }
+
 
 
 
