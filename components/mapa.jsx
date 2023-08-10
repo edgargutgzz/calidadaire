@@ -193,7 +193,7 @@ export default function Mapa({ onNearestSensorChange }) {
       )}
 
       <div className="absolute top-0 left-0 ml-2 mt-2 mr-5 mb-5 bg-gray-100 bg-opacity-90 pl-3 pr-3 pb-0 pt-2 rounded-lg">
-        <h3 className="mb-1 font-bold text-xs lg:text-sm">Calidad del Aire</h3>
+        <h3 className="mb-1 font-bold">Calidad del Aire</h3>
         <div className="flex flex-col text-gray-500">
           <LegendItem color="bg-custom-purple" text="Extremadamente Mala" />
           <LegendItem color="bg-custom-red" text="Muy Mala" />
@@ -211,7 +211,7 @@ function LegendItem({ color, text }) {
   return (
     <div className="flex items-center mb-1">
       <div className={`${color} w-1 h-3 mr-1 rounded`} />
-      <p className="text-gray-500 lg:text-sm">{text}</p>
+      <p className="text-gray-500">{text}</p>
     </div>
   );
 }
