@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 function Navbar({ currentPage }) {
   return (
-    <nav className="bg-white z-10 fixed w-full bottom-0 lg:w-1/4 lg:h-full lg:bottom-auto lg:left-0 lg:top-0 lg:flex-col">
+    <nav className="bg-white z-10 lg:z-auto fixed w-full bottom-0 lg:w-3/12 lg:h-full lg:bottom-auto lg:left-0 lg:top-0 flex-col lg:flex-col lg:static lg:flex lg:flex-col lg:overflow-y-auto">
       <div className="container mx-auto px-6 pt-3 pb-2 flex justify-around items-center h-full lg:flex-col lg:justify-center lg:items-center">
 
         {/* Home */}
