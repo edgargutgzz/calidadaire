@@ -204,7 +204,7 @@ export default function Mapa({ onNearestSensorChange }) {
           tipSize={5}
         >
           <div>
-            <p>Concentración promedio de la última hora de PM2.5, contaminante más peligroso para la salud.</p>
+            <p>Concentración promedio de PM2.5, contaminante más peligroso para la salud.</p>
           </div>
         </Popup>
       )}

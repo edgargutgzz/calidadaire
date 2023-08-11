@@ -37,4 +37,5 @@ body {
 
 .mapboxgl-popup-close-button {
   padding-right: 10px; /* Add padding to the button to move it away from the edge */
+  outline: none;
 }
