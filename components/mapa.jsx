@@ -105,12 +105,22 @@ export default function Mapa({ onNearestSensorChange }) {
   }
 
   function getUserLocation() {
-    navigator.geolocation.getCurrentPosition(position => {
-      setUserLocation({
-        latitude: position.coords.latitude,
-        longitude: position.coords.longitude,
-      });
-    });
+    navigator.geolocation.getCurrentPosition(
+      position => {
+        setUserLocation({
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude,
+        });
+      },
+      error => {
+        // If user denies location permission or it's not available, set the default coordinates
+        console.warn("User location is not available. Using default location:", error);
+        setUserLocation({
+          latitude: 25.68884642528181,
+          longitude: -100.31533132620893,
+        });
+      }
+    );
   }
 
   function reverseGeocode(location) {
