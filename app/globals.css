@@ -47,6 +47,6 @@ body {
 .mapboxgl-popup .mapboxgl-popup-content {
   padding-top: 16px !important; 
   padding-left: 12px !important;
-
+  padding-bottom: 10px !important;
 }
 
