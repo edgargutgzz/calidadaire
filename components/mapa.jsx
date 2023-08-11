@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import Map, { Marker } from 'react-map-gl';
+import Map, { Marker, Popup } from 'react-map-gl';
 import { createClient } from '@supabase/supabase-js';
 import mbxGeocoding from '@mapbox/mapbox-sdk/services/geocoding';
 
@@ -52,6 +52,8 @@ export default function Mapa({ onNearestSensorChange }) {
   const [userLocation, setUserLocation] = useState(null);
   const [nearestSensor, setNearestSensor] = useState(null);
   const [userAddress, setUserAddress] = useState(null);
+  const [popupInfo, setPopupInfo] = useState(null);
+
 
   const formatHour = (date) => {
     let hour = date.getHours();
@@ -176,6 +178,7 @@ export default function Mapa({ onNearestSensorChange }) {
               width: "32px",
               height: "28px"
             }}
+            onClick={() => setPopupInfo(sensor)} // Adding click handler here
           >
             {sensor.pm25 != null ? Math.round(sensor.pm25) : 'N/A'}
             <div className="triangle absolute w-0 h-0" />
@@ -191,6 +194,21 @@ export default function Mapa({ onNearestSensorChange }) {
           <div className="animate-pulse bg-blue-700 rounded-full w-4 h-4 border-2 border-white"></div>
         </Marker>
       )}
+
+      {popupInfo && (
+        <Popup
+          latitude={popupInfo.lat}
+          longitude={popupInfo.lon}
+          onClose={() => setPopupInfo(null)}
+          closeOnClick={false}
+          tipSize={5}
+        >
+          <div>
+            <p>Concentración promedio de la última hora de PM2.5, contaminante más peligroso para la salud.</p>
+          </div>
+        </Popup>
+      )}
+
 
       <div className="absolute top-0 left-0 ml-2 mt-2 mr-5 mb-5 bg-gray-100 bg-opacity-90 pl-3 pr-3 pb-0 pt-2 rounded-lg">
         <h3 className="mb-1 font-bold">Calidad del Aire</h3>
