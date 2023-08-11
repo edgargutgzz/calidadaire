@@ -45,7 +45,6 @@ body {
 }
 
 .mapboxgl-popup .mapboxgl-popup-content {
-  width: 250px; /* Adjust the width as needed */
   padding-top: 12px !important; /* Adjust the right padding as needed */
   padding-left: 12px !important; /* Adjust the right padding as needed */
   padding-bottom: 5px !important; /* Adjust the right padding as needed */
