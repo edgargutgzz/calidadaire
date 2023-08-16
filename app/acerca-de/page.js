@@ -18,7 +18,7 @@ export default function Index() {
       <div className="mx-4 pt-4 flex-grow overflow-auto lg:w-9/12 lg:flex-grow lg:pl-4">
 
         {/* Title and Intro text */}
-        <div className="mx-2 mt-4 mb-4">
+        <div className="mx-2 mt-4 mb-8">
           <h1 className="text-xl font-bold">Aire Claro</h1>
           <p className="text-sm mt-2">
             Creamos aire claro para informar sobre la calidad del aire al momento con mejore datos.
