@@ -18,12 +18,13 @@ export default function Index() {
       <div className="mx-4 pt-4 flex-grow overflow-auto lg:w-9/12 lg:flex-grow lg:pl-4">
 
         {/* Title and Intro text */}
-        <div className="mx-1 mt-4 mb-8">
-          <h1 className="text-xl font-bold">Aire Claro</h1>
-          <p className="text-sm mt-2">
-            Creamos aire claro para informar sobre la calidad del aire al momento con mejore datos.
-          </p>
+        <div className="mx-1 mt-2 mb-6 flex justify-center">
+        <img src="/aire_claro.png" alt="Aire Claro" className="w-44" /> {/* Adjust the size here */}
         </div>
+        <p className="text-sm mt-2 mb-8">
+        Creamos aire claro para informar sobre la calidad del aire al momento con mejore datos.
+        </p>
+
 
         {/* Pregunta 1 */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
@@ -95,5 +96,5 @@ export default function Index() {
 
       </div>
     </div>
-    );
+  );
 }

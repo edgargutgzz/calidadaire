@@ -75,10 +75,13 @@ export default function Index() {
         </style>
 
         {/* Title and Intro text */}
-        <div className="mx-1 mt-4 mb-8">
+        <div className="mx-1 mt-2 mb-8">
           <h1 className="text-xl font-bold">Descarga los datos</h1>
           <p className="text-sm mt-2">
-            Todos los datos que utilizamos para informarte sobre la calidad de aire en tu ciudad se encuentran abiertos a través del botón de descarga.
+            Todos los datos que utilizamos para informarte sobre la calidad de aire del área metropolitana de Monterrey se encuentran abiertos a través del botón de descarga.
+          </p>
+          <p className="text-sm mt-2">
+            Creemos en la transparencia y en la apertura de datos, por lo que te invitamos a que utilices estos datos para crear tus propias visualizaciones y análisis.
           </p>
         </div>
 
