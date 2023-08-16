@@ -75,7 +75,7 @@ export default function Index() {
         </style>
 
         {/* Title and Intro text */}
-        <div className="mx-2 mt-4 mb-8">
+        <div className="mx-1 mt-4 mb-8">
           <h1 className="text-xl font-bold">Descarga los datos</h1>
           <p className="text-sm mt-2">
             Todos los datos que utilizamos para informarte sobre la calidad de aire en tu ciudad se encuentran abiertos a través del botón de descarga.
