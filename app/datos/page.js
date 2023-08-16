@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import Papa from 'papaparse';
 import Navbar from '../../components/navbar';
+import { ClipLoader } from "react-spinners";
+
 
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
 
@@ -144,10 +146,10 @@ export default function Index() {
         <div style={{ display: 'flex', justifyContent: 'flex-end', backgroundColor: 'white', borderRadius: '0.5rem', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', padding: '8px', marginBottom: '16px', width: 'fit-content', marginLeft: 'auto' }}>
           <button
             onClick={downloadData}
-            className={`text-sm text-black flex font-bold items-center px-4 py-1 cursor-pointer ${isDownloading ? 'downloading' : ''}`} // Added text-sm here
+            className={`text-sm text-black flex font-bold items-center px-4 py-1 cursor-pointer ${isDownloading ? 'downloading' : ''}`}
           >
-            <img src="/download.png" alt="Download" className="h-4 w-4 mr-2" />
-            {isDownloading ? 'Descargando...' : 'Descargar'}
+            {isDownloading ? <span style={{ marginRight: '10px', display: 'flex', alignItems: 'center' }}><ClipLoader size={15} color={"#000000"} /></span> : <img src="/download.png" alt="Download" className="h-4 w-4 mr-2" />}
+            {isDownloading ? 'Descargando' : 'Descargar'}
           </button>
         </div>
 
