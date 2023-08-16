@@ -84,13 +84,13 @@ export default function Index() {
 
         {/* Download button */}
         <div style={{ display: 'flex', justifyContent: 'flex-end', backgroundColor: 'white', borderRadius: '0.5rem', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', padding: '8px', marginBottom: '16px', width: 'fit-content', marginLeft: 'auto' }}>
-          <button
-            onClick={downloadData}
-            className={`text-sm text-black flex font-bold items-center px-4 py-1 cursor-pointer ${isDownloading ? 'downloading' : ''}`}
-          >
-            {isDownloading ? <span style={{ marginRight: '10px', display: 'flex', alignItems: 'center' }}><ClipLoader size={15} color={"#000000"} /></span> : <img src="/download.png" alt="Download" className="h-4 w-4 mr-2" />}
-            {isDownloading ? 'Descargando' : 'Descargar'}
-          </button>
+        <button
+          onClick={downloadData}
+          className={`text-sm text-black flex font-bold items-center px-4 py-1 cursor-pointer ${isDownloading ? 'downloading' : ''}`}
+        >
+          {isDownloading ? <span style={{ marginRight: '8px', display: 'flex', alignItems: 'center' }}><ClipLoader size={16} color={"#000000"} /></span> : <img src="/download.png" alt="Download" className="h-4 w-4 mr-2" />}
+          {isDownloading ? 'Descargando' : 'Descargar'}
+        </button>
         </div>
 
       </div>
