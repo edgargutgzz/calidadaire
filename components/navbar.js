@@ -9,7 +9,7 @@ function Navbar({ currentPage }) {
         
         {/* Home */}
         <Link href="/">
-          <div className="flex flex-col lg:flex-row items-center text-xs lg:text-lg text-black lg:mb-8 mx-2">
+          <div className="flex flex-col lg:flex-row items-center text-xs lg:text-lg text-black lg:mb-8 mx-4">
             <Image src={currentPage === 'inicio' ? "/inicio_on.png" : "/inicio_off.png"} alt="Inicio" width={24} height={24} className="lg:w-7 lg:h-7" />
             <span className={`mt-0 lg:mt-0 lg:ml-4 pt-1 ${currentPage === 'inicio' ? "font-bold" : ""}`}>Inicio</span>
           </div>
@@ -17,7 +17,7 @@ function Navbar({ currentPage }) {
 
         {/* Mapa */}
         <Link href="/mapa">
-          <div className="flex flex-col lg:flex-row items-center text-xs lg:text-lg text-black lg:mx-auto lg:mb-8 mx-2">
+          <div className="flex flex-col lg:flex-row items-center text-xs lg:text-lg text-black lg:mx-auto lg:mb-8 mx-4">
             <Image src={currentPage === 'mapa' ? "/mapa_on.png" : "/mapa_off.png"} alt="Mapa" width={24} height={24} className="lg:w-7 lg:h-7" />
             <span className={`mt-0 lg:mt-0 lg:ml-4 pt-1 ${currentPage === 'mapa' ? "font-bold" : ""}`}>Mapa</span>
           </div>
@@ -25,7 +25,7 @@ function Navbar({ currentPage }) {
 
         {/* Datos */}
         <Link href="/datos">
-          <div className="flex flex-col lg:flex-row items-center text-xs lg:text-lg text-black lg:mx-auto lg:mb-8 mx-2">
+          <div className="flex flex-col lg:flex-row items-center text-xs lg:text-lg text-black lg:mx-auto lg:mb-8 mx-4">
             <Image src={currentPage === 'datos' ? "/datos_on.png" : "/datos_off.png"} alt="Datos" width={24} height={24} className="lg:w-7 lg:h-7" />
             <span className={`mt-0 lg:mt-0 lg:ml-4 pt-1 ${currentPage === 'datos' ? "font-bold" : ""}`}>Datos</span>
           </div>
@@ -33,7 +33,7 @@ function Navbar({ currentPage }) {
 
         {/* Acerca de */}
         <Link href="/acerca-de">
-          <div className="flex flex-col lg:flex-row items-center text-xs lg:text-lg text-black lg:mx-auto lg:mb-8 mx-2">
+          <div className="flex flex-col lg:flex-row items-center text-xs lg:text-lg text-black lg:mx-auto lg:mb-8 mx-4">
             <Image src={currentPage === 'acerca-de' ? "/info_on.png" : "/info_off.png"} alt="Acerca de" width={24} height={24} className="lg:w-7 lg:h-7" />
             <span className={`mt-0 lg:mt-0 lg:ml-4 pt-1 ${currentPage === 'acerca-de' ? "font-bold" : ""}`}>Acerca</span>
           </div>
