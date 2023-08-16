@@ -30,6 +30,15 @@ function Navbar({ currentPage }) {
             <span className={`mt-0 lg:mt-0 lg:ml-4 pt-1 ${currentPage === 'datos' ? "font-bold" : ""}`}>Datos</span>
           </div>
         </Link>
+
+        {/* Acerca de */}
+        <Link href="/acerca-de">
+          <div className="flex flex-col lg:flex-row items-center text-xs lg:text-lg text-black lg:mx-auto lg:mb-8">
+            <Image src={currentPage === 'acerca-de' ? "/info_on.png" : "/info_off.png"} alt="Acerca de" width={24} height={24} className="lg:w-7 lg:h-7" />
+            <span className={`mt-0 lg:mt-0 lg:ml-4 pt-1 ${currentPage === 'acerca-de' ? "font-bold" : ""}`}>Acerca de</span>
+          </div>
+        </Link>
+
       </div>
     </nav>
   );

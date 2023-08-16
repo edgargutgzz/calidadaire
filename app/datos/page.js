@@ -75,7 +75,7 @@ export default function Index() {
         </style>
 
         {/* Pregunta 1 */}
-        <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
+        {/* <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
           <div onClick={() => setIsOpen1(!isOpen1)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p>¿Por qué utilizar esta app sobre las otras?</p>
             <img 
@@ -89,10 +89,10 @@ export default function Index() {
               Esta app es la única que te permite saber si puedes salir a correr o andar en bici, si puedes llevar a tus hijos o a tus padres a un parque, o si puedes hacer un picnic en el parque. Todo esto basado en la calidad del aire en tu ciudad.
             </p>
           )}
-        </div>
+        </div> */}
 
         {/* Pregunta 2 */}
-        <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
+        {/* <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
           <div onClick={() => setIsOpen2(!isOpen2)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p>Question 2</p>
             <img 
@@ -106,10 +106,10 @@ export default function Index() {
               Answer 2
             </p>
           )}
-        </div>
+        </div> */}
 
         {/* Pregunta 3 */}
-        <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
+        {/* <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
           <div onClick={() => setIsOpen3(!isOpen3)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p>Question 3</p>
             <img 
@@ -123,10 +123,10 @@ export default function Index() {
               Answer 3
             </p>
           )}
-        </div>
+        </div> */}
 
         {/* Pregunta 4 */}
-        <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
+        {/* <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
           <div onClick={() => setIsOpen4(!isOpen4)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p>Question 4</p>
             <img 
@@ -140,6 +140,14 @@ export default function Index() {
               Answer 4
             </p>
           )}
+        </div> */}
+
+        {/* Title and Intro text */}
+        <div className="mx-4 mt-4 mb-4">
+          <h1 className="text-xl font-bold">Descarga los datos</h1>
+          <p className="text-sm mt-2">
+            Todos los datos que utilizamos para informarte sobre la calidad de aire en tu ciudad se encuentran abiertos a través del botón de descarga.
+          </p>
         </div>
 
         {/* Download button */}
