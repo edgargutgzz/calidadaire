@@ -139,10 +139,10 @@ export default function Index() {
           </p>
         </div>
 
-        {/* Button to toggle table visibility */}
+        {/* Vista Previa - Dropdown */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
           <div onClick={() => setIsPreviewOpen(!isPreviewOpen)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
-            <p>{isPreviewOpen ? 'Ocultar Vista Previa' : 'Mostrar Vista Previa'}</p>
+            <p>Vista Previa</p>
             <img 
               src={isPreviewOpen ? "/up-arrow.png" : "/down-arrow.png"} 
               alt="toggle" 
@@ -151,7 +151,7 @@ export default function Index() {
           </div>
         </div>
 
-        {/* Conditionally rendered table */}
+        {/* Vista Previa - Table */}
         {isPreviewOpen && (
           <div className="rounded-lg overflow-hidden border border-gray-200 mb-8">
             <div className="overflow-x-auto"> {/* Add this wrapper */}
@@ -184,10 +184,10 @@ export default function Index() {
           </div>
         )}
 
-        {/* Button to toggle explanation table visibility */}
+        {/* Descripción - Button*/}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
           <div onClick={() => setIsExplanationOpen(!isExplanationOpen)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
-            <p>{isExplanationOpen ? 'Ocultar Descripción' : 'Mostrar Descripción'}</p>
+            <p>Descripción de Datos</p>
             <img 
               src={isExplanationOpen ? "/up-arrow.png" : "/down-arrow.png"} 
               alt="toggle" 
@@ -196,7 +196,7 @@ export default function Index() {
           </div>
         </div>
 
-        {/* Explanation Table */}
+        {/* Descripción - Table */}
         {isExplanationOpen && (
           <div className="rounded-lg overflow-hidden border border-gray-200 mb-8 mt-8">
             <div className="overflow-x-auto">
