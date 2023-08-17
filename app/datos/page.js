@@ -131,7 +131,7 @@ export default function Index() {
         {/* Title and Intro text */}
         <div className="mx-1 mt-2 mb-8">
           <h1 className="text-xl font-bold">Datos de Calidad del Aire</h1>
-          <p className="text-sm mt-2">
+          <p className="text-sm mt-4">
             Todos los datos que utilizamos para informarte sobre la calidad del aire en tu ciudad se encuentran abiertos al público.
           </p>
           <p className="text-sm mt-2">
@@ -185,7 +185,7 @@ export default function Index() {
         )}
 
         {/* Descripción - Button*/}
-        <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
+        <div className="bg-white rounded-lg shadow-lg p-4 mb-4 mt-8">
           <div onClick={() => setIsExplanationOpen(!isExplanationOpen)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p>Descripción de Datos</p>
             <img 
@@ -198,7 +198,7 @@ export default function Index() {
 
         {/* Descripción - Table */}
         {isExplanationOpen && (
-          <div className="rounded-lg overflow-hidden border border-gray-200 mb-8 mt-8">
+          <div className="rounded-lg overflow-hidden border border-gray-200">
             <div className="overflow-x-auto">
               <table className="min-w-full bg-white text-sm" {...getExplanationTableProps()}>
                 <thead>
@@ -230,15 +230,18 @@ export default function Index() {
         )}
 
         {/* Download button */}
-        <div style={{ display: 'flex', justifyContent: 'flex-end', backgroundColor: 'white', borderRadius: '0.5rem', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', padding: '8px', marginBottom: '16px', width: 'fit-content', marginLeft: 'auto' }}>
-          <button
-            onClick={downloadData}
-            className={`text-sm text-black flex font-bold items-center px-4 py-1 cursor-pointer ${isDownloading ? 'downloading' : ''}`}
-          >
-            {isDownloading ? <span style={{ marginRight: '8px', display: 'flex', alignItems: 'center' }}><ClipLoader size={16} color={"#000000"} /></span> : <img src="/download.png" alt="Download" className="h-4 w-4 mr-2" />}
-            {isDownloading ? 'Descargando' : 'Descargar'}
-          </button>
+        <div className="mt-8 flex justify-end">
+          <div className="bg-white rounded p-2 mb-4 shadow-md w-auto inline-flex">
+            <button
+              onClick={downloadData}
+              className={`text-sm text-black font-bold flex items-center px-4 py-1 cursor-pointer ${isDownloading ? 'downloading' : ''}`}
+            >
+              {isDownloading ? <span className="mr-2 flex items-center"><ClipLoader size={16} color={"#000000"} /></span> : <img src="/download.png" alt="Download" className="h-4 w-4 mr-2" />}
+              {isDownloading ? 'Descargando' : 'Descargar'}
+            </button>
+          </div>
         </div>
+
 
       </div>
     </div>
