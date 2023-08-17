@@ -12,6 +12,9 @@ const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.
 const previewData = [
   { id: 1, sensor_id: 136522, pm25: 22, temperature: 37, humidity: 36, time_stamp: "2023-07-19T12:01:02" },
   { id: 2, sensor_id: 45903, pm25: 28.4, temperature: 35, humidity: 38, time_stamp: "2023-07-19T12:01:03" },
+  { id: 3, sensor_id: 24415, pm25: 9.5, temperature: 36, humidity: 37, time_stamp: "2023-07-19T12:01:04" },
+  { id: 4, sensor_id: 47855, pm25: 20.2, temperature: 39, humidity: 27, time_stamp: "2023-07-19T12:01:05" },
+  { id: 5, sensor_id: 39695, pm25: 14.7, temperature: 33, humidity: 42, time_stamp: "2023-07-19T12:01:06" },
 ];
 
 export default function Index() {
@@ -136,6 +139,47 @@ export default function Index() {
             </table>
           </div>
         </div>
+
+        {/* Explanation Table */}
+        <div className="rounded-lg overflow-hidden border border-gray-200 mb-8 mt-8">
+          <div className="overflow-x-auto">
+            <table className="min-w-full bg-white text-sm">
+              <thead>
+                <tr>
+                  <th className="py-2 px-4 border-b">Column Name</th>
+                  <th className="py-2 px-4 border-b">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="py-2 px-4 border-b">ID</td>
+                  <td className="py-2 px-4 border-b">Id único de medición</td>
+                </tr>
+                <tr>
+                  <td className="py-2 px-4 border-b">Sensor ID</td>
+                  <td className="py-2 px-4 border-b">ID del sensor</td>
+                </tr>
+                <tr>
+                  <td className="py-2 px-4 border-b">PM2.5</td>
+                  <td className="py-2 px-4 border-b">Partículas finas PM2.5</td>
+                </tr>
+                <tr>
+                  <td className="py-2 px-4 border-b">Temperature</td>
+                  <td className="py-2 px-4 border-b">Temperatura en grados Celsius</td>
+                </tr>
+                <tr>
+                  <td className="py-2 px-4 border-b">Humidity</td>
+                  <td className="py-2 px-4 border-b">Humedad en porcentaje</td>
+                </tr>
+                <tr>
+                  <td className="py-2 px-4 border-b">Timestamp</td>
+                  <td className="py-2 px-4 border-b">Marca de tiempo de la medición</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
 
 
         {/* Download button */}
