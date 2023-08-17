@@ -129,7 +129,7 @@ export default function Index() {
         </style>
 
         {/* Title and Intro text */}
-        <div className="mx-1 mt-2 mb-8">
+        <div className="mx-1 mt-2 mb-4">
           <h1 className="text-xl font-bold">Datos de Calidad del Aire</h1>
           <p className="text-sm mt-2">
             Todos los datos que utilizamos para informarte sobre la calidad del aire en tu ciudad se encuentran abiertos al público.
