@@ -230,7 +230,7 @@ export default function Index() {
         )}
 
         {/* Download button */}
-        <div className="mt-8 flex justify-end">
+        <div className="mt-4 flex justify-end">
           <div className="bg-white rounded p-2 mb-4 shadow-md w-auto inline-flex">
             <button
               onClick={downloadData}
