@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useState } from 'react';
+import { useTable } from 'react-table';
 import { createClient } from '@supabase/supabase-js';
 import Papa from 'papaparse';
 import Navbar from '../../components/navbar';
-import { ClipLoader } from "react-spinners";
+import { ClipLoader } from 'react-spinners';
 
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
 
@@ -14,11 +15,27 @@ const previewData = [
 ];
 
 export default function Index() {
-  const [isOpen1, setIsOpen1] = useState(false);
-  const [isOpen2, setIsOpen2] = useState(false);
-  const [isOpen3, setIsOpen3] = useState(false);
-  const [isOpen4, setIsOpen4] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
+
+  const columns = React.useMemo(
+    () => [
+      { Header: 'ID', accessor: 'id' },
+      { Header: 'Sensor ID', accessor: 'sensor_id' },
+      { Header: 'PM2.5', accessor: 'pm25' },
+      { Header: 'Temperature', accessor: 'temperature' },
+      { Header: 'Humidity', accessor: 'humidity' },
+      { Header: 'Timestamp', accessor: 'time_stamp' }
+    ],
+    []
+  );
+
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow,
+  } = useTable({ columns, data: previewData });
 
   const downloadData = async () => {
     setIsDownloading(true);
@@ -91,30 +108,33 @@ export default function Index() {
 
         {/* Data Preview Table */}
         <div className="rounded-lg overflow-hidden border border-gray-200 mb-8">
-          <table className="min-w-full bg-white text-sm">
-            <thead>
-              <tr>
-                <th className="py-2 px-4 border-b">ID</th>
-                <th className="py-2 px-4 border-b">Sensor ID</th>
-                <th className="py-2 px-4 border-b">PM2.5</th>
-                <th className="py-2 px-4 border-b">Temperature</th>
-                <th className="py-2 px-4 border-b">Humidity</th>
-                <th className="py-2 px-4 border-b">Timestamp</th>
-              </tr>
-            </thead>
-            <tbody>
-              {previewData.map((row, index) => (
-                <tr key={row.id}>
-                  <td className="py-2 px-4 border-b">{row.id}</td>
-                  <td className="py-2 px-4 border-b">{row.sensor_id}</td>
-                  <td className="py-2 px-4 border-b">{row.pm25}</td>
-                  <td className="py-2 px-4 border-b">{row.temperature}</td>
-                  <td className="py-2 px-4 border-b">{row.humidity}</td>
-                  <td className="py-2 px-4 border-b">{row.time_stamp}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <div className="overflow-x-auto"> {/* Add this wrapper */}
+            <table className="min-w-full bg-white text-sm" {...getTableProps()}>
+              <thead>
+                {headerGroups.map(headerGroup => (
+                  <tr {...headerGroup.getHeaderGroupProps()}>
+                    {headerGroup.headers.map(column => (
+                      <th className="py-2 px-4 border-b" {...column.getHeaderProps()}>{column.render('Header')}</th>
+                    ))}
+                  </tr>
+                ))}
+              </thead>
+              <tbody {...getTableBodyProps()}>
+                {rows.map(row => {
+                  prepareRow(row)
+                  return (
+                    <tr {...row.getRowProps()}>
+                      {row.cells.map(cell => {
+                        return (
+                          <td className="py-2 px-4 border-b" {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                        )
+                      })}
+                    </tr>
+                  )
+                })}
+              </tbody>
+            </table>
+          </div>
         </div>
 
 
