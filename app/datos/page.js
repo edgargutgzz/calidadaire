@@ -112,7 +112,7 @@ export default function Index() {
   return (
     <div className="flex flex-col lg:flex-row h-screen">
       <Navbar currentPage="datos" />
-      <div className="mx-4 pt-4 pb-20 flex-grow overflow-auto lg:w-9/12 lg:flex-grow lg:pl-4">
+      <div className="mx-4 pt-4 pb-20 flex-grow lg:w-9/12 lg:flex-grow lg:pl-4">
         <style>
           {`
           .downloading {
