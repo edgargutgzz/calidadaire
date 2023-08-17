@@ -45,7 +45,7 @@ export default function Index() {
   // Columns for the explanation table
   const explanationColumns = React.useMemo(
     () => [
-      { Header: 'Columna', accessor: 'column' },
+      { Header: 'Nombre', accessor: 'column' },
       { Header: 'Descripción', accessor: 'description' },
     ],
     []
@@ -53,12 +53,12 @@ export default function Index() {
 
   // Data for the explanation table
   const explanationData = [
-    { column: 'ID', description: 'Id único de medición' },
-    { column: 'Sensor ID', description: 'ID del sensor' },
-    { column: 'PM2.5', description: 'Partículas finas PM2.5' },
-    { column: 'Temperature', description: 'Temperatura en grados Celsius' },
-    { column: 'Humidity', description: 'Humedad en porcentaje' },
-    { column: 'Timestamp', description: 'Marca de tiempo de la medición' },
+    { column: 'ID', description: 'Identificador único de cada medición.' },
+    { column: 'Sensor ID', description: ' Identificador único de cada sensor.' },
+    { column: 'PM2.5', description: 'Promedio móvil de la última hora de PM2.5 ' },
+    { column: 'Temperature', description: 'Temperatura en grados Celsius.' },
+    { column: 'Humidity', description: 'Humedad en porcentaje.' },
+    { column: 'Timestamp', description: 'Día y hora de la medición.' },
   ];
 
   // Use `useTable` for the explanation table
