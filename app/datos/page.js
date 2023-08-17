@@ -19,6 +19,8 @@ const previewData = [
 
 export default function Index() {
   const [isDownloading, setIsDownloading] = useState(false);
+  const [isPreviewOpen, setIsPreviewOpen] = useState(false); 
+  const [isExplanationOpen, setIsExplanationOpen] = useState(false);
 
   const columns = React.useMemo(
     () => [
@@ -39,6 +41,34 @@ export default function Index() {
     rows,
     prepareRow,
   } = useTable({ columns, data: previewData });
+
+  // Columns for the explanation table
+  const explanationColumns = React.useMemo(
+    () => [
+      { Header: 'Columna', accessor: 'column' },
+      { Header: 'Descripción', accessor: 'description' },
+    ],
+    []
+  );
+
+  // Data for the explanation table
+  const explanationData = [
+    { column: 'ID', description: 'Id único de medición' },
+    { column: 'Sensor ID', description: 'ID del sensor' },
+    { column: 'PM2.5', description: 'Partículas finas PM2.5' },
+    { column: 'Temperature', description: 'Temperatura en grados Celsius' },
+    { column: 'Humidity', description: 'Humedad en porcentaje' },
+    { column: 'Timestamp', description: 'Marca de tiempo de la medición' },
+  ];
+
+  // Use `useTable` for the explanation table
+  const {
+    getTableProps: getExplanationTableProps,
+    getTableBodyProps: getExplanationTableBodyProps,
+    headerGroups: explanationHeaderGroups,
+    rows: explanationRows,
+    prepareRow: prepareExplanationRow,
+  } = useTable({ columns: explanationColumns, data: explanationData });
 
   const downloadData = async () => {
     setIsDownloading(true);
@@ -109,76 +139,95 @@ export default function Index() {
           </p>
         </div>
 
-        {/* Data Preview Table */}
-        <div className="rounded-lg overflow-hidden border border-gray-200 mb-8">
-          <div className="overflow-x-auto"> {/* Add this wrapper */}
-            <table className="min-w-full bg-white text-sm" {...getTableProps()}>
-              <thead>
-                {headerGroups.map(headerGroup => (
-                  <tr {...headerGroup.getHeaderGroupProps()}>
-                    {headerGroup.headers.map(column => (
-                      <th className="py-2 px-4 border-b" {...column.getHeaderProps()}>{column.render('Header')}</th>
-                    ))}
-                  </tr>
-                ))}
-              </thead>
-              <tbody {...getTableBodyProps()}>
-                {rows.map(row => {
-                  prepareRow(row)
-                  return (
-                    <tr {...row.getRowProps()}>
-                      {row.cells.map(cell => {
-                        return (
-                          <td className="py-2 px-4 border-b" {...cell.getCellProps()}>{cell.render('Cell')}</td>
-                        )
-                      })}
+        {/* Button to toggle table visibility */}
+        <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
+          <div onClick={() => setIsPreviewOpen(!isPreviewOpen)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
+            <p>{isPreviewOpen ? 'Ocultar Vista Previa' : 'Mostrar Vista Previa'}</p>
+            <img 
+              src={isPreviewOpen ? "/up-arrow.png" : "/down-arrow.png"} 
+              alt="toggle" 
+              className="h-3 w-3" 
+            />
+          </div>
+        </div>
+
+        {/* Conditionally rendered table */}
+        {isPreviewOpen && (
+          <div className="rounded-lg overflow-hidden border border-gray-200 mb-8">
+            <div className="overflow-x-auto"> {/* Add this wrapper */}
+              <table className="min-w-full bg-white text-sm" {...getTableProps()}>
+                <thead>
+                  {headerGroups.map(headerGroup => (
+                    <tr {...headerGroup.getHeaderGroupProps()}>
+                      {headerGroup.headers.map(column => (
+                        <th className="py-2 px-4 border-b" {...column.getHeaderProps()}>{column.render('Header')}</th>
+                      ))}
                     </tr>
-                  )
-                })}
-              </tbody>
-            </table>
+                  ))}
+                </thead>
+                <tbody {...getTableBodyProps()}>
+                  {rows.map(row => {
+                    prepareRow(row)
+                    return (
+                      <tr {...row.getRowProps()}>
+                        {row.cells.map(cell => {
+                          return (
+                            <td className="py-2 px-4 border-b" {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                          )
+                        })}
+                      </tr>
+                    )
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+
+        {/* Button to toggle explanation table visibility */}
+        <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
+          <div onClick={() => setIsExplanationOpen(!isExplanationOpen)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
+            <p>{isExplanationOpen ? 'Ocultar Descripción' : 'Mostrar Descripción'}</p>
+            <img 
+              src={isExplanationOpen ? "/up-arrow.png" : "/down-arrow.png"} 
+              alt="toggle" 
+              className="h-3 w-3" 
+            />
           </div>
         </div>
 
         {/* Explanation Table */}
-        <div className="rounded-lg overflow-hidden border border-gray-200 mb-8 mt-8">
-          <div className="overflow-x-auto">
-            <table className="min-w-full bg-white text-sm">
-              <thead>
-                <tr>
-                  <th className="py-2 px-4 border-b">Column Name</th>
-                  <th className="py-2 px-4 border-b">Description</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className="py-2 px-4 border-b">ID</td>
-                  <td className="py-2 px-4 border-b">Id único de medición</td>
-                </tr>
-                <tr>
-                  <td className="py-2 px-4 border-b">Sensor ID</td>
-                  <td className="py-2 px-4 border-b">ID del sensor</td>
-                </tr>
-                <tr>
-                  <td className="py-2 px-4 border-b">PM2.5</td>
-                  <td className="py-2 px-4 border-b">Partículas finas PM2.5</td>
-                </tr>
-                <tr>
-                  <td className="py-2 px-4 border-b">Temperature</td>
-                  <td className="py-2 px-4 border-b">Temperatura en grados Celsius</td>
-                </tr>
-                <tr>
-                  <td className="py-2 px-4 border-b">Humidity</td>
-                  <td className="py-2 px-4 border-b">Humedad en porcentaje</td>
-                </tr>
-                <tr>
-                  <td className="py-2 px-4 border-b">Timestamp</td>
-                  <td className="py-2 px-4 border-b">Marca de tiempo de la medición</td>
-                </tr>
-              </tbody>
-            </table>
+        {isExplanationOpen && (
+          <div className="rounded-lg overflow-hidden border border-gray-200 mb-8 mt-8">
+            <div className="overflow-x-auto">
+              <table className="min-w-full bg-white text-sm" {...getExplanationTableProps()}>
+                <thead>
+                  {explanationHeaderGroups.map(headerGroup => (
+                    <tr {...headerGroup.getHeaderGroupProps()}>
+                      {headerGroup.headers.map(column => (
+                        <th className="py-2 px-4 border-b" {...column.getHeaderProps()}>{column.render('Header')}</th>
+                      ))}
+                    </tr>
+                  ))}
+                </thead>
+                <tbody {...getExplanationTableBodyProps()}>
+                  {explanationRows.map(row => {
+                    prepareExplanationRow(row);
+                    return (
+                      <tr {...row.getRowProps()}>
+                        {row.cells.map(cell => {
+                          return (
+                            <td className="py-2 px-4 border-b" {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                          )
+                        })}
+                      </tr>
+                    )
+                  })}
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Download button */}
         <div style={{ display: 'flex', justifyContent: 'flex-end', backgroundColor: 'white', borderRadius: '0.5rem', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', padding: '8px', marginBottom: '16px', width: 'fit-content', marginLeft: 'auto' }}>
