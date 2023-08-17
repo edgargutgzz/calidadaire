@@ -6,8 +6,12 @@ import Papa from 'papaparse';
 import Navbar from '../../components/navbar';
 import { ClipLoader } from "react-spinners";
 
-
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
+
+const previewData = [
+  { id: 1, sensor_id: 136522, pm25: 22, temperature: 37, humidity: 36, time_stamp: "2023-07-19T12:01:02" },
+  { id: 2, sensor_id: 45903, pm25: 28.4, temperature: 35, humidity: 38, time_stamp: "2023-07-19T12:01:03" },
+];
 
 export default function Index() {
   const [isOpen1, setIsOpen1] = useState(false);
@@ -76,24 +80,53 @@ export default function Index() {
 
         {/* Title and Intro text */}
         <div className="mx-1 mt-2 mb-8">
-          <h1 className="text-2xl font-bold">Datos de Calidad del Aire</h1>
+          <h1 className="text-xl font-bold">Datos de Calidad del Aire</h1>
           <p className="text-sm mt-2">
             Todos los datos que utilizamos para informarte sobre la calidad del aire en tu ciudad se encuentran abiertos al público.
           </p>
           <p className="text-sm mt-2">
-            Creemos en la transparencia y en la apertura de datos, por lo que te invitamos a que utilices estos datos para crear tus propias visualizaciones y análisis.
+            Creemos en la transparencia y en la apertura de datos, por lo que te invitamos a que utilices esta información como mejor te convenga.
           </p>
         </div>
 
+        {/* Data Preview Table */}
+        <div className="rounded-lg overflow-hidden border border-gray-200 mb-8">
+          <table className="min-w-full bg-white text-sm">
+            <thead>
+              <tr>
+                <th className="py-2 px-4 border-b">ID</th>
+                <th className="py-2 px-4 border-b">Sensor ID</th>
+                <th className="py-2 px-4 border-b">PM2.5</th>
+                <th className="py-2 px-4 border-b">Temperature</th>
+                <th className="py-2 px-4 border-b">Humidity</th>
+                <th className="py-2 px-4 border-b">Timestamp</th>
+              </tr>
+            </thead>
+            <tbody>
+              {previewData.map((row, index) => (
+                <tr key={row.id}>
+                  <td className="py-2 px-4 border-b">{row.id}</td>
+                  <td className="py-2 px-4 border-b">{row.sensor_id}</td>
+                  <td className="py-2 px-4 border-b">{row.pm25}</td>
+                  <td className="py-2 px-4 border-b">{row.temperature}</td>
+                  <td className="py-2 px-4 border-b">{row.humidity}</td>
+                  <td className="py-2 px-4 border-b">{row.time_stamp}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+
         {/* Download button */}
         <div style={{ display: 'flex', justifyContent: 'flex-end', backgroundColor: 'white', borderRadius: '0.5rem', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', padding: '8px', marginBottom: '16px', width: 'fit-content', marginLeft: 'auto' }}>
-        <button
-          onClick={downloadData}
-          className={`text-sm text-black flex font-bold items-center px-4 py-1 cursor-pointer ${isDownloading ? 'downloading' : ''}`}
-        >
-          {isDownloading ? <span style={{ marginRight: '8px', display: 'flex', alignItems: 'center' }}><ClipLoader size={16} color={"#000000"} /></span> : <img src="/download.png" alt="Download" className="h-4 w-4 mr-2" />}
-          {isDownloading ? 'Descargando' : 'Descargar'}
-        </button>
+          <button
+            onClick={downloadData}
+            className={`text-sm text-black flex font-bold items-center px-4 py-1 cursor-pointer ${isDownloading ? 'downloading' : ''}`}
+          >
+            {isDownloading ? <span style={{ marginRight: '8px', display: 'flex', alignItems: 'center' }}><ClipLoader size={16} color={"#000000"} /></span> : <img src="/download.png" alt="Download" className="h-4 w-4 mr-2" />}
+            {isDownloading ? 'Descargando' : 'Descargar'}
+          </button>
         </div>
 
       </div>
