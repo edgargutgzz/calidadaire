@@ -82,7 +82,7 @@ export default function Index() {
   return (
     <div className="flex flex-col lg:flex-row h-screen">
       <Navbar currentPage="datos" />
-      <div className="mx-4 pt-4 flex-grow overflow-auto lg:w-9/12 lg:flex-grow lg:pl-4">
+      <div className="mx-4 pt-4 pb-20 flex-grow overflow-auto lg:w-9/12 lg:flex-grow lg:pl-4">
         <style>
           {`
           .downloading {
@@ -179,8 +179,6 @@ export default function Index() {
             </table>
           </div>
         </div>
-
-
 
         {/* Download button */}
         <div style={{ display: 'flex', justifyContent: 'flex-end', backgroundColor: 'white', borderRadius: '0.5rem', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', padding: '8px', marginBottom: '16px', width: 'fit-content', marginLeft: 'auto' }}>

@@ -14,7 +14,6 @@ function QualityBar({ pm25 }) {
     return 88 + 6; // for PM2.5 > 147, shifted by half (6%)
   };
   
-
   // Function to determine quality text based on PM2.5 value
   const getQualityText = () => {
     if (pm25 <= 25) return "Buena";
