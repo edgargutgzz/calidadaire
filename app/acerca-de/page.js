@@ -25,7 +25,7 @@ export default function Index() {
         {/* Pregunta 1 */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
           <div onClick={() => setIsOpen2(!isOpen2)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
-            <p className='pr-2'>¿Qué información utilizamos para medir la calidad del aire?</p>
+            <p className='mr-4'>¿Qué información utilizamos para medir la calidad del aire?</p>
             <img 
               src={isOpen2 ? "/up-arrow.png" : "/down-arrow.png"} 
               alt="toggle" 
