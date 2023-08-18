@@ -36,7 +36,24 @@ export default function Index() {
           </div>
           {isOpen3 && (
             <p className="mt-2 text-sm">
-              Aire Claro es la plataforma que muestra la calidad del aire en tiempo real en la Zona Metropolitana de Monterrey. <br />
+              Aire Claro es la plataforma que muestra la calidad del aire en tiempo real de la Zona Metropolitana de Monterrey. <br />
+            </p>
+          )}
+        </div>
+
+        {/* Pregunta 4 */}
+        <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
+          <div onClick={() => setIsOpen4(!isOpen4)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
+            <p className='mr-4'>¿Por que utilizar Aire Claro?</p>
+            <img
+              src={isOpen4 ? "/up-arrow.png" : "/down-arrow.png"}
+              alt="toggle"
+              className="h-3 w-3"
+            />
+          </div>
+          {isOpen4 && (
+            <p className="mt-2 text-sm">
+              El observatorio evalúa la información que utiliza Aire Claro para brindar recomendaciones enfocadas en la Zona Metropolitana de Monterrey.
             </p>
           )}
         </div>
@@ -71,28 +88,8 @@ export default function Index() {
             />
           </div>
           {isOpen2 && (
-            <div>
-              <p className="mt-2 text-sm">
-                El <a href="https://observatoriodelaire.com/index.html" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">OCCAMM</a> es un organización de la sociedad civil que promueve información sobre el estado, causas y efectos de la contaminación del aire en la Zona Metropolitana de Monterrey.
-              </p>
-              <p className="mt-2 text-sm">El observatorio es también quien evalúa la información que utiliza Aire Claro para brindarte las mejores recomendaciones posibles.</p>
-            </div>
-          )}
-        </div>
-
-        {/* Pregunta 4 */}
-        <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
-          <div onClick={() => setIsOpen4(!isOpen4)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
-            <p className='mr-4'>¿Cómo se calcula el índice de calidad del aire?</p>
-            <img
-              src={isOpen4 ? "/up-arrow.png" : "/down-arrow.png"}
-              alt="toggle"
-              className="h-3 w-3"
-            />
-          </div>
-          {isOpen4 && (
             <p className="mt-2 text-sm">
-              El índice de calidad del aire se calcula con base en los niveles de contaminantes en el aire y sus efectos en la salud. El índice de calidad del aire se divide en 6 categorías, que van de Bueno a Peligroso.
+              El <a href="https://observatoriodelaire.com/index.html" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">OCCAMM</a> es un organización de la sociedad civil que promueve información sobre el estado, causas y efectos de la contaminación del aire en la Zona Metropolitana de Monterrey.
             </p>
           )}
         </div>
