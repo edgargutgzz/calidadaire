@@ -19,7 +19,7 @@ export default function Index() {
       <div className="lg:ml-20 lg:mr-20 lg:mt-10 mx-4 pt-4 flex-grow overflow-auto lg:w-9/12 lg:flex-grow">
 
         {/* Logo */}
-        <div className="mx-1 mt-2 mb-6 flex justify-center">
+        <div className="mx-1 mb-6 flex justify-center">
           <img src="/aire_claro.png" alt="Aire Claro" className="w-40" />
         </div>
 
