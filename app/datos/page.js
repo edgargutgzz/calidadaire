@@ -112,7 +112,7 @@ export default function Index() {
   return (
     <div className="flex flex-col lg:flex-row h-screen">
       <Navbar currentPage="datos" />
-      <div className="lg:ml-20 lg:mr-20 lg:mt-10 mx-4 pt-4 pb-20 flex-grow lg:w-9/12 lg:flex-grow">
+      <div className="lg:ml-20 lg:mr-20 lg:mt-10 mx-4 lg:pt-0 pt-4 pb-20 flex-grow lg:w-9/12 lg:flex-grow">
         <style>
           {`
           .downloading {
@@ -129,7 +129,7 @@ export default function Index() {
         </style>
 
         {/* Title and Intro text */}
-        <div className="mx-1 mt-2 mb-8">
+        <div className="mx-1 mb-8">
           <h1 className="text-xl font-bold">Datos de Calidad del Aire</h1>
           <p className="text-sm mt-2">
             Todos los datos que utilizamos para informarte sobre la calidad del aire en la Zona Metropolitana de Monterrey se encuentran abiertos al público.
