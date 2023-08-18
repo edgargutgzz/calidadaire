@@ -61,7 +61,7 @@ export default function Index() {
   return (
     <div className="flex flex-col lg:flex-row">
       <Navbar currentPage="inicio" />
-      <div className="pb-20 lg:pl-4 lg:w-9/12 lg:flex-grow">
+      <div className="pb-10 lg:pl-4 lg:w-9/12 lg:flex-grow">
 
         {/* Hidden Mapa component to fetch the nearest sensor data */}
         <div style={{ display: 'none' }}>
