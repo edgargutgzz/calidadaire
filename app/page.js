@@ -61,7 +61,7 @@ export default function Index() {
   return (
     <div className="flex flex-col lg:flex-row">
       <Navbar currentPage="inicio" />
-      <div className="lg:ml-20 lg:mr-20 lg:mt-10 pb-20 lg:w-9/12 lg:flex-grow">
+      <div className="lg:ml-20 lg:mr-20 lg:mt-10 pb-20 lg:pt-0 pt-4 lg:w-9/12 lg:flex-grow">
 
         {/* Hidden Mapa component to fetch the nearest sensor data */}
         <div style={{ display: 'none' }}>
@@ -70,7 +70,7 @@ export default function Index() {
       
         {/* Calidad del Aire */}
         {nearestSensor && (
-          <div className="mx-4 lg:mx-0 mb-2 lg:pt-0 pt-4 pb-4">
+          <div className="mx-4 lg:mx-0 mb-2 pb-4">
             {/* Quality Bar */}
             <div className="bg-white rounded-lg shadow-lg p-4">
               <QualityBar pm25={nearestSensor.pm25} />
