@@ -11,6 +11,8 @@ export default function Index() {
   const [isOpen2, setIsOpen2] = useState(false);
   const [isOpen3, setIsOpen3] = useState(false);
   const [isOpen4, setIsOpen4] = useState(false);
+  const [isOpen5, setIsOpen5] = useState(false);
+
 
   return (
     <div className="flex flex-col lg:flex-row h-screen">
@@ -22,10 +24,27 @@ export default function Index() {
           <img src="/aire_claro.png" alt="Aire Claro" className="w-40" />
         </div>
 
+        {/* Pregunta 3 */}
+        <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
+          <div onClick={() => setIsOpen3(!isOpen3)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
+            <p className='mr-4'>¿Qué es Aire Claro?</p>
+            <img
+              src={isOpen3 ? "/up-arrow.png" : "/down-arrow.png"}
+              alt="toggle"
+              className="h-3 w-3"
+            />
+          </div>
+          {isOpen3 && (
+            <p className="mt-2 text-sm">
+              Aire Claro es la plataforma que muestra la calidad del aire en tiempo real en la Zona Metropolitana de Monterrey. <br />
+            </p>
+          )}
+        </div>
+
         {/* Pregunta 1 */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
           <div onClick={() => setIsOpen1(!isOpen1)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
-            <p className='mr-4'>¿Qué información utilizamos para medir la calidad del aire?</p>
+            <p className='mr-4'>¿Qué información utilizan para medir la calidad del aire?</p>
             <img 
               src={isOpen1 ? "/up-arrow.png" : "/down-arrow.png"} // Corrected here
               alt="toggle" 
@@ -52,26 +71,12 @@ export default function Index() {
             />
           </div>
           {isOpen2 && (
-            <p className="mt-2 text-sm">
-              El <a href="https://observatoriodelaire.com/index.html" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">OCCAMM</a> es un instrumento ciudadano confiable, que promueve información sobre el estado, causas y efectos de la contaminación del Aire en la Zona Metropolitana.
-            </p>
-          )}
-        </div>
-
-        {/* Pregunta 3 */}
-        <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
-          <div onClick={() => setIsOpen3(!isOpen3)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
-            <p className='mr-4'>¿Quién es Data Comun?</p>
-            <img
-              src={isOpen3 ? "/up-arrow.png" : "/down-arrow.png"}
-              alt="toggle"
-              className="h-3 w-3"
-            />
-          </div>
-          {isOpen3 && (
-            <p className="mt-2 text-sm">
-              <a href="https://www.datacomun.org/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Data Comun</a> es una empresa de tecnología que promueve el uso de datos abiertos para crear una ciudad más segura, justa y sustentable.
-            </p>
+            <div>
+              <p className="mt-2 text-sm">
+                El <a href="https://observatoriodelaire.com/index.html" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">OCCAMM</a> es un organización de la sociedad civil que promueve información sobre el estado, causas y efectos de la contaminación del aire en la Zona Metropolitana de Monterrey.
+              </p>
+              <p className="mt-2 text-sm">El observatorio es también quien evalúa la información que utiliza Aire Claro para brindarte las mejores recomendaciones posibles.</p>
+            </div>
           )}
         </div>
 
@@ -88,6 +93,23 @@ export default function Index() {
           {isOpen4 && (
             <p className="mt-2 text-sm">
               El índice de calidad del aire se calcula con base en los niveles de contaminantes en el aire y sus efectos en la salud. El índice de calidad del aire se divide en 6 categorías, que van de Bueno a Peligroso.
+            </p>
+          )}
+        </div>
+
+        {/* Pregunta 5 */}
+        <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
+          <div onClick={() => setIsOpen5(!isOpen5)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
+            <p className='mr-4'>¿Tienes más preguntas o comentarios?</p>
+            <img 
+              src={isOpen5 ? "/up-arrow.png" : "/down-arrow.png"} 
+              alt="toggle" 
+              className="h-3 w-3" 
+            />
+          </div>
+          {isOpen5 && (
+            <p className="mt-2 text-sm">
+              Envíanos un correo a <a href="mailto:hola@aireclaro.mx" className="text-blue-500 hover:underline">hola@aireclaro.mx</a>
             </p>
           )}
         </div>
