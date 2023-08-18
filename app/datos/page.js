@@ -112,7 +112,7 @@ export default function Index() {
   return (
     <div className="flex flex-col lg:flex-row h-screen">
       <Navbar currentPage="datos" />
-      <div className="mx-4 pt-4 pb-20 flex-grow lg:w-9/12 lg:flex-grow lg:pl-4">
+      <div className="lg:ml-40 lg:mr-40 lg:mt-10 mx-4 pt-4 pb-20 flex-grow lg:w-9/12 lg:flex-grow">
         <style>
           {`
           .downloading {
@@ -132,7 +132,7 @@ export default function Index() {
         <div className="mx-1 mt-2 mb-8">
           <h1 className="text-xl font-bold">Datos de Calidad del Aire</h1>
           <p className="text-sm mt-2">
-            Todos los datos que utilizamos para informarte sobre la calidad del aire en tu ciudad se encuentran abiertos al público.
+            Todos los datos que utilizamos para informarte sobre la calidad del aire en la Zona Metropolitana de Monterrey se encuentran abiertos al público.
           </p>
           <p className="text-sm mt-2">
             Creemos en la transparencia y en la apertura de datos, por lo que te invitamos a que utilices esta información como mejor te convenga.
@@ -160,7 +160,7 @@ export default function Index() {
                   {headerGroups.map(headerGroup => (
                     <tr {...headerGroup.getHeaderGroupProps()}>
                       {headerGroup.headers.map(column => (
-                        <th className="py-2 px-4 border-b" {...column.getHeaderProps()}>{column.render('Header')}</th>
+                        <th className="text-left py-2 px-4 border-b" {...column.getHeaderProps()}>{column.render('Header')}</th>
                       ))}
                     </tr>
                   ))}

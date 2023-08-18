@@ -61,7 +61,7 @@ export default function Index() {
   return (
     <div className="flex flex-col lg:flex-row">
       <Navbar currentPage="inicio" />
-      <div className="pb-20 lg:pl-4 lg:w-9/12 lg:flex-grow">
+      <div className="lg:ml-20 lg:mr-20 lg:mt-10 pb-20 lg:w-9/12 lg:flex-grow">
 
         {/* Hidden Mapa component to fetch the nearest sensor data */}
         <div style={{ display: 'none' }}>
@@ -70,7 +70,7 @@ export default function Index() {
       
         {/* Calidad del Aire */}
         {nearestSensor && (
-          <div className="mx-4 mb-2 mt-2 pt-4 pb-4">
+          <div className="mx-4 mb-2 pb-4">
             {/* Quality Bar */}
             <div className="bg-white rounded-lg shadow-lg p-4">
               <QualityBar pm25={nearestSensor.pm25} />
@@ -123,16 +123,6 @@ export default function Index() {
                 <p className="ml-2 text-xs">Última actualización a las {nearestSensor.lastUpdated}.</p>
               </div>
             </div>
-            {/* Source */}
-            {/* <div className="text-left text-xs pt-2 text-gray-500">
-              Datos de calidad de aire proporcionados por{' '} 
-              <a href="https://www2.purpleair.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
-                Purple Air
-              </a> y evaluados por el{' '}
-              <a href="https://observatoriodelaire.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
-                Observatorio Ciudadano de la Calidad del Aire
-              </a>.
-            </div> */}
           </div>
         )}
       </div>
