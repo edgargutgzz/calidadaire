@@ -19,7 +19,7 @@ export default function Index() {
 
         {/* Logo */}
         <div className="mx-1 mt-2 mb-6 flex justify-center">
-        <img src="/aire_claro.png" alt="Aire Claro" className="w-44" /> {/* Adjust the size here */}
+        <img src="/aire_claro.png" alt="Aire Claro" className="w-40" /> {/* Adjust the size here */}
         </div>
 
         {/* Pregunta 1 */}
