@@ -13,7 +13,6 @@ export default function Index() {
   const [isOpen4, setIsOpen4] = useState(false);
   const [isOpen5, setIsOpen5] = useState(false);
 
-
   return (
     <div className="flex flex-col lg:flex-row h-screen">
       <Navbar currentPage="acerca-de" />
@@ -24,7 +23,7 @@ export default function Index() {
           <img src="/aire_claro.png" alt="Aire Claro" className="w-40" />
         </div>
 
-        {/* Pregunta 3 */}
+        {/* Pregunta 1 */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
           <div onClick={() => setIsOpen3(!isOpen3)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p className='mr-4'>¿Qué es Aire Claro?</p>
@@ -41,7 +40,7 @@ export default function Index() {
           )}
         </div>
 
-        {/* Pregunta 4 */}
+        {/* Pregunta 2 */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
           <div onClick={() => setIsOpen4(!isOpen4)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p className='mr-4'>¿Cómo garantizan la precisión de sus recomendaciones?</p>
@@ -58,8 +57,7 @@ export default function Index() {
           )}
         </div>
 
-
-        {/* Pregunta 1 */}
+        {/* Pregunta 3 */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
           <div onClick={() => setIsOpen1(!isOpen1)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p className='mr-4'>¿Qué información utilizan para medir la calidad del aire?</p>
@@ -78,7 +76,7 @@ export default function Index() {
           )}
         </div>
   
-        {/* Pregunta 2 */}
+        {/* Pregunta 4 */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
           <div onClick={() => setIsOpen2(!isOpen2)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p className='mr-4'>¿Quién es el Observatorio Ciudadano de la Calidad del Aire?</p>
@@ -99,7 +97,6 @@ export default function Index() {
             </>
           )}
         </div>
-
 
         {/* Pregunta 5 */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
@@ -123,4 +120,5 @@ export default function Index() {
     </div>
   );
 }
+
 
