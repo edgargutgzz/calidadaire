@@ -124,7 +124,7 @@ export default function Index() {
               </div>
             </div>
             {/* Source */}
-            <div className="text-left text-xs pt-2 text-gray-500">
+            {/* <div className="text-left text-xs pt-2 text-gray-500">
               Datos de calidad de aire proporcionados por{' '} 
               <a href="https://www2.purpleair.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
                 Purple Air
@@ -132,7 +132,7 @@ export default function Index() {
               <a href="https://observatoriodelaire.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
                 Observatorio Ciudadano de la Calidad del Aire
               </a>.
-            </div>
+            </div> */}
           </div>
         )}
       </div>
