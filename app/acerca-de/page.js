@@ -21,32 +21,11 @@ export default function Index() {
         <div className="mx-1 mt-2 mb-6 flex justify-center">
         <img src="/aire_claro.png" alt="Aire Claro" className="w-44" /> {/* Adjust the size here */}
         </div>
-        <p className="text-sm mt-2 mb-8">
-        Creamos aire claro para informar sobre la calidad del aire al momento con mejore datos.
-        </p>
-
 
         {/* Pregunta 1 */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
-          <div onClick={() => setIsOpen1(!isOpen1)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
-            <p>¿Por qué utilizar esta app sobre las otras?</p>
-            <img 
-              src={isOpen1 ? "/up-arrow.png" : "/down-arrow.png"} 
-              alt="toggle" 
-              className="h-3 w-3" 
-            />
-          </div>
-          {isOpen1 && (
-            <p className="mt-2 text-sm">
-              Esta app es la única que te permite saber si puedes salir a correr o andar en bici, si puedes llevar a tus hijos o a tus padres a un parque, o si puedes hacer un picnic en el parque. Todo esto basado en la calidad del aire en tu ciudad.
-            </p>
-          )}
-        </div>
-
-        {/* Pregunta 2 */}
-        <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
           <div onClick={() => setIsOpen2(!isOpen2)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
-            <p>Question 2</p>
+            <p>¿Qué información utilizamos para medir la calidad del aire?</p>
             <img 
               src={isOpen2 ? "/up-arrow.png" : "/down-arrow.png"} 
               alt="toggle" 
@@ -55,12 +34,14 @@ export default function Index() {
           </div>
           {isOpen2 && (
             <p className="mt-2 text-sm">
-              Answer 2
+              Utilizamos 2 fuentes principales: <br />
+              <div className="py-2">1. Las estaciones de monitoreo de la <a href="http://aire.nl.gob.mx/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Secretaría de Desarrollo Sustentable</a> del estado de Nuevo León.</div>
+              <div className="py-2">2. Las estaciones de monitoreo ciudadanas de <a href="https://www2.purpleair.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Purple Air</a>.</div>
             </p>
           )}
         </div>
 
-        {/* Pregunta 3 */}
+        {/* Pregunta 2 */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
           <div onClick={() => setIsOpen3(!isOpen3)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p>Question 3</p>
@@ -77,7 +58,7 @@ export default function Index() {
           )}
         </div>
 
-        {/* Pregunta 4 */}
+        {/* Pregunta 3 */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
           <div onClick={() => setIsOpen4(!isOpen4)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p>Question 4</p>

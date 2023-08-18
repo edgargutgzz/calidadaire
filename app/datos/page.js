@@ -205,7 +205,7 @@ export default function Index() {
                   {explanationHeaderGroups.map(headerGroup => (
                     <tr {...headerGroup.getHeaderGroupProps()}>
                       {headerGroup.headers.map(column => (
-                        <th className="py-2 px-4 border-b" {...column.getHeaderProps()}>{column.render('Header')}</th>
+                        <th className="text-left py-2 px-4 border-b" {...column.getHeaderProps()}>{column.render('Header')}</th>
                       ))}
                     </tr>
                   ))}
