@@ -41,40 +41,6 @@ export default function Index() {
           )}
         </div>
 
-        {/* Pregunta 2 */}
-        <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
-          <div onClick={() => setIsOpen3(!isOpen3)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
-            <p>Question 3</p>
-            <img 
-              src={isOpen3 ? "/up-arrow.png" : "/down-arrow.png"} 
-              alt="toggle" 
-              className="h-3 w-3" 
-            />
-          </div>
-          {isOpen3 && (
-            <p className="mt-2 text-sm">
-              Answer 3
-            </p>
-          )}
-        </div>
-
-        {/* Pregunta 3 */}
-        <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
-          <div onClick={() => setIsOpen4(!isOpen4)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
-            <p>Question 4</p>
-            <img 
-              src={isOpen4 ? "/up-arrow.png" : "/down-arrow.png"} 
-              alt="toggle" 
-              className="h-3 w-3" 
-            />
-          </div>
-          {isOpen4 && (
-            <p className="mt-2 text-sm">
-              Answer 4
-            </p>
-          )}
-        </div>
-
       </div>
     </div>
   );
