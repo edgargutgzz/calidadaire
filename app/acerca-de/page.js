@@ -17,7 +17,7 @@ export default function Index() {
       <Navbar currentPage="acerca-de" />
       <div className="mx-4 pt-4 flex-grow overflow-auto lg:w-9/12 lg:flex-grow lg:pl-4">
 
-        {/* Title and Intro text */}
+        {/* Logo */}
         <div className="mx-1 mt-2 mb-6 flex justify-center">
         <img src="/aire_claro.png" alt="Aire Claro" className="w-44" /> {/* Adjust the size here */}
         </div>
@@ -35,8 +35,8 @@ export default function Index() {
           {isOpen2 && (
             <p className="mt-2 text-sm">
               Utilizamos 2 fuentes principales: <br />
-              <div className="py-2">1. Las estaciones de monitoreo de la <a href="http://aire.nl.gob.mx/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Secretaría de Desarrollo Sustentable</a> del estado de Nuevo León.</div>
-              <div className="py-2">2. Las estaciones de monitoreo ciudadanas de <a href="https://www2.purpleair.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Purple Air</a>.</div>
+              <div className="py-1">1. Las estaciones de monitoreo de la <a href="http://aire.nl.gob.mx/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Secretaría de Desarrollo Sustentable</a> del estado de Nuevo León.</div>
+              <div className="py-1">2. Las estaciones de monitoreo ciudadanas de <a href="https://www2.purpleair.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Purple Air</a>.</div>
             </p>
           )}
         </div>
