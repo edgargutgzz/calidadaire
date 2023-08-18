@@ -44,7 +44,7 @@ export default function Index() {
         {/* Pregunta 4 */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
           <div onClick={() => setIsOpen4(!isOpen4)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
-            <p className='mr-4'>¿Por que utilizar Aire Claro?</p>
+            <p className='mr-4'>¿Cómo garantizan la precisión de sus recomendaciones?</p>
             <img
               src={isOpen4 ? "/up-arrow.png" : "/down-arrow.png"}
               alt="toggle"
@@ -53,10 +53,11 @@ export default function Index() {
           </div>
           {isOpen4 && (
             <p className="mt-2 text-sm">
-              El observatorio evalúa la información que utiliza Aire Claro para brindar recomendaciones enfocadas en la Zona Metropolitana de Monterrey.
+              Medimos sólo las partículas más dañinas para tu salud de acuerdo a las condiciones climatológicas de la Zona Metropolitana de Monterrey.
             </p>
           )}
         </div>
+
 
         {/* Pregunta 1 */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
@@ -81,18 +82,24 @@ export default function Index() {
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
           <div onClick={() => setIsOpen2(!isOpen2)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p className='mr-4'>¿Quién es el Observatorio Ciudadano de la Calidad del Aire?</p>
-            <img 
-              src={isOpen2 ? "/up-arrow.png" : "/down-arrow.png"} 
-              alt="toggle" 
-              className="h-3 w-3" 
+            <img
+              src={isOpen2 ? "/up-arrow.png" : "/down-arrow.png"}
+              alt="toggle"
+              className="h-3 w-3"
             />
           </div>
           {isOpen2 && (
-            <p className="mt-2 text-sm">
-              El <a href="https://observatoriodelaire.com/index.html" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">OCCAMM</a> es un organización de la sociedad civil que promueve información sobre el estado, causas y efectos de la contaminación del aire en la Zona Metropolitana de Monterrey.
-            </p>
+            <>
+              <p className="mt-2 text-sm">
+                El <a href="https://observatoriodelaire.com/index.html" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">OCCAMM</a> es un organización de la sociedad civil que promueve información sobre el estado, causas y efectos de la contaminación del aire en la Zona Metropolitana de Monterrey.
+              </p>
+              <p className="mt-2 text-sm">
+                El observatorio es también quién evalúa la información que utiliza Aire Claro para brindar las mejores recomendaciones posibles.
+              </p>
+            </>
           )}
         </div>
+
 
         {/* Pregunta 5 */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
