@@ -220,7 +220,7 @@ export default function Mapa({ onNearestSensorChange }) {
       )} */}
 
 
-      <div className="absolute top-0 left-0 ml-2 mt-2 mr-5 mb-5 bg-gray-100 bg-opacity-90 pl-3 pr-3 pb-0 pt-2 rounded-lg">
+      <div className="absolute top-0 left-0 ml-3 mt-3 bg-gray-100 bg-opacity-90 pl-3 pr-3 pb-0 pt-2 rounded-lg">
         <h3 className="mb-1 font-bold">Calidad del Aire</h3>
         <div className="flex flex-col text-gray-500">
           <LegendItem color="bg-custom-purple" text="Extremadamente Mala" />
