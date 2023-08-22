@@ -151,13 +151,13 @@ export default function Index() {
               <QualityBar pm25={nearestSensor.pm25} />
             </div>
             {/* Población */}
-            <div className="flex justify-between mt-6">
+            <div className="flex justify-between mt-4">
               {/* Vulnerable */}
-              <div className={`rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2 ${selectedProfile === 'vulnerable' ? 'border-b-4 border-gray-400 font-bold' : 'border-b-4 border-transparent'}`}>
+              <div className={`rounded-lg shadow-lg w-1/2 mr-2 p-4 mb-6 ${selectedProfile === 'vulnerable' ? 'border-b-4 border-gray-400 font-bold' : 'border-b-4 border-transparent'}`}>
                 <button className="w-full text-xs" onClick={() => setSelectedProfile('vulnerable')}>Población Vulnerable</button>
               </div>
               {/* General */}
-              <div className={`rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${selectedProfile === 'general' ? 'border-b-4 border-gray-400 font-bold' : 'border-b-4 border-transparent'}`}>
+              <div className={`rounded-lg shadow-lg p-4 mb-6 w-1/2 ml-2 ${selectedProfile === 'general' ? 'border-b-4 border-gray-400 font-bold' : 'border-b-4 border-transparent'}`}>
                 <button className="w-full text-xs" onClick={() => setSelectedProfile('general')}>Población General</button>
               </div>
             </div>
