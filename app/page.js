@@ -145,15 +145,15 @@ export default function Index() {
       
         {/* Calidad del Aire */}
         {nearestSensor && (
-          <div className="mx-4 lg:mx-0 mb-2 pb-4">
+          <div className="mx-4 lg:mx-0 mb-0 pb-4">
             {/* Quality Bar */}
             <div className="bg-white rounded-lg shadow-lg p-4">
               <QualityBar pm25={nearestSensor.pm25} />
             </div>
             {/* Población */}
-            <div className="flex justify-between mt-4">
+            <div className="flex justify-between mt-0">
               {/* Vulnerable */}
-              <div className={`rounded-lg shadow-lg w-1/2 mr-2 p-4 mb-6 ${selectedProfile === 'vulnerable' ? 'border-b-4 border-gray-400 font-bold' : 'border-b-4 border-transparent'}`}>
+              <div className={`rounded-lg shadow-lg w-1/2 mr-2 pt-6 pb-0 mb-6 ${selectedProfile === 'vulnerable' ? 'border-b-4 border-gray-400 font-bold' : 'border-b-4 border-transparent'}`}>
                 <button className="w-full text-xs" onClick={() => setSelectedProfile('vulnerable')}>Población Vulnerable</button>
               </div>
               {/* General */}
