@@ -78,27 +78,26 @@ export default function Index() {
             <p className="mt-2 text-sm">{getGeneralRecommendation(nearestSensor.pm25)}</p>
           </div>
           {/* Actividades */}
-          <div className="flex flex-col justify-between mt-2"> 
+          <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-full"> 
+            <div className="flex items-center space-x-2">
+              <img src="/picnic.png" width={24} height={24} alt="Correr Icon" />
+            </div>
+            <p className="mt-2 text-sm">Es seguro realizar picnics al aire libre.</p>
+          </div>
+          <div className="flex flex-row justify-between mt-2"> {/* Updated flex direction */}
             {/* Running */}
-            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-full"> 
+            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2"> {/* Updated width */}
               <div className="flex items-center space-x-2">
                 <img src="/run.png" width={24} height={24} alt="Correr Icon" />
               </div>
               <p className="mt-2 text-sm">Es seguro salir a correr.</p>
             </div>
             {/* Cycling */}
-            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-full"> 
+            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2"> {/* Updated width */}
               <div className="flex items-center space-x-2">
                 <img src="/cycling.png" width={24} height={24} alt="Correr Icon" />
               </div>
               <p className="mt-2 text-sm">Es seguro andar en bici.</p>
-            </div>
-            {/* Parques */}
-            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-full"> 
-              <div className="flex items-center space-x-2">
-                <img src="/picnic.png" width={24} height={24} alt="Correr Icon" />
-              </div>
-              <p className="mt-2 text-sm">Es seguro realizar picnics al aire libre.</p>
             </div>
           </div>
         </>
@@ -173,22 +172,20 @@ export default function Index() {
               </div>
             </div>
             {renderCards()}
-            {/* Location and Hora */}
-            <div className="flex justify-between mt-2">
-              <div className="bg-white rounded-lg shadow-lg p-4 w-1/2 mr-2">
-                <div className="flex items-center">
-                  <img src="/navigation.png" className="w-4 h-4" alt="Correr Icon" />
-                  <p className="ml-2 text-xs">Calidad de aire en {nearestSensor.address}.</p>
-                </div>
-              </div>
-              <div className="bg-white rounded-lg shadow-lg p-4 w-1/2 ml-2">
-                <div className="flex items-center">
-                  <img src="/clock.png" className="w-4 h-4" alt="Correr Icon" />
-                  <p className="ml-2 text-xs">Última actualización a las {nearestSensor.lastUpdated}.</p>
-                </div>
+            {/* Location */}
+            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 mt-0">
+              <div className="flex items-center">
+                <img src="/navigation.png" className="w-4 h-4" alt="Correr Icon" />
+                <p className="ml-2 text-xs">Calidad de aire en {nearestSensor.address}.</p>
               </div>
             </div>
-
+            {/* Hora */}
+            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 mt-0">
+              <div className="flex items-center">
+                <img src="/clock.png" className="w-4 h-4" alt="Correr Icon" />
+                <p className="ml-2 text-xs">Última actualización a las {nearestSensor.lastUpdated}.</p>
+              </div>
+            </div>
           </div>
         )}
       </div>
