@@ -61,27 +61,33 @@ export default function Index() {
 
   // Function to render the cards based on the selected profile
   const renderCards = () => {
-    if (selectedProfile === 'general') {
+
+     // Vulnerable
+    if (selectedProfile === 'vulnerable') {
       return (
         <>
+          {/* Recomendación General */}
+          <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-full"> 
+            <p className="mt-2 text-sm">Disfruta de las actividades al aire libre.</p>
+          </div>
           {/* Actividades */}
-          <div className="flex flex-col justify-between mt-2"> {/* Updated flexbox direction */}
+          <div className="flex flex-col justify-between mt-2"> 
             {/* Running */}
-            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-full"> {/* Updated width */}
+            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-full"> 
               <div className="flex items-center space-x-2">
                 <img src="/run.png" width={24} height={24} alt="Correr Icon" />
               </div>
               <p className="mt-2 text-sm">Es seguro salir a correr.</p>
             </div>
             {/* Cycling */}
-            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-full"> {/* Updated width */}
+            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-full"> 
               <div className="flex items-center space-x-2">
                 <img src="/cycling.png" width={24} height={24} alt="Correr Icon" />
               </div>
               <p className="mt-2 text-sm">Es seguro andar en bici.</p>
             </div>
             {/* Parques */}
-            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-full"> {/* Updated width */}
+            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-full"> 
               <div className="flex items-center space-x-2">
                 <img src="/picnic.png" width={24} height={24} alt="Correr Icon" />
               </div>
@@ -92,7 +98,8 @@ export default function Index() {
       );
     }
 
-    if (selectedProfile === 'vulnerable') {
+    // General
+    if (selectedProfile === 'general') {
       return (
         <>
           {/* Actividades */}
@@ -146,12 +153,12 @@ export default function Index() {
             {/* Población */}
             <div className="flex justify-between mt-6">
               {/* Vulnerable */}
-              <div className={`rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2 ${selectedProfile === 'vulnerable' ? 'bg-gray-200' : ''}`}>
-                <button className="w-full text-sm" onClick={() => setSelectedProfile('vulnerable')}>Población<br />Vulnerable</button>
+              <div className={`rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2 ${selectedProfile === 'vulnerable' ? 'border-b-4 border-blue-500 font-bold' : 'border-b-4 border-transparent'}`}>
+                <button className="w-full text-xs" onClick={() => setSelectedProfile('vulnerable')}>Población Vulnerable</button>
               </div>
               {/* General */}
-              <div className={`rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${selectedProfile === 'general' ? 'bg-gray-200' : 'bg-white'}`}>
-                <button className="w-full text-sm" onClick={() => setSelectedProfile('general')}>Población<br />General</button>
+              <div className={`rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${selectedProfile === 'general' ? 'border-b-4 border-blue-500 font-bold' : 'border-b-4 border-transparent'}`}>
+                <button className="w-full text-xs" onClick={() => setSelectedProfile('general')}>Población General</button>
               </div>
             </div>
             {renderCards()}
