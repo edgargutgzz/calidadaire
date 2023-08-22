@@ -24,16 +24,6 @@ function QualityBar({ pm25 }) {
     return "N/A";  // default text in case the value is null or undefined
   };
 
-  // Function to determine quality recommendations based on PM2.5 value
-  const getQualityRecommendations = () => {
-    if (pm25 <= 25) return "Disfruta las actividades al aire libre.";
-    if (pm25 > 25 && pm25 <= 45) return "Disfruta las actividades al aire libre.";
-    if (pm25 > 45 && pm25 <= 79) return "Es posible realizar actividades al aire libre. Si presentas síntomas como tos o falta de aire, toma más descansos y realiza actividades menos vigorosas.";
-    if (pm25 > 79 && pm25 <= 147) return "Evita la actividad física vigorosa o prolongada al aire libre. Mantente informado sobre la evolución  de la calidad del aire.";
-    if (pm25 > 147) return "Permanece en espacios interiores, reprograma actividades al aire libre y si presentas síntomas respiratorios y/o cardiácos acude al médico.";
-    return "N/A";  // default text in case the value is null or undefined
-  };
-
   return (
     <>
       <div className="text-left font-semibold text-4xl">{getQualityText()}</div>
@@ -58,6 +48,24 @@ export default function Index() {
   const [nearestSensor, setNearestSensor] = useState(null);
   const [selectedProfile, setSelectedProfile] = useState('vulnerable');
 
+  // Function to determine general recommendation based on PM2.5 value
+  const getGeneralRecommendation = (pm25) => {
+    if (selectedProfile === 'vulnerable') {
+      if (pm25 <= 25) return 'Disfruta las actividades al aire libre.';
+      if (pm25 > 25 && pm25 <= 45) return 'Considera reducir las actividades físicas vigorosas al aire libre.';
+      if (pm25 > 45 && pm25 <= 79) return 'Evita las actividades físicas moderadas y vigorosas al aire libre.';
+      if (pm25 > 79 && pm25 <= 147) return 'No realices actividades al aire libre. Acude al médico si presentas síntomas respiratorios o cardiacos.';
+      return 'Permanece en interiores. Acude al médico si presentas síntomas respiratorios o cardiacos.'; // for PM2.5 > 147
+    }
+
+    // General
+    if (pm25 <= 25) return 'Disfruta las actividades al aire libre.';
+    if (pm25 > 25 && pm25 <= 45) return 'Disfruta las actividades al aire libre.';
+    if (pm25 > 45 && pm25 <= 79) return 'Reduce las actividades físicas vigorosas al aire libre.';
+    if (pm25 > 79 && pm25 <= 147) return 'Evita las actividades físicas moderadas y vigorosas al aire libre.';
+    return 'Permanece en interiores. Acude al médico si presentas síntomas respiratorios o cardiacos.'; // for PM2.5 > 147
+  };
+
   // Function to render the cards based on the selected profile
   const renderCards = () => {
 
@@ -67,7 +75,7 @@ export default function Index() {
         <>
           {/* Recomendación General */}
           <div className="bg-white rounded-lg shadow-lg p-4 mb-4 mt-4 w-full"> 
-            <p className="mt-2 text-sm">Disfruta de las actividades al aire libre.</p>
+            <p className="mt-2 text-sm">{getGeneralRecommendation(nearestSensor.pm25)}</p>
           </div>
           {/* Actividades */}
           <div className="flex flex-col justify-between mt-2"> 
@@ -101,6 +109,10 @@ export default function Index() {
     if (selectedProfile === 'general') {
       return (
         <>
+          {/* Recomendación General */}
+          <div className="bg-white rounded-lg shadow-lg p-4 mb-4 mt-4 w-full"> 
+            <p className="mt-2 text-sm">{getGeneralRecommendation(nearestSensor.pm25)}</p>
+          </div>
           {/* Actividades */}
           <div className="flex flex-col justify-between mt-2"> {/* Updated flexbox direction */}
             {/* Running */}
