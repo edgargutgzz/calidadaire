@@ -153,11 +153,11 @@ export default function Index() {
             {/* Población */}
             <div className="flex justify-between mt-4">
               {/* Vulnerable */}
-              <div className={`rounded-lg shadow-lg w-1/2 mr-2 p-4 mb-10 bg-white ${selectedProfile === 'vulnerable' ? 'border-b-4 border-gray-400 font-bold' : 'border-b-4 border-transparent'}`}>
+              <div className={`rounded-lg shadow-lg w-1/2 mr-2 p-2 mb-14 bg-white ${selectedProfile === 'vulnerable' ? 'border-b-4 border-gray-400 font-bold' : 'border-b-4 border-transparent'}`}>
                 <button className="w-full text-xs" onClick={() => setSelectedProfile('vulnerable')}>Población Vulnerable</button>
               </div>
               {/* General */}
-              <div className={`rounded-lg shadow-lg w-1/2 ml-2 p-4 mb-10 bg-white bg-white ${selectedProfile === 'general' ? 'border-b-4 border-gray-400 font-bold' : 'border-b-4 border-transparent'}`}>
+              <div className={`rounded-lg shadow-lg w-1/2 ml-2 p-2 mb-14 bg-white ${selectedProfile === 'general' ? 'border-b-4 border-gray-400 font-bold' : 'border-b-4 border-transparent'}`}>
                 <button className="w-full text-xs" onClick={() => setSelectedProfile('general')}>Población General</button>
               </div>
             </div>
