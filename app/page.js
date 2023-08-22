@@ -77,23 +77,24 @@ export default function Index() {
           <div className="bg-white rounded-lg shadow-lg p-4 mb-4 mt-4 w-full"> 
             <p className="mt-2 text-sm">{getGeneralRecommendation(nearestSensor.pm25)}</p>
           </div>
-          {/* Actividades */}
+          {/* Picnic */}
           <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-full"> 
             <div className="flex items-center space-x-2">
               <img src="/picnic.png" width={24} height={24} alt="Correr Icon" />
             </div>
             <p className="mt-2 text-sm">Es seguro realizar picnics al aire libre.</p>
           </div>
-          <div className="flex flex-row justify-between mt-2"> {/* Updated flex direction */}
+          {/* Actividades */}
+          <div className="flex flex-row justify-between mt-2"> 
             {/* Running */}
-            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2"> {/* Updated width */}
+            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2"> 
               <div className="flex items-center space-x-2">
                 <img src="/run.png" width={24} height={24} alt="Correr Icon" />
               </div>
               <p className="mt-2 text-sm">Es seguro salir a correr.</p>
             </div>
             {/* Cycling */}
-            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2"> {/* Updated width */}
+            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2"> 
               <div className="flex items-center space-x-2">
                 <img src="/cycling.png" width={24} height={24} alt="Correr Icon" />
               </div>
@@ -112,28 +113,28 @@ export default function Index() {
           <div className="bg-white rounded-lg shadow-lg p-4 mb-4 mt-4 w-full"> 
             <p className="mt-2 text-sm">{getGeneralRecommendation(nearestSensor.pm25)}</p>
           </div>
+          {/* Picnic */}
+          <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-full"> 
+            <div className="flex items-center space-x-2">
+              <img src="/picnic.png" width={24} height={24} alt="Correr Icon" />
+            </div>
+            <p className="mt-2 text-sm">Es seguro realizar picnics al aire libre.</p>
+          </div>
           {/* Actividades */}
-          <div className="flex flex-col justify-between mt-2"> {/* Updated flexbox direction */}
+          <div className="flex flex-row justify-between mt-2"> 
             {/* Running */}
-            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-full"> {/* Updated width */}
+            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2"> 
               <div className="flex items-center space-x-2">
                 <img src="/run.png" width={24} height={24} alt="Correr Icon" />
               </div>
-              <p className="mt-2 text-sm">Es seguro.</p>
+              <p className="mt-2 text-sm">Es seguro salir a correr.</p>
             </div>
             {/* Cycling */}
-            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-full"> {/* Updated width */}
+            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2"> 
               <div className="flex items-center space-x-2">
                 <img src="/cycling.png" width={24} height={24} alt="Correr Icon" />
               </div>
-              <p className="mt-2 text-sm">Es seguro.</p>
-            </div>
-            {/* Parques */}
-            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-full"> {/* Updated width */}
-              <div className="flex items-center space-x-2">
-                <img src="/picnic.png" width={24} height={24} alt="Correr Icon" />
-              </div>
-              <p className="mt-2 text-sm">Es seguro.</p>
+              <p className="mt-2 text-sm">Es seguro andar en bici.</p>
             </div>
           </div>
         </>
