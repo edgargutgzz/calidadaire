@@ -165,7 +165,7 @@ export default function Index() {
             <div className="flex justify-between mt-4">
               {/* Vulnerable */}
               <div 
-                className={`flex text-xs items-center justify-center rounded-2xl w-1/2 mr-2 cursor-pointer text-center ${selectedProfile === 'vulnerable' ? 'bg-black text-white' : 'bg-white border-transparent'}`}
+                className={`flex text-xs items-center justify-center rounded-2xl w-1/2 mr-2 cursor-pointer text-center ${selectedProfile === 'vulnerable' ? 'bg-gray-400 font-bold text-white' : 'bg-white border-transparent'}`}
                 onClick={() => setSelectedProfile('vulnerable')}>
                 Población Vulnerable
               </div>
