@@ -37,7 +37,7 @@ function QualityBar({ pm25 }) {
   return (
     <>
       <div className="text-left font-semibold text-4xl">{getQualityText()}</div>
-      <div className="text-left text-sm pt-2">{getQualityRecommendations()}</div>
+      {/* <div className="text-left text-sm pt-2">{getQualityRecommendations()}</div> */}
       <div className="relative flex min-h-[12px] rounded-lg overflow-hidden mt-4 mb-2">
         <div style={{ flexBasis: "12%" }} className="bg-custom-green" />
         <div style={{ flexBasis: "10%" }} className="bg-gradient-to-r from-custom-green to-custom-yellow" />
@@ -57,6 +57,80 @@ function QualityBar({ pm25 }) {
 // Index
 export default function Index() {
   const [nearestSensor, setNearestSensor] = useState(null);
+  const [selectedProfile, setSelectedProfile] = useState('general');
+
+  // Function to render the cards based on the selected profile
+  const renderCards = () => {
+    if (selectedProfile === 'general') {
+      return (
+        <>
+          {/* Running and Cycling */}
+          <div className="flex justify-between mt-2">
+            {/* Running */}
+            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2">
+              <div className="flex items-center space-x-2">
+                <img src="/run.png" width={24} height={24} alt="Correr Icon" />
+              </div>
+              <p className="mt-2 text-sm">Es seguro salir a correr.</p>
+            </div>
+            {/* Cycling */}
+            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2">
+              <div className="flex items-center space-x-2">
+                <img src="/cycling.png" width={24} height={24} alt="Correr Icon" />
+              </div>
+              <p className="mt-2 text-sm">Es seguro andar en bici.</p>
+            </div>
+          </div>
+          {/* Personas vulnerables y parques */}
+          <div className="flex justify-between mt-2">
+            {/* Parques */}
+            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2">
+              <div className="flex items-center space-x-2">
+                <img src="/picnic.png" width={24} height={24} alt="Correr Icon" />
+              </div>
+              <p className="mt-2 text-sm">Es seguro realizar picnics al aire libre.</p>
+            </div>
+          </div>
+        </>
+      );
+    }
+
+    if (selectedProfile === 'vulnerable') {
+      return (
+        <>
+          {/* Running and Cycling */}
+          <div className="flex justify-between mt-2">
+            {/* Running */}
+            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2">
+              <div className="flex items-center space-x-2">
+                <img src="/run.png" width={24} height={24} alt="Correr Icon" />
+              </div>
+              <p className="mt-2 text-sm">Es seguro salir a correr.</p>
+            </div>
+            {/* Cycling */}
+            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2">
+              <div className="flex items-center space-x-2">
+                <img src="/cycling.png" width={24} height={24} alt="Correr Icon" />
+              </div>
+              <p className="mt-2 text-sm">Es seguro andar en bici.</p>
+            </div>
+          </div>
+          {/* Personas vulnerables y parques */}
+          <div className="flex justify-between mt-2">
+            {/* Parques */}
+            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2">
+              <div className="flex items-center space-x-2">
+                <img src="/picnic.png" width={24} height={24} alt="Correr Icon" />
+              </div>
+              <p className="mt-2 text-sm">Es seguro realizar picnics al aire libre.</p>
+            </div>
+          </div>
+        </>
+      );
+    }
+
+    return null;
+  };
 
   return (
     <div className="flex flex-col lg:flex-row">
@@ -75,40 +149,18 @@ export default function Index() {
             <div className="bg-white rounded-lg shadow-lg p-4">
               <QualityBar pm25={nearestSensor.pm25} />
             </div>
-            {/* Running and Cycling */}
+            {/* Población */}
             <div className="flex justify-between mt-6">
-              {/* Running */}
-              <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2">
-                <div className="flex items-center space-x-2">
-                  <img src="/run.png" width={24} height={24} alt="Correr Icon" />
-                </div>
-                <p className="mt-2 text-sm">Es seguro salir a correr.</p>
+              {/* Vulnerable */}
+              <div className={`rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2 ${selectedProfile === 'vulnerable' ? 'bg-gray-200' : ''}`}>
+                <button className="w-full text-sm" onClick={() => setSelectedProfile('vulnerable')}>Población Vulnerable</button>
               </div>
-              {/* Cycling */}
-              <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2">
-                <div className="flex items-center space-x-2">
-                  <img src="/cycling.png" width={24} height={24} alt="Correr Icon" />
-                </div>
-                <p className="mt-2 text-sm">Es seguro andar en bici.</p>
+              {/* General */}
+              <div className={`rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${selectedProfile === 'general' ? 'bg-gray-200' : 'bg-white'}`}>
+                <button className="w-full text-sm" onClick={() => setSelectedProfile('general')}>Población General</button>
               </div>
             </div>
-            {/* Personas vulnerables y parques */}
-            <div className="flex justify-between mt-2">
-              {/* Personas vulnerables */}
-              <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2">
-                <div className="flex items-center space-x-2">
-                  <img src="/baby.png" width={24} height={24} alt="Correr Icon" />
-                </div>
-                <p className="mt-2 text-sm">Bebes y adultos mayores pueden salir con seguridad.</p>
-              </div>
-              {/* Parques */}
-              <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2">
-                <div className="flex items-center space-x-2">
-                  <img src="/picnic.png" width={24} height={24} alt="Correr Icon" />
-                </div>
-                <p className="mt-2 text-sm">Es seguro realizar picnics al aire libre.</p>
-              </div>
-            </div>
+            {renderCards()}
             {/* Location */}
             <div className="bg-white rounded-lg shadow-lg p-4 mb-4 mt-2">
               <div className="flex items-center">
