@@ -147,11 +147,11 @@ export default function Index() {
             <div className="flex justify-between mt-6">
               {/* Vulnerable */}
               <div className={`rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2 ${selectedProfile === 'vulnerable' ? 'bg-gray-200' : ''}`}>
-                <button className="w-full text-sm" onClick={() => setSelectedProfile('vulnerable')}>Población Vulnerable</button>
+                <button className="w-full text-sm" onClick={() => setSelectedProfile('vulnerable')}>Población<br />Vulnerable</button>
               </div>
               {/* General */}
               <div className={`rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${selectedProfile === 'general' ? 'bg-gray-200' : 'bg-white'}`}>
-                <button className="w-full text-sm" onClick={() => setSelectedProfile('general')}>Población General</button>
+                <button className="w-full text-sm" onClick={() => setSelectedProfile('general')}>Población<br />General</button>
               </div>
             </div>
             {renderCards()}
