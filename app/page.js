@@ -157,7 +157,7 @@ export default function Index() {
                 <button className="w-full text-xs" onClick={() => setSelectedProfile('vulnerable')}>Población Vulnerable</button>
               </div>
               {/* General */}
-              <div className={`rounded-lg shadow-lg p-4 mb-6 w-1/2 ml-2 bg-white ${selectedProfile === 'general' ? 'border-b-4 border-gray-400 font-bold' : 'border-b-4 border-transparent'}`}>
+              <div className={`rounded-lg shadow-lg w-1/2 ml-2 p-4 mb-8 bg-white bg-white ${selectedProfile === 'general' ? 'border-b-4 border-gray-400 font-bold' : 'border-b-4 border-transparent'}`}>
                 <button className="w-full text-xs" onClick={() => setSelectedProfile('general')}>Población General</button>
               </div>
             </div>
