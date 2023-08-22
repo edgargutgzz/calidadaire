@@ -67,7 +67,7 @@ export default function Index() {
       return (
         <>
           {/* Recomendación General */}
-          <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-full"> 
+          <div className="bg-white rounded-lg shadow-lg p-4 mb-4 mt-4 w-full"> 
             <p className="mt-2 text-sm">Disfruta de las actividades al aire libre.</p>
           </div>
           {/* Actividades */}
@@ -153,11 +153,11 @@ export default function Index() {
             {/* Población */}
             <div className="flex justify-between mt-4">
               {/* Vulnerable */}
-              <div className={`rounded-lg shadow-lg w-1/2 mr-2 p-2 mb-14 bg-white ${selectedProfile === 'vulnerable' ? 'border-b-4 border-gray-400 font-bold' : 'border-b-4 border-transparent'}`}>
+              <div className={`rounded-lg shadow-lg w-1/2 mr-2 p-2 bg-white ${selectedProfile === 'vulnerable' ? 'border-b-4 border-gray-400 font-bold' : 'border-b-4 border-transparent'}`}>
                 <button className="w-full text-xs" onClick={() => setSelectedProfile('vulnerable')}>Población Vulnerable</button>
               </div>
               {/* General */}
-              <div className={`rounded-lg shadow-lg w-1/2 ml-2 p-2 mb-14 bg-white ${selectedProfile === 'general' ? 'border-b-4 border-gray-400 font-bold' : 'border-b-4 border-transparent'}`}>
+              <div className={`rounded-lg shadow-lg w-1/2 ml-2 p-2 bg-white ${selectedProfile === 'general' ? 'border-b-4 border-gray-400 font-bold' : 'border-b-4 border-transparent'}`}>
                 <button className="w-full text-xs" onClick={() => setSelectedProfile('general')}>Población General</button>
               </div>
             </div>
