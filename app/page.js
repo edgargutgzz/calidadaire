@@ -94,16 +94,33 @@ export default function Index() {
             </div>
             <p className="mt-2 text-sm">Es seguro realizar picnics al aire libre.</p>
           </div> */}
-          {/* Actividades */}
+          {/* Caminar y Picnic / Terraza */}
           <div className="flex flex-row justify-between mt-2"> 
-            {/* Running */}
+            {/* Caminar */}
+            <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
+              <div className="flex items-center space-x-2">
+                <img src="/walk.png" width={24} height={24} alt="Correr Icon" />
+              </div>
+              <p className="mt-2 text-sm">Es seguro salir a caminar.</p>
+            </div>
+            {/* Picnic / Terraza */}
+            <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
+              <div className="flex items-center space-x-2">
+                <img src="/cycling.png" width={24} height={24} alt="Correr Icon" />
+              </div>
+              <p className="mt-2 text-sm">Es seguro andar en bici.</p>
+            </div>
+          </div>
+          {/* Correr and Bici */}
+          <div className="flex flex-row justify-between mt-2"> 
+            {/* Correr */}
             <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
               <div className="flex items-center space-x-2">
                 <img src="/run.png" width={24} height={24} alt="Correr Icon" />
               </div>
               <p className="mt-2 text-sm">Es seguro salir a correr.</p>
             </div>
-            {/* Cycling */}
+            {/* Bici */}
             <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
               <div className="flex items-center space-x-2">
                 <img src="/cycling.png" width={24} height={24} alt="Correr Icon" />
