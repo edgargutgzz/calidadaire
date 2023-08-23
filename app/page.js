@@ -74,7 +74,7 @@ export default function Index() {
       return (
         <>
           {/* Recomendación General */}
-          <div className="bg-white rounded-lg shadow-lg p-4 mb-4 mt-4 w-full"> 
+          <div className="bg-white rounded-lg shadow-lg p-4 mb-4 mt-4 w-full font-bold"> 
             <p className="mt-2 text-sm">{getGeneralRecommendation(nearestSensor.pm25)}</p>
           </div>
           {/* Picnic */}
@@ -161,21 +161,6 @@ export default function Index() {
             <div className="bg-white rounded-lg shadow-lg p-4">
               <QualityBar pm25={nearestSensor.pm25} />
             </div>
-            {/* Población */}
-            <div className="flex justify-between mt-4">
-              {/* Vulnerable */}
-              <div 
-                className={`flex text-sm items-center justify-center rounded-2xl w-1/2 mr-2 p-2 cursor-pointer text-center ${selectedProfile === 'vulnerable' ? 'bg-black text-white' : 'bg-white border-transparent'}`}
-                onClick={() => setSelectedProfile('vulnerable')}>
-                Población Vulnerable
-              </div>
-              {/* General */}
-              <div 
-                className={`flex text-sm items-center justify-center rounded-2xl w-1/2 ml-2 p-2 cursor-pointer text-center ${selectedProfile === 'general' ? 'bg-black text-white' : 'bg-white border-transparent'}`}
-                onClick={() => setSelectedProfile('general')}>
-                Población General
-              </div>
-            </div>
             {renderCards()}
             {/* Location */}
             <div className="bg-white rounded-lg shadow-lg p-4 mb-4 mt-0">
@@ -189,6 +174,21 @@ export default function Index() {
               <div className="flex items-center">
                 <img src="/clock.png" className="w-4 h-4" alt="Correr Icon" />
                 <p className="ml-2 text-xs">Última actualización a las {nearestSensor.lastUpdated}.</p>
+              </div>
+            </div>
+            {/* Población */}
+            <div className="fixed bottom-0 left-0 right-0 mb-16 flex justify-between mt-4 p-2 shadow-lg">
+              {/* Vulnerable */}
+              <div 
+                className={`flex text-sm items-center justify-center rounded-2xl w-1/2 mr-2 p-2 cursor-pointer text-center ${selectedProfile === 'vulnerable' ? 'bg-black text-white' : 'bg-white border-transparent'}`}
+                onClick={() => setSelectedProfile('vulnerable')}>
+                Población Vulnerable
+              </div>
+              {/* General */}
+              <div 
+                className={`flex text-sm items-center justify-center rounded-2xl w-1/2 ml-2 p-2 cursor-pointer text-center ${selectedProfile === 'general' ? 'bg-black text-white' : 'bg-white border-transparent'}`}
+                onClick={() => setSelectedProfile('general')}>
+                Población General
               </div>
             </div>
           </div>
