@@ -170,14 +170,14 @@ export default function Index() {
               </div>
             </div>
             {/* Hora */}
-            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 mt-0">
+            <div className="bg-white rounded-lg shadow-lg p-4 mb-8 mt-0">
               <div className="flex items-center">
                 <img src="/clock.png" className="w-4 h-4" alt="Correr Icon" />
                 <p className="ml-2 text-xs">Última actualización a las {nearestSensor.lastUpdated}.</p>
               </div>
             </div>
             {/* Población */}
-            <div className="fixed bottom-0 left-0 right-0 mb-16 flex justify-between mt-4 pb-2 pt-10 px-4 shadow-lg">
+            <div className="fixed bottom-0 left-0 right-0 mb-16 flex justify-between mt-4 py-2 px-4 shadow-lg">
               {/* Vulnerable */}
               <div 
                 className={`flex text-sm items-center justify-center rounded-2xl w-1/2 mr-2 p-2 cursor-pointer text-center ${selectedProfile === 'vulnerable' ? 'bg-black text-white' : 'bg-white border-transparent'}`}
