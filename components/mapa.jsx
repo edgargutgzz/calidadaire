@@ -214,11 +214,11 @@ export default function Mapa({ onNearestSensorChange }) {
           tipSize={5}
         >
           <div>
+            <p><strong>Sensor ID:</strong> {popupInfo.sensor_id}</p>
             <p>Concentración promedio de PM2.5, contaminante más peligroso para la salud.</p>
           </div>
         </Popup>
       )}
-
 
       <div className="absolute top-0 left-0 ml-3 mt-3 bg-gray-100 bg-opacity-90 pl-3 pr-3 pb-0 pt-2 rounded-lg">
         <h3 className="mb-1 font-bold">Calidad del Aire</h3>
