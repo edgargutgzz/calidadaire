@@ -205,7 +205,7 @@ export default function Mapa({ onNearestSensorChange }) {
         </Marker>
       )}
 
-      {/* {popupInfo && (
+      {popupInfo && (
         <Popup
           latitude={popupInfo.lat}
           longitude={popupInfo.lon}
@@ -217,7 +217,7 @@ export default function Mapa({ onNearestSensorChange }) {
             <p>Concentración promedio de PM2.5, contaminante más peligroso para la salud.</p>
           </div>
         </Popup>
-      )} */}
+      )}
 
 
       <div className="absolute top-0 left-0 ml-3 mt-3 bg-gray-100 bg-opacity-90 pl-3 pr-3 pb-0 pt-2 rounded-lg">
