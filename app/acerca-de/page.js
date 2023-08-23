@@ -12,6 +12,7 @@ export default function Index() {
   const [isOpen3, setIsOpen3] = useState(false);
   const [isOpen4, setIsOpen4] = useState(false);
   const [isOpen5, setIsOpen5] = useState(false);
+  const [isOpen6, setIsOpen6] = useState(false);
 
   return (
     <div className="flex flex-col lg:flex-row h-screen">
@@ -59,6 +60,23 @@ export default function Index() {
 
         {/* Pregunta 3 */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
+          <div onClick={() => setIsOpen6(!isOpen6)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
+            <p className='mr-4'>¿Quién conforma la población vulnerable?</p>
+            <img
+              src={isOpen4 ? "/up-arrow.png" : "/down-arrow.png"}
+              alt="toggle"
+              className="h-3 w-3"
+            />
+          </div>
+          {isOpen6 && (
+            <p className="mt-2 text-sm">
+              Infantes, mujeres embarazadas, personas mayores o con padecimientos.
+            </p>
+          )}
+        </div>
+
+        {/* Pregunta 4 */}
+        <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
           <div onClick={() => setIsOpen1(!isOpen1)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p className='mr-4'>¿Qué información utilizan para medir la calidad del aire?</p>
             <img 
@@ -76,7 +94,7 @@ export default function Index() {
           )}
         </div>
   
-        {/* Pregunta 4 */}
+        {/* Pregunta 5 */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
           <div onClick={() => setIsOpen2(!isOpen2)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p className='mr-4'>¿Quién es el Observatorio Ciudadano de la Calidad del Aire?</p>
@@ -98,7 +116,7 @@ export default function Index() {
           )}
         </div>
 
-        {/* Pregunta 5 */}
+        {/* Pregunta 6 */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
           <div onClick={() => setIsOpen5(!isOpen5)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p className='mr-4'>¿Tienes más preguntas o comentarios?</p>

@@ -68,10 +68,10 @@ export default function Index() {
 
   const getBorderColor = (pm25) => {
     if (pm25 <= 25) return "custom-green";
-    if (pm25 > 25 && pm25 <= 45) return "border-yellow-400";
-    if (pm25 > 45 && pm25 <= 79) return "border-orange-400";
-    if (pm25 > 79 && pm25 <= 147) return "border-red-400";
-    return "border-purple-400"; // for PM2.5 > 147
+    if (pm25 > 25 && pm25 <= 45) return "custom-yellow";
+    if (pm25 > 45 && pm25 <= 79) return "custom-orange";
+    if (pm25 > 79 && pm25 <= 147) return "custom-red";
+    return "custom-purple"; // for PM2.5 > 147
   };
 
   

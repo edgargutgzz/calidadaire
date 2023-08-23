@@ -53,3 +53,19 @@ body {
 .custom-green {
   border-color: #06DD70;
 }
+
+.custom-yellow {
+  border-color: #FEE71D;
+}
+
+.custom-orange {
+  border-color: #FF830B;
+}
+
+.custom-red {
+  border-color: #FB194A;
+}
+
+.custom-purple {
+  border-color: #B200ED;
+}
