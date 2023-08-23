@@ -51,6 +51,5 @@ body {
 }
 
 .custom-green {
-  background-color: #06DD70;
-  opacity: 0.9;
+  border-color: #06DD70;
 }

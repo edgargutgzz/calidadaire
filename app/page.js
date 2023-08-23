@@ -66,13 +66,14 @@ export default function Index() {
     return 'Permanece en interiores. Acude al médico si presentas síntomas respiratorios o cardiacos.'; // for PM2.5 > 147
   };
 
-  const getBackgroundColor = (pm25) => {
+  const getBorderColor = (pm25) => {
     if (pm25 <= 25) return "custom-green";
-    if (pm25 > 25 && pm25 <= 45) return "bg-yellow-100";
-    if (pm25 > 45 && pm25 <= 79) return "bg-orange-100";
-    if (pm25 > 79 && pm25 <= 147) return "bg-red-100";
-    return "bg-purple-100"; // for PM2.5 > 147
+    if (pm25 > 25 && pm25 <= 45) return "border-yellow-400";
+    if (pm25 > 45 && pm25 <= 79) return "border-orange-400";
+    if (pm25 > 79 && pm25 <= 147) return "border-red-400";
+    return "border-purple-400"; // for PM2.5 > 147
   };
+
   
   // Function to render the cards based on the selected profile
   const renderCards = () => {
@@ -82,7 +83,7 @@ export default function Index() {
       return (
         <>
           {/* Recomendación General */}
-          <div className={`flex items-center rounded-lg shadow-lg p-4 mb-4 mt-4 w-full ${getBackgroundColor(nearestSensor.pm25)}`}>
+          <div className={`flex items-center rounded-lg shadow-lg p-4 mb-4 mt-4 w-full ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
             <p className="text-sm">{getGeneralRecommendation(nearestSensor.pm25)}</p>
           </div>
           {/* Picnic */}
@@ -118,8 +119,8 @@ export default function Index() {
       return (
         <>
           {/* Recomendación General */}
-          <div className={`rounded-lg shadow-lg p-4 mb-4 mt-4 w-full ${getBackgroundColor(nearestSensor.pm25)}`}>
-            <p className="mt-2 text-sm">{getGeneralRecommendation(nearestSensor.pm25)}</p>
+          <div className={`flex items-center rounded-lg shadow-lg p-4 mb-4 mt-4 w-full ${getBackgroundColor(nearestSensor.pm25)}`}>
+            <p className="text-sm">{getGeneralRecommendation(nearestSensor.pm25)}</p>
           </div>
           {/* Picnic */}
           <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-full"> 
