@@ -74,7 +74,7 @@ export default function Index() {
       return (
         <>
           {/* Recomendación General */}
-          <div className="bg-white rounded-lg shadow-lg p-4 mb-4 mt-4 w-full font-bold"> 
+          <div className="bg-white rounded-lg shadow-lg p-4 mb-4 mt-4 w-full"> 
             <p className="mt-2 text-sm">{getGeneralRecommendation(nearestSensor.pm25)}</p>
           </div>
           {/* Picnic */}
@@ -177,7 +177,7 @@ export default function Index() {
               </div>
             </div>
             {/* Población */}
-            <div className="fixed bottom-0 left-0 right-0 mb-16 flex justify-between mt-4 p-2 shadow-lg bg-white opacity-80">
+            <div className="fixed bottom-0 left-0 right-0 mb-16 flex justify-between mt-4 p-2 shadow-lg bg-white">
               {/* Vulnerable */}
               <div 
                 className={`flex text-sm items-center justify-center rounded-2xl w-1/2 mr-2 p-2 cursor-pointer text-center ${selectedProfile === 'vulnerable' ? 'bg-black text-white' : 'bg-white border-transparent'}`}
