@@ -37,7 +37,7 @@ function QualityBar({ pm25 }) {
         <div style={{ flexBasis: "12%" }} className="bg-custom-red" />
         <div style={{ flexBasis: "10%" }} className="bg-gradient-to-r from-custom-red to-custom-purple" />
         <div style={{ flexBasis: "12%" }} className="bg-custom-purple" />
-        <div style={{ left: `${calculateLeft()}%`, borderColor: "white" }} className="absolute w-4 h-4 bg-gray-200 rounded-full border-4 transform -translate-y-1/2 top-1/2"></div>
+        <div style={{ left: `${calculateLeft()}%`, borderColor: "white" }} className="absolute w-4 h-4 bg-gray-700 rounded-full border-4 transform -translate-y-1/2 top-1/2"></div>
       </div>
     </>
   );
@@ -170,7 +170,7 @@ export default function Index() {
               </div>
             </div>
             {/* Hora */}
-            <div className="bg-white rounded-lg shadow-lg p-4 mb-8 mt-0">
+            <div className="bg-white rounded-lg shadow-lg p-4 mb-6 mt-0">
               <div className="flex items-center">
                 <img src="/clock.png" className="w-4 h-4" alt="Correr Icon" />
                 <p className="ml-2 text-xs">Última actualización a las {nearestSensor.lastUpdated}.</p>
