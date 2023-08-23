@@ -67,6 +67,44 @@ export default function Index() {
     return 'Permanece en interiores. Reprograma tus actividades al aire libre y si presentas síntomas respiratorios o cardiacos acude al médico.'; // for PM2.5 > 147
   };
 
+  // Function to determine activity recommendation based on PM2.5 value
+  const getActivityRecommendation = (activity, pm25, profile) => {
+    if (activity === 'correr') {
+      if (profile === 'vulnerable') {
+        if (pm25 <= 25) return 'Es seguro salir a correr.';
+        if (pm25 <= 45) return 'Con precaución.';
+        if (pm25 <= 79) return 'Evita salir a correr.';
+        if (pm25 <= 147) return 'Evita salir a correr.';
+        return 'Permanece en interiores.';
+      }
+      if (profile === 'general') {
+        if (pm25 <= 25) return 'Es seguro salir a correr.';
+        if (pm25 <= 45) return 'Es seguro salir a correr.';
+        if (pm25 <= 79) return 'Con precaución.';
+        if (pm25 <= 147) return 'Evita salir a correr.';
+        return 'Permanece en interiores.';
+      }
+    }
+    if (activity === 'bici') {
+      if (profile === 'vulnerable') {
+        if (pm25 <= 25) return 'Es seguro andar en bici.';
+        if (pm25 <= 45) return 'Con precaución.';
+        if (pm25 <= 79) return 'Evita andar en bici.';
+        if (pm25 <= 147) return 'Evita andar en bici.';
+        return 'Permanece en interiores.';
+      }
+      if (profile === 'general') {
+        if (pm25 <= 25) return 'Es seguro andar en bici.';
+        if (pm25 <= 45) return 'Es seguro andar en bici.';
+        if (pm25 <= 79) return 'Con precaución.';
+        if (pm25 <= 147) return 'Evita andar en bici.';
+        return 'Permanece en interiores.';
+      }
+    }
+    return 'N/A'; // default text in case of unexpected input
+  };
+
+  // Function to determine card's border color
   const getBorderColor = (pm25) => {
     if (pm25 <= 25) return "custom-green";
     if (pm25 > 25 && pm25 <= 45) return "custom-yellow";
@@ -75,7 +113,6 @@ export default function Index() {
     return "custom-purple"; // for PM2.5 > 147
   };
 
-  
   // Function to render the cards based on the selected profile
   const renderCards = () => {
 
@@ -87,30 +124,23 @@ export default function Index() {
           <div className={`bg-white flex items-center rounded-lg shadow-lg p-4 mb-4 mt-4 w-full ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
             <p className="text-sm">{getGeneralRecommendation(nearestSensor.pm25)}</p>
           </div>
-          {/* Picnic */}
-          {/* <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-full"> 
-            <div className="flex items-center space-x-2">
-              <img src="/picnic.png" width={24} height={24} alt="Correr Icon" />
-            </div>
-            <p className="mt-2 text-sm">Es seguro realizar picnics al aire libre.</p>
-          </div> */}
           {/* Caminar y Picnic / Terraza */}
-          <div className="flex flex-row justify-between mt-2"> 
+          {/* <div className="flex flex-row justify-between mt-2">  */}
             {/* Caminar */}
-            <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
+            {/* <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
               <div className="flex items-center space-x-2">
                 <img src="/walking-man.png" width={14} height={14} alt="Caminar Icon" />
               </div>
               <p className="mt-2 text-sm">Es seguro salir a caminar.</p>
-            </div>
+            </div> */}
             {/* Picnic / Terraza */}
-            <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
+            {/* <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
               <div className="flex items-center space-x-2">
                 <img src="picnic.png" width={24} height={24} alt="Correr Icon" />
               </div>
-              <p className="mt-2 text-sm">Es seguro andar en bici.</p>
+              <p className="mt-2 text-sm">Es seguro realizar .</p>
             </div>
-          </div>
+          </div> */}
           {/* Correr and Bici */}
           <div className="flex flex-row justify-between mt-2"> 
             {/* Correr */}
@@ -118,14 +148,14 @@ export default function Index() {
               <div className="flex items-center space-x-2">
                 <img src="/run.png" width={24} height={24} alt="Correr Icon" />
               </div>
-              <p className="mt-2 text-sm">Es seguro salir a correr.</p>
+              <p className="mt-2 text-sm">{getActivityRecommendation('correr', nearestSensor.pm25, selectedProfile)}</p>
             </div>
             {/* Bici */}
             <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
               <div className="flex items-center space-x-2">
                 <img src="/cycling.png" width={24} height={24} alt="Correr Icon" />
               </div>
-              <p className="mt-2 text-sm">Es seguro andar en bici.</p>
+              <p className="mt-2 text-sm">{getActivityRecommendation('bici', nearestSensor.pm25, selectedProfile)}</p>
             </div>
           </div>
         </>
@@ -140,24 +170,17 @@ export default function Index() {
           <div className={`bg-white flex items-center rounded-lg shadow-lg p-4 mb-4 mt-4 w-full ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
             <p className="text-sm">{getGeneralRecommendation(nearestSensor.pm25)}</p>
           </div>
-          {/* Picnic */}
-          <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-full"> 
-            <div className="flex items-center space-x-2">
-              <img src="/picnic.png" width={24} height={24} alt="Correr Icon" />
-            </div>
-            <p className="mt-2 text-sm">Es seguro realizar picnics al aire libre.</p>
-          </div>
-          {/* Actividades */}
+          {/* Correr y Bici */}
           <div className="flex flex-row justify-between mt-2"> 
-            {/* Running */}
-            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2"> 
+            {/* Correr */}
+            <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
               <div className="flex items-center space-x-2">
                 <img src="/run.png" width={24} height={24} alt="Correr Icon" />
               </div>
               <p className="mt-2 text-sm">Es seguro salir a correr.</p>
             </div>
-            {/* Cycling */}
-            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2"> 
+            {/* Bici */}
+            <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
               <div className="flex items-center space-x-2">
                 <img src="/cycling.png" width={24} height={24} alt="Correr Icon" />
               </div>
