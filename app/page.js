@@ -119,7 +119,7 @@ export default function Index() {
       return (
         <>
           {/* Recomendación General */}
-          <div className={`flex items-center rounded-lg shadow-lg p-4 mb-4 mt-4 w-full ${getBackgroundColor(nearestSensor.pm25)}`}>
+          <div className={`flex items-center rounded-lg shadow-lg p-4 mb-4 mt-4 w-full ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
             <p className="text-sm">{getGeneralRecommendation(nearestSensor.pm25)}</p>
           </div>
           {/* Picnic */}
