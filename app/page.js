@@ -99,7 +99,7 @@ export default function Index() {
             {/* Caminar */}
             <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
               <div className="flex items-center space-x-2">
-                <img src="/walking-man.png" width={16} height={16} alt="Caminar Icon" />
+                <img src="/walking-man.png" width={14} height={14} alt="Caminar Icon" />
               </div>
               <p className="mt-2 text-sm">Es seguro salir a caminar.</p>
             </div>
