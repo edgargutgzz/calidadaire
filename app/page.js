@@ -227,7 +227,7 @@ export default function Index() {
               </div>
             </div>
             {/* Población */}
-            <div className="fixed bottom-0 left-0 right-0 mb-16 pb-2 px-5 flex justify-between lg:pb-0 lg:px-0 lg:static">
+            <div className="fixed bottom-0 left-0 right-0 mb-16 pb-1 px-5 flex justify-between lg:pb-0 lg:px-0 lg:static">
               {/* Vulnerable */}
               <div 
                 className={`flex text-sm items-center justify-center rounded-3xl w-1/2 mr-2 p-2 cursor-pointer text-center shadow-lg ${selectedProfile === 'vulnerable' ? 'bg-black text-white' : 'bg-white shadow-lg border-transparent'}`}
