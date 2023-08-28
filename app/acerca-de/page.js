@@ -127,7 +127,7 @@ export default function Index() {
           </div>
           {isOpen5 && (
             <p className="mt-4 text-base">
-              Envíanos un correo a <a href="mailto:hola@aireclaro.com" className="text-blue-500 hover:underline">hola@aireclaro.com</a>
+              Envíanos un correo  <a href="mailto:hola@aireclaro.com" className="text-blue-500 hover:underline">hola@aireclaro.com</a>
             </p>
           )}
         </div>
