@@ -117,7 +117,7 @@ export default function Index() {
         {/* Title and Intro text */}
         <div className="mb-4 lg:mb-8">
           <h1 className="text-xl mb-2 lg:text-4xl font-bold lg:mb-4">Datos de Calidad del Aire</h1>
-          <p className="text-base">
+          <p className="text-sm lg:text-base">
             <span className="block mb-2">
               Todos los datos que utilizamos para informarte sobre la calidad del aire en la Zona Metropolitana de Monterrey se encuentran abiertos al público.
               Creemos en la transparencia y en la apertura de datos, por lo que te invitamos a que utilices esta información como mejor te convenga.
