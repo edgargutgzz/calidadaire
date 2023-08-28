@@ -115,8 +115,8 @@ export default function Index() {
       <div className="flex-grow mx-4 mt-6 lg:ml-40 lg:mr-40 lg:mt-10 lg:flex-grow lg:w-9/12">
 
         {/* Title and Intro text */}
-        <div className="mb-4 lg:mb-8">
-          <h1 className="text-2xl mb-2 lg:text-4xl font-bold lg:mb-4">Datos de Calidad del Aire</h1>
+        <div className="mb-8 lg:mb-8">
+          <h1 className="text-2xl mb-4 lg:text-4xl font-bold lg:mb-4">Datos de Calidad del Aire</h1>
           <p className="text-sm lg:text-base">
             <span className="block mb-2">
               Todos los datos que utilizamos para informarte sobre la calidad del aire en la Zona Metropolitana de Monterrey se encuentran abiertos al público.
@@ -126,7 +126,7 @@ export default function Index() {
         </div>
 
         {/* Vista Previa - Dropdown */}
-        <div className="bg-white mb-4 rounded-lg shadow-lg p-4 lg:mb-8">
+        <div className="bg-white mb-8 rounded-lg shadow-lg p-4 lg:mb-8">
           <div onClick={() => setIsPreviewOpen(!isPreviewOpen)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p className='text-sm lg:text-base'>Vista Previa</p>
             <img 
@@ -139,7 +139,7 @@ export default function Index() {
 
         {/* Vista Previa - Table */}
         {isPreviewOpen && (
-          <div className="rounded-lg mb-4 overflow-hidden border border-gray-200 lg:mb-8">
+          <div className="rounded-lg mb-8 overflow-hidden border border-gray-200 lg:mb-8">
             <div className="overflow-x-auto"> {/* Add this wrapper */}
               <table className="min-w-full bg-white text-sm" {...getTableProps()}>
                 <thead>
@@ -171,7 +171,7 @@ export default function Index() {
         )}
 
         {/* Descripción - Button*/}
-        <div className="bg-white rounded-lg shadow-lg mb-4 p-4 lg:mb-8">
+        <div className="bg-white rounded-lg shadow-lg mb-8 p-4 lg:mb-8">
           <div onClick={() => setIsExplanationOpen(!isExplanationOpen)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p className='text-sm lg:text-base'>Descripción de Datos</p>
             <img 
@@ -184,7 +184,7 @@ export default function Index() {
 
         {/* Descripción - Table */}
         {isExplanationOpen && (
-          <div className="rounded-lg overflow-hidden border mb-4 border-gray-200 lg:mb-8">
+          <div className="rounded-lg overflow-hidden border mb-8 border-gray-200 lg:mb-8">
             <div className="overflow-x-auto">
               <table className="min-w-full bg-white text-sm" {...getExplanationTableProps()}>
                 <thead>
@@ -217,7 +217,7 @@ export default function Index() {
 
         {/* Download button */}
         <div className="flex justify-end">
-          <div className="bg-white rounded p-2 mb-4 shadow-md w-auto inline-flex">
+          <div className="bg-white rounded p-2 shadow-md w-auto inline-flex">
             <button
               onClick={downloadData}
               className={`text-sm lg:text-base text-black font-bold flex items-center px-4 py-1 cursor-pointer ${isDownloading ? 'downloading' : ''}`}
