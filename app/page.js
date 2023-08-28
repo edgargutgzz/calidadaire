@@ -197,7 +197,7 @@ export default function Index() {
   return (
     <div className="flex flex-col lg:flex-row">
       <Navbar currentPage="inicio" />
-      <div className="lg:ml-20 lg:mr-20 lg:mt-10 pb-20 lg:pt-0 pt-4 lg:w-9/12 lg:flex-grow">
+      <div className="pt-4 pb-20 lg:ml-40 lg:mr-40 lg:mt-10 lg:pt-0 lg:flex-grow">
 
         {/* Hidden Mapa component to fetch the nearest sensor data */}
         <div style={{ display: 'none' }}>
@@ -227,7 +227,7 @@ export default function Index() {
               </div>
             </div>
             {/* Población */}
-            <div className="fixed bottom-0 left-0 right-0 mb-16 pb-2 px-5 flex justify-between lg:pb-0 lg:px-0 lg:mx-16 lg:static lg:pt-6">
+            <div className="fixed bottom-0 left-0 right-0 mb-16 pb-2 px-5 flex justify-between lg:pb-0 lg:px-0 lg:mx-20 lg:static lg:pt-6">
               {/* Vulnerable */}
               <div 
                 className={`flex text-sm items-center justify-center rounded-3xl w-1/2 mr-2 p-2 cursor-pointer text-center shadow-lg lg:mr-12 ${selectedProfile === 'vulnerable' ? 'bg-black text-white' : 'bg-white shadow-lg border-transparent'}`}

@@ -110,23 +110,9 @@ export default function Index() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row h-screen">
+    <div className="flex flex-col lg:flex-row">
       <Navbar currentPage="datos" />
-      <div className="lg:ml-20 lg:mr-20 lg:mt-10 mx-4 lg:pt-0 pt-6 pb-20 flex-grow lg:w-9/12 lg:flex-grow">
-        <style>
-          {`
-          .downloading {
-            background-image: linear-gradient(120deg, transparent 25%, rgba(255, 255, 255, 0.5) 50%, transparent 75%);
-            background-size: 200% 100%;
-            animation: downloading 1s linear infinite;
-          }
-
-          @keyframes downloading {
-            from { background-position: 200% 0; }
-            to { background-position: -200% 0; }
-          }
-          `}
-        </style>
+      <div className="mx-4 pt-6 pb-20 flex-grow lg:pt-0 lg:ml-40 lg:mr-40 lg:mt-10 lg:flex-grow">
 
         {/* Title and Intro text */}
         <div className="mx-1 mb-8">
@@ -241,7 +227,6 @@ export default function Index() {
             </button>
           </div>
         </div>
-
 
       </div>
     </div>
