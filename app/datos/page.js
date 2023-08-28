@@ -126,7 +126,7 @@ export default function Index() {
         </div>
 
         {/* Vista Previa - Dropdown */}
-        <div className="bg-white mb-8 rounded-lg shadow-lg p-4 lg:mb-8">
+        <div className="bg-white mb-4 rounded-lg shadow-lg p-4 lg:mb-8">
           <div onClick={() => setIsPreviewOpen(!isPreviewOpen)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p className='text-sm lg:text-base'>Vista Previa</p>
             <img 
