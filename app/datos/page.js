@@ -128,7 +128,7 @@ export default function Index() {
         {/* Vista Previa - Dropdown */}
         <div className="bg-white mb-4 rounded-lg shadow-lg p-4 lg:mb-8">
           <div onClick={() => setIsPreviewOpen(!isPreviewOpen)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
-            <p className='text-base lg:text-base'>Vista Previa</p>
+            <p className='text-sm lg:text-base'>Vista Previa</p>
             <img 
               src={isPreviewOpen ? "/up-arrow.png" : "/down-arrow.png"} 
               alt="toggle" 
@@ -173,7 +173,7 @@ export default function Index() {
         {/* Descripción - Button*/}
         <div className="bg-white rounded-lg shadow-lg mb-4 p-4 lg:mb-8">
           <div onClick={() => setIsExplanationOpen(!isExplanationOpen)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
-            <p className='text-base lg:text-base'>Descripción de Datos</p>
+            <p className='text-sm lg:text-base'>Descripción de Datos</p>
             <img 
               src={isExplanationOpen ? "/up-arrow.png" : "/down-arrow.png"} 
               alt="toggle" 
@@ -220,7 +220,7 @@ export default function Index() {
           <div className="bg-white rounded p-2 mb-4 shadow-md w-auto inline-flex">
             <button
               onClick={downloadData}
-              className={`text-base lg:text-base text-black font-bold flex items-center px-4 py-1 cursor-pointer ${isDownloading ? 'downloading' : ''}`}
+              className={`text-sm lg:text-base text-black font-bold flex items-center px-4 py-1 cursor-pointer ${isDownloading ? 'downloading' : ''}`}
             >
               {isDownloading ? <span className="mr-2 flex items-center"><ClipLoader size={16} color={"#000000"} /></span> : <img src="/download.png" alt="Download" className="h-4 w-4 mr-2" />}
               {isDownloading ? 'Descargando' : 'Descargar'}
