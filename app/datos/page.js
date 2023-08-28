@@ -112,23 +112,23 @@ export default function Index() {
   return (
     <div className="flex flex-col lg:flex-row">
       <Navbar currentPage="datos" />
-      <div className="mx-4 pt-6 pb-20 flex-grow lg:pt-0 lg:ml-40 lg:mr-40 lg:mt-12 lg:flex-grow lg:w-9/12">
+      <div className="mx-4 pt-6 pb-20 flex-grow lg:ml-40 lg:mr-40 lg:mt-2 lg:flex-grow lg:w-9/12">
 
         {/* Title and Intro text */}
         <div className="mx-1 mb-8">
-          <h1 className="text-xl font-bold">Datos de Calidad del Aire</h1>
-          <p className="text-sm mt-2">
-            Todos los datos que utilizamos para informarte sobre la calidad del aire en la Zona Metropolitana de Monterrey se encuentran abiertos al público.
-          </p>
-          <p className="text-sm mt-2">
-            Creemos en la transparencia y en la apertura de datos, por lo que te invitamos a que utilices esta información como mejor te convenga.
+          <h1 className="lg:text-3xl font-bold">Datos de Calidad del Aire</h1>
+          <p className="text-base mt-6">
+            <span className="block mb-2">
+              Todos los datos que utilizamos para informarte sobre la calidad del aire en la Zona Metropolitana de Monterrey se encuentran abiertos al público.
+              Creemos en la transparencia y en la apertura de datos, por lo que te invitamos a que utilices esta información como mejor te convenga.
+            </span>
           </p>
         </div>
 
         {/* Vista Previa - Dropdown */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
           <div onClick={() => setIsPreviewOpen(!isPreviewOpen)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
-            <p>Vista Previa</p>
+            <p className='text-base'>Vista Previa</p>
             <img 
               src={isPreviewOpen ? "/up-arrow.png" : "/down-arrow.png"} 
               alt="toggle" 
@@ -173,7 +173,7 @@ export default function Index() {
         {/* Descripción - Button*/}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-8 mt-4">
           <div onClick={() => setIsExplanationOpen(!isExplanationOpen)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
-            <p>Descripción de Datos</p>
+            <p className='text-base'>Descripción de Datos</p>
             <img 
               src={isExplanationOpen ? "/up-arrow.png" : "/down-arrow.png"} 
               alt="toggle" 
@@ -220,7 +220,7 @@ export default function Index() {
           <div className="bg-white rounded p-2 mb-4 shadow-md w-auto inline-flex">
             <button
               onClick={downloadData}
-              className={`text-sm text-black font-bold flex items-center px-4 py-1 cursor-pointer ${isDownloading ? 'downloading' : ''}`}
+              className={`text-base text-black font-bold flex items-center px-4 py-1 cursor-pointer ${isDownloading ? 'downloading' : ''}`}
             >
               {isDownloading ? <span className="mr-2 flex items-center"><ClipLoader size={16} color={"#000000"} /></span> : <img src="/download.png" alt="Download" className="h-4 w-4 mr-2" />}
               {isDownloading ? 'Descargando' : 'Descargar'}

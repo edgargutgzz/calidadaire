@@ -19,9 +19,9 @@ export default function Index() {
       <Navbar currentPage="acerca-de" />
       <div className="lg:ml-40 lg:mr-40 lg:mt-6 mx-4 pt-6 flex-grow overflow-auto lg:w-9/12 lg:flex-grow">
 
-        {/* Logo */}
-        <div className="mb-7 flex justify-center">
-          <img src="/aire_claro.png" alt="Aire Claro" className="w-40" />
+        {/* Title and Intro text */}
+        <div className="mx-1 mb-8">
+          <h1 className="text-3xl font-bold">Preguntas Frecuentes</h1>
         </div>
 
         {/* Pregunta 1 */}
