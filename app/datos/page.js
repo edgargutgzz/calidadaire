@@ -116,12 +116,10 @@ export default function Index() {
 
         {/* Title and Intro text */}
         <div className="mb-6 lg:mb-8">
-          <h1 className="text-2xl mb-2 lg:text-4xl font-bold lg:mb-4">Datos de Calidad del Aire</h1>
+          <h1 className="text-2xl mb-2 lg:text-4xl font-bold lg:mb-4">Apertura de Información</h1>
           <p className="text-sm lg:text-base">
-            <span className="block mb-2">
-              Todos los datos que utilizamos para informarte sobre la calidad del aire en la Zona Metropolitana de Monterrey se encuentran abiertos al público.
-              Creemos en la transparencia y en la apertura de datos, por lo que te invitamos a que utilices esta información como mejor te convenga.
-            </span>
+            Buscamos impulsar la transparencia y la participación ciudadana en la toma de decisiones sobre la calidad del aire que respiramos.
+            Por esa razon es que publicamos todos los datos que se recolectan a través de los sensores ubicados en la Zona Metropolitana de Monterrey.
           </p>
         </div>
 
