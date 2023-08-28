@@ -7,7 +7,7 @@ export default function Index() {
     <div className="flex flex-col lg:flex-row">
       <Navbar currentPage="mapa" />
       {/* Mapa */}
-      <div className="lg:w-9/12 lg:flex-grow">
+      <div className="lg:w-9/12">
         <Mapa />
       </div>
     </div>

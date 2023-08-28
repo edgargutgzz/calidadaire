@@ -69,3 +69,12 @@ body {
 .custom-purple {
   border-color: #B200ED;
 }
+
+.icon-container {
+  transition: all 0.3s ease;
+}
+
+.icon-container:hover {
+  transform: scale(1.1);
+}
+

@@ -112,7 +112,7 @@ export default function Index() {
   return (
     <div className="flex flex-col lg:flex-row">
       <Navbar currentPage="datos" />
-      <div className="mx-4 pt-6 pb-20 flex-grow lg:pt-0 lg:ml-40 lg:mr-40 lg:mt-10 lg:flex-grow">
+      <div className="mx-4 pt-6 pb-20 flex-grow lg:pt-0 lg:ml-40 lg:mr-40 lg:mt-12 lg:flex-grow lg:w-9/12">
 
         {/* Title and Intro text */}
         <div className="mx-1 mb-8">
