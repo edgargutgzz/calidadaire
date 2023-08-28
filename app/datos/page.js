@@ -115,7 +115,7 @@ export default function Index() {
       <div className="flex-grow mx-4 mt-6 lg:ml-40 lg:mr-40 lg:mt-10 lg:flex-grow lg:w-9/12">
 
         {/* Title and Intro text */}
-        <div className="mb-8 lg:mb-8">
+        <div className="mb-6 lg:mb-8">
           <h1 className="text-2xl mb-2 lg:text-4xl font-bold lg:mb-4">Datos de Calidad del Aire</h1>
           <p className="text-sm lg:text-base">
             <span className="block mb-2">
