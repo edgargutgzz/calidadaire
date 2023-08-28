@@ -126,7 +126,7 @@ export default function Index() {
         </div>
 
         {/* Vista Previa - Dropdown */}
-        <div className="bg-white mb-4 rounded-lg shadow-lg p-4 lg:mb-8">
+        <div className="bg-white mb-6 rounded-lg shadow-lg p-4 lg:mb-8">
           <div onClick={() => setIsPreviewOpen(!isPreviewOpen)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p className='text-sm lg:text-base'>Vista Previa</p>
             <img 
@@ -139,7 +139,7 @@ export default function Index() {
 
         {/* Vista Previa - Table */}
         {isPreviewOpen && (
-          <div className="rounded-lg mb-4 overflow-hidden border border-gray-200 lg:mb-8">
+          <div className="rounded-lg mb-6 overflow-hidden border border-gray-200 lg:mb-8">
             <div className="overflow-x-auto"> {/* Add this wrapper */}
               <table className="min-w-full bg-white text-sm" {...getTableProps()}>
                 <thead>
@@ -171,7 +171,7 @@ export default function Index() {
         )}
 
         {/* Descripción - Button*/}
-        <div className="bg-white rounded-lg shadow-lg mb-4 p-4 lg:mb-8">
+        <div className="bg-white rounded-lg shadow-lg mb-6 p-4 lg:mb-8">
           <div onClick={() => setIsExplanationOpen(!isExplanationOpen)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p className='text-sm lg:text-base'>Descripción de Datos</p>
             <img 
@@ -184,7 +184,7 @@ export default function Index() {
 
         {/* Descripción - Table */}
         {isExplanationOpen && (
-          <div className="rounded-lg overflow-hidden border mb-4 border-gray-200 lg:mb-8">
+          <div className="rounded-lg overflow-hidden border mb-6 border-gray-200 lg:mb-8">
             <div className="overflow-x-auto">
               <table className="min-w-full bg-white text-sm" {...getExplanationTableProps()}>
                 <thead>
