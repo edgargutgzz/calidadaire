@@ -232,7 +232,7 @@ export default function Index() {
               <div 
                 className={`flex text-sm items-center justify-center rounded-3xl w-1/2 mr-2 p-2 cursor-pointer text-center shadow-lg lg:mr-12 ${selectedProfile === 'vulnerable' ? 'bg-black text-white' : 'bg-white shadow-lg border-transparent'}`}
                 onClick={() => setSelectedProfile('vulnerable')}>
-                Población Vulnerable
+                Población Sensible
               </div>
               {/* General */}
               <div 
