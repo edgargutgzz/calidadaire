@@ -99,7 +99,7 @@ export default function Index() {
           <div onClick={() => setIsOpen1(!isOpen1)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p className='text-sm lg:text-base'>¿Qué información utilizan para medir la calidad del aire?</p>
             <img 
-              src={isOpen1 ? "/up-arrow.png" : "/down-arrow.png"} // Corrected here
+              src={isOpen1 ? "/up-arrow.png" : "/down-arrow.png"} 
               alt="toggle" 
               className="h-3 w-3" 
             />
@@ -115,7 +115,7 @@ export default function Index() {
         {/* Pregunta 5 */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4 lg:mb-6">
           <div onClick={() => setIsOpen7(!isOpen7)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
-            <p className='text-sm lg:text-base'>¿Cómo agrego un ícono como enlace directo a la página web?</p>
+            <p className='text-sm lg:text-base'>¿Cómo agrego un ícono de enlace directo en mi celular?</p>
             <img 
               src={isOpen7 ? "/up-arrow.png" : "/down-arrow.png"}
               alt="toggle" 
