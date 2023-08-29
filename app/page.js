@@ -122,7 +122,7 @@ export default function Index() {
         <>
           {/* Recomendación General */}
           <div className={`bg-white flex items-center rounded-lg shadow-lg p-4 mb-4 mt-4 w-full ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
-            <p className="text-sm">{getGeneralRecommendation(nearestSensor.pm25)}</p>
+            <p className="text-sm lg:text-base">{getGeneralRecommendation(nearestSensor.pm25)}</p>
           </div>
           {/* Caminar y Picnic / Terraza */}
           {/* <div className="flex flex-row justify-between mt-2">  */}
@@ -148,14 +148,14 @@ export default function Index() {
               <div className="flex items-center space-x-2">
                 <img src="/run.png" width={24} height={24} alt="Correr Icon" />
               </div>
-              <p className="mt-2 text-sm">{getActivityRecommendation('correr', nearestSensor.pm25, selectedProfile)}</p>
+              <p className="mt-2 text-sm lg:text-base">{getActivityRecommendation('correr', nearestSensor.pm25, selectedProfile)}</p>
             </div>
             {/* Bici */}
             <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
               <div className="flex items-center space-x-2">
                 <img src="/cycling.png" width={24} height={24} alt="Correr Icon" />
               </div>
-              <p className="mt-2 text-sm">{getActivityRecommendation('bici', nearestSensor.pm25, selectedProfile)}</p>
+              <p className="mt-2 text-sm lg:text-base">{getActivityRecommendation('bici', nearestSensor.pm25, selectedProfile)}</p>
             </div>
           </div>
         </>
@@ -168,7 +168,7 @@ export default function Index() {
         <>
           {/* Recomendación General */}
           <div className={`bg-white flex items-center rounded-lg shadow-lg p-4 mb-4 mt-4 w-full ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
-            <p className="text-sm">{getGeneralRecommendation(nearestSensor.pm25)}</p>
+            <p className="text-sm lg:text-base">{getGeneralRecommendation(nearestSensor.pm25)}</p>
           </div>
           {/* Correr y Bici */}
           <div className="flex flex-row justify-between mt-2"> 
@@ -177,14 +177,14 @@ export default function Index() {
               <div className="flex items-center space-x-2">
                 <img src="/run.png" width={24} height={24} alt="Correr Icon" />
               </div>
-              <p className="mt-2 text-sm">Es seguro salir a correr.</p>
+              <p className="mt-2 text-sm lg:text-base">Es seguro salir a correr.</p>
             </div>
             {/* Bici */}
             <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
               <div className="flex items-center space-x-2">
                 <img src="/cycling.png" width={24} height={24} alt="Correr Icon" />
               </div>
-              <p className="mt-2 text-sm">Es seguro andar en bici.</p>
+              <p className="mt-2 text-sm lg:text-base">Es seguro andar en bici.</p>
             </div>
           </div>
         </>
@@ -216,27 +216,27 @@ export default function Index() {
             <div className="bg-white rounded-lg shadow-lg p-4 mb-4 mt-0">
               <div className="flex items-center">
                 <img src="/navigation.png" className="w-4 h-4" alt="Correr Icon" />
-                <p className="ml-2 text-xs">Calidad de aire en {nearestSensor.address}.</p>
+                <p className="ml-2 text-xs lg:text-sm">Calidad de aire en {nearestSensor.address}.</p>
               </div>
             </div>
             {/* Hora */}
             <div className="bg-white rounded-lg shadow-lg p-4 mb-10 mt-0">
               <div className="flex items-center">
                 <img src="/clock.png" className="w-4 h-4" alt="Correr Icon" />
-                <p className="ml-2 text-xs">Última actualización a las {nearestSensor.lastUpdated}.</p>
+                <p className="ml-2 text-xs lg:text-sm">Última actualización a las {nearestSensor.lastUpdated}.</p>
               </div>
             </div>
             {/* Población */}
             <div className="fixed bottom-0 left-0 right-0 mb-16 pb-2 px-5 flex justify-between lg:pb-0 lg:px-0 lg:mx-20 lg:static lg:pt-6">
               {/* Vulnerable */}
               <div 
-                className={`flex text-sm items-center justify-center rounded-3xl w-1/2 mr-2 p-2 cursor-pointer text-center shadow-lg lg:mr-12 ${selectedProfile === 'vulnerable' ? 'bg-black text-white' : 'bg-white shadow-lg border-transparent'}`}
+                className={`flex text-sm lg:text-base items-center justify-center rounded-3xl w-1/2 mr-2 p-2 cursor-pointer text-center shadow-lg lg:mr-12 ${selectedProfile === 'vulnerable' ? 'bg-black text-white' : 'bg-white shadow-lg border-transparent'}`}
                 onClick={() => setSelectedProfile('vulnerable')}>
                 Población Sensible
               </div>
               {/* General */}
               <div 
-                className={`flex text-sm items-center justify-center rounded-3xl w-1/2 ml-2 p-2 cursor-pointer text-center shadow-lg lg:ml-12 ${selectedProfile === 'general' ? 'bg-black text-white' : 'bg-white shadow-lg border-transparent'}`}
+                className={`flex text-sm lg:text-base items-center justify-center rounded-3xl w-1/2 ml-2 p-2 cursor-pointer text-center shadow-lg lg:ml-12 ${selectedProfile === 'general' ? 'bg-black text-white' : 'bg-white shadow-lg border-transparent'}`}
                 onClick={() => setSelectedProfile('general')}>
                 Población General
               </div>
