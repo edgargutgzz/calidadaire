@@ -21,7 +21,7 @@ export default function Index() {
       <div className="flex-grow mx-4 mt-6 mb-20 lg:ml-40 lg:mr-40 lg:mt-10 lg:flex-grow lg:w-9/12">
 
         {/* Aire Claro - Video */}
-        <div className="mb-4 relative rounded-lg overflow-hidden md:pb-[56.25%] pb-[75%]" style={{ paddingBottom: "56.25%" }}> {/* 16:9 Aspect Ratio */}
+        <div className="mb-4 relative rounded-lg overflow-hidden md:pb-[56.25%] pb-[75%]"> {/* 16:9 Aspect Ratio */}
           <iframe 
             style={{
               position: "absolute",
