@@ -25,7 +25,7 @@ export default function Index() {
         </div>
 
         {/* Pregunta 1 */}
-        <div className="bg-white rounded-lg shadow-lg p-4 mb-6">
+        <div className="bg-white rounded-lg shadow-lg p-4 mb-4 lg:mb-6">
           <div onClick={() => setIsOpen3(!isOpen3)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p className='text-sm lg:text-base'>¿Qué es Aire Claro?</p>
             <img
@@ -42,7 +42,7 @@ export default function Index() {
         </div>
 
         {/* Pregunta 2 */}
-        <div className="bg-white rounded-lg shadow-lg p-4 mb-6">
+        <div className="bg-white rounded-lg shadow-lg p-4 mb-4 lg:mb-6">
           <div onClick={() => setIsOpen4(!isOpen4)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p className='text-sm lg:text-base'>¿Cómo garantizan la precisión de sus recomendaciones?</p>
             <img
@@ -59,7 +59,7 @@ export default function Index() {
         </div>
 
         {/* Pregunta 3 */}
-        <div className="bg-white rounded-lg shadow-lg p-4 mb-6">
+        <div className="bg-white rounded-lg shadow-lg p-4 mb-4 lg:mb-6">
           <div onClick={() => setIsOpen6(!isOpen6)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p className='text-sm lg:text-base'>¿Quién conforma la población sensible?</p>
             <img
@@ -76,7 +76,7 @@ export default function Index() {
         </div>
 
         {/* Pregunta 4 */}
-        <div className="bg-white rounded-lg shadow-lg p-4 mb-6">
+        <div className="bg-white rounded-lg shadow-lg p-4 mb-4 lg:mb-6">
           <div onClick={() => setIsOpen1(!isOpen1)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p className='text-sm lg:text-base'>¿Qué información utilizan para medir la calidad del aire?</p>
             <img 
@@ -94,7 +94,7 @@ export default function Index() {
         </div>
   
         {/* Pregunta 5 */}
-        <div className="bg-white rounded-lg shadow-lg p-4 mb-6">
+        <div className="bg-white rounded-lg shadow-lg p-4 mb-4 lg:mb-6">
           <div onClick={() => setIsOpen2(!isOpen2)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p className='text-sm lg:text-base pr-4'>¿Quién es el Observatorio Ciudadano de la Calidad del Aire?</p>
             <img
@@ -116,7 +116,7 @@ export default function Index() {
         </div>
 
         {/* Pregunta 6 */}
-        <div className="bg-white rounded-lg shadow-lg p-4 mb-6">
+        <div className="bg-white rounded-lg shadow-lg p-4 mb-4 lg:mb-6">
           <div onClick={() => setIsOpen5(!isOpen5)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p className='text-sm lg:text-base'>¿Tienes más preguntas o comentarios?</p>
             <img 
@@ -131,7 +131,6 @@ export default function Index() {
             </p>
           )}
         </div>
-        
 
       </div>
     </div>
