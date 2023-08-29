@@ -21,16 +21,9 @@ export default function Index() {
       <div className="flex-grow mx-4 mt-6 mb-20 lg:ml-40 lg:mr-40 lg:mt-10 lg:flex-grow lg:w-9/12">
 
         {/* Aire Claro - Video */}
-        <div className="mb-4 relative rounded-lg overflow-hidden md:pb-[56.25%] pb-[75%]"> {/* 16:9 Aspect Ratio */}
+        <div className="mb-4 relative rounded-lg overflow-hidden lg:pb-[56.25%] pb-[75%]"> {/* Different aspect ratios for large and small screens */}
           <iframe 
-            style={{
-              position: "absolute",
-              top: "0",
-              bottom: "0",
-              left: "0",
-              width: "100%",
-              height: "100%",
-            }}
+            className="absolute top-0 left-0 w-full h-full"
             src="https://www.youtube.com/embed/PLACEHOLDER" 
             title="YouTube video" 
             frameborder="0" 
@@ -38,6 +31,7 @@ export default function Index() {
             allowfullscreen
           ></iframe>
         </div>
+
 
         {/* Title */}
         <div className="mt-16">
