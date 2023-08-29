@@ -32,9 +32,8 @@ export default function Index() {
           ></iframe>
         </div>
 
-
         {/* Title */}
-        <div className="mt-16">
+        <div className="mt-12 lg:mt-16">
           <h1 className="text-2xl lg:text-3xl font-bold mb-4 lg:mb-8 px-1">Preguntas Frecuentes</h1>
         </div>
 
