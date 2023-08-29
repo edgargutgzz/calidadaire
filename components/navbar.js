@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 function Navbar({ currentPage }) {
   return (
@@ -16,7 +15,7 @@ function Navbar({ currentPage }) {
         <div className="text-black lg:hover:bg-gray-100 rounded-lg lg:w-full lg:mb-4 lg:pr-6">
           <Link href="/">
             <div className="flex flex-col items-center text-xs lg:text-base lg:flex-row lg:py-3 lg:p-4">
-              <Image src={currentPage === 'inicio' ? "/inicio_on.png" : "/inicio_off.png"} alt="Inicio" width={22} height={22} className="lg:w-6 lg:h-6" />
+              <img src={currentPage === 'inicio' ? "/inicio_on.png" : "/inicio_off.png"} alt="Inicio" width={22} height={22} className="lg:w-6 lg:h-6" />
               <span className={`mt-0 lg:mt-0 lg:ml-4 pt-1 ${currentPage === 'inicio' ? "font-bold" : ""}`}>Inicio</span>
             </div>
           </Link>
@@ -26,7 +25,7 @@ function Navbar({ currentPage }) {
         <div className="text-black lg:hover:bg-gray-100 rounded-lg lg:w-full lg:mb-4 lg:pr-6">
           <Link href="/mapa">
             <div className="flex flex-col items-center text-xs lg:text-base lg:flex-row lg:py-3 lg:p-4">
-              <Image src={currentPage === 'mapa' ? "/mapa_on.png" : "/mapa_off.png"} alt="Inicio" width={22} height={22} className="lg:w-6 lg:h-6" />
+              <img src={currentPage === 'mapa' ? "/mapa_on.png" : "/mapa_off.png"} alt="Inicio" width={22} height={22} className="lg:w-6 lg:h-6" />
               <span className={`mt-0 lg:mt-0 lg:ml-4 pt-1 ${currentPage === 'mapa' ? "font-bold" : ""}`}>Mapa</span>
             </div>
           </Link>
@@ -36,7 +35,7 @@ function Navbar({ currentPage }) {
         <div className="text-black lg:hover:bg-gray-100 rounded-lg lg:w-full lg:mb-4 lg:pr-6">
           <Link href="/datos">
             <div className="flex flex-col items-center text-xs lg:text-base lg:flex-row lg:py-3 lg:p-4">
-              <Image src={currentPage === 'datos' ? "/datos_on.png" : "/datos_off.png"} alt="Inicio" width={22} height={22} className="lg:w-6 lg:h-6" />
+              <img src={currentPage === 'datos' ? "/datos_on.png" : "/datos_off.png"} alt="Inicio" width={22} height={22} className="lg:w-6 lg:h-6" />
               <span className={`mt-0 lg:mt-0 lg:ml-4 pt-1 ${currentPage === 'datos' ? "font-bold" : ""}`}>Datos</span>
             </div>
           </Link>
@@ -46,7 +45,7 @@ function Navbar({ currentPage }) {
         <div className="text-black lg:hover:bg-gray-100 rounded-lg lg:w-full lg:mb-4 lg:pr-6">
           <Link href="/acerca-de">
             <div className="flex flex-col items-center text-xs lg:text-base lg:flex-row lg:py-3 lg:p-4">
-              <Image src={currentPage === 'acerca-de' ? "/info_on.png" : "/info_off.png"} alt="Inicio" width={22} height={22} quality={100} className="lg:w-6 lg:h-6" />
+              <img src={currentPage === 'acerca-de' ? "/info_on.png" : "/info_off.png"} alt="Inicio" width={22} height={22} className="lg:w-6 lg:h-6" />
               <span className={`mt-0 lg:mt-0 lg:ml-4 pt-1 ${currentPage === 'acerca-de' ? "font-bold" : ""}`}>Acerca</span>
             </div>
           </Link>
