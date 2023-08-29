@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Aire Claro',
-  description: 'Plataforma de calidad del aire del área metropolitana de Monterrey',
+  description: 'Cuida tu salud con la mejor información de calidad del aire de Monterrey.'
 }
 
 export default function RootLayout({ children }) {
