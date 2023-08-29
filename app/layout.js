@@ -7,7 +7,7 @@ import { Analytics } from '@vercel/analytics/react';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Calidad del Aire',
+  title: 'Aire Claro',
   description: 'Plataforma de calidad del aire del área metropolitana de Monterrey',
 }
 

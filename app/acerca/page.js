@@ -13,15 +13,34 @@ export default function Index() {
   const [isOpen4, setIsOpen4] = useState(false);
   const [isOpen5, setIsOpen5] = useState(false);
   const [isOpen6, setIsOpen6] = useState(false);
+  const [isOpen7, setIsOpen7] = useState(false);
 
   return (
-    <div className="flex flex-col lg:flex-row h-screen">
+    <div className="flex flex-col lg:flex-row">
       <Navbar currentPage="acerca" />
       <div className="flex-grow mx-4 mt-6 lg:ml-40 lg:mr-40 lg:mt-10 lg:flex-grow lg:w-9/12">
 
-        {/* Title and Intro text */}
-        <div className="mb-6 lg:mb-8 px-1">
-          <h1 className="text-2xl lg:text-4xl font-bold lg:mb-4">Preguntas Frecuentes</h1>
+        {/* Aire Claro - Video */}
+        <div className="mb-4 relative rounded-lg overflow-hidden" style={{ paddingBottom: "56.25%" }}> {/* 16:9 Aspect Ratio */}
+          <iframe 
+            style={{
+              position: "absolute",
+              top: "0",
+              left: "0",
+              width: "100%",
+              height: "100%",
+            }}
+            src="https://www.youtube.com/embed/PLACEHOLDER" 
+            title="YouTube video" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        {/* Title */}
+        <div className="mt-16">
+          <h1 className="text-2xl lg:text-3xl font-bold lg:mb-8">Preguntas Frecuentes</h1>
         </div>
 
         {/* Pregunta 1 */}
@@ -92,8 +111,53 @@ export default function Index() {
             </p>
           )}
         </div>
-  
+
         {/* Pregunta 5 */}
+        <div className="bg-white rounded-lg shadow-lg p-4 mb-4 lg:mb-6">
+          <div onClick={() => setIsOpen7(!isOpen7)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
+            <p className='text-sm lg:text-base'>¿Cómo agrego un ícono como enlace directo a la página web?</p>
+            <img 
+              src={isOpen7 ? "/up-arrow.png" : "/down-arrow.png"}
+              alt="toggle" 
+              className="h-3 w-3" 
+            />
+          </div>
+          {isOpen7 && (
+            <div className="mt-4 text-sm lg:text-base">
+              <div className="relative mb-8">
+                <p className="text-sm lg:text-base mb-4">iPhone</p>
+                <div style={{ height: '300px', position: 'relative' }} className="rounded-lg overflow-hidden">
+                  <iframe 
+                    className="absolute top-0 left-0 w-full h-full"
+                    src="https://www.youtube.com/embed/B7fKs4dTeu0?start=64" 
+                    frameBorder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowFullScreen>
+                  </iframe>
+                </div>
+              </div>
+
+              <div className="relative">
+                <p className="text-sm lg:text-base mb-4">Android</p> {/* New title */}
+                <div style={{ height: '300px', position: 'relative' }} className="rounded-lg overflow-hidden"> {/* Rounded corners */}
+                  <iframe 
+                    className="absolute top-0 left-0 w-full h-full"
+                    src="https://www.youtube.com/embed/O1xEXKB6tNg"  
+                    frameBorder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowFullScreen>
+                  </iframe>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+
+
+
+
+
+        {/* Pregunta 6 */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4 lg:mb-6">
           <div onClick={() => setIsOpen2(!isOpen2)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p className='text-sm lg:text-base pr-4'>¿Quién es el Observatorio Ciudadano de la Calidad del Aire?</p>
@@ -115,7 +179,7 @@ export default function Index() {
           )}
         </div>
 
-        {/* Pregunta 6 */}
+        {/* Pregunta 7 */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4 lg:mb-6">
           <div onClick={() => setIsOpen5(!isOpen5)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p className='text-sm lg:text-base'>¿Tienes más preguntas o comentarios?</p>
