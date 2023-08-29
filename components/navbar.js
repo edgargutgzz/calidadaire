@@ -46,7 +46,7 @@ function Navbar({ currentPage }) {
         <div className="text-black lg:hover:bg-gray-100 rounded-lg lg:w-full lg:mb-4 lg:pr-6">
           <Link href="/acerca-de">
             <div className="flex flex-col items-center text-xs lg:text-base lg:flex-row lg:py-3 lg:p-4">
-              <Image src={currentPage === 'acerca-de' ? "/acerca_on.png" : "/acerca_off.png"} alt="Inicio" width={22} height={22} className="lg:w-6 lg:h-6" />
+              <Image src={currentPage === 'acerca-de' ? "/info_on.png" : "/info_off.png"} alt="Inicio" width={22} height={22} quality={100} className="lg:w-6 lg:h-6" />
               <span className={`mt-0 lg:mt-0 lg:ml-4 pt-1 ${currentPage === 'acerca-de' ? "font-bold" : ""}`}>Acerca</span>
             </div>
           </Link>
