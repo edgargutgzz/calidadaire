@@ -115,7 +115,7 @@ export default function Index() {
       <div className="flex-grow mx-4 mt-6 lg:ml-40 lg:mr-40 lg:mt-10 lg:flex-grow lg:w-9/12">
 
         {/* Title and Intro text */}
-        <div className="mb-6 lg:mb-8">
+        <div className="mb-4 lg:mb-8">
           <h1 className="text-2xl mb-2 lg:text-4xl font-bold lg:mb-4">Apertura de Información</h1>
           <p className="text-sm lg:text-base">
             Buscamos impulsar la transparencia y la participación ciudadana en la toma de decisiones sobre la calidad del aire que respiramos.
@@ -124,7 +124,7 @@ export default function Index() {
         </div>
 
         {/* Vista Previa - Dropdown */}
-        <div className="bg-white mb-6 rounded-lg shadow-lg p-4 lg:mb-6">
+        <div className="bg-white mb-4 rounded-lg shadow-lg p-4 lg:mb-6">
           <div onClick={() => setIsPreviewOpen(!isPreviewOpen)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p className='text-sm lg:text-base'>Vista Previa</p>
             <img 
@@ -137,7 +137,7 @@ export default function Index() {
 
         {/* Vista Previa - Table */}
         {isPreviewOpen && (
-          <div className="rounded-lg mb-6 overflow-hidden border border-gray-200 lg:mb-6">
+          <div className="rounded-lg mb-4 overflow-hidden border border-gray-200 lg:mb-6">
             <div className="overflow-x-auto"> {/* Add this wrapper */}
               <table className="min-w-full bg-white text-sm" {...getTableProps()}>
                 <thead>
@@ -169,7 +169,7 @@ export default function Index() {
         )}
 
         {/* Descripción - Button*/}
-        <div className="bg-white rounded-lg shadow-lg mb-6 p-4 lg:mb-6">
+        <div className="bg-white rounded-lg shadow-lg mb-4 p-4 lg:mb-6">
           <div onClick={() => setIsExplanationOpen(!isExplanationOpen)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p className='text-sm lg:text-base'>Descripción de Datos</p>
             <img 
@@ -182,7 +182,7 @@ export default function Index() {
 
         {/* Descripción - Table */}
         {isExplanationOpen && (
-          <div className="rounded-lg overflow-hidden border mb-6 border-gray-200 lg:mb-6">
+          <div className="rounded-lg overflow-hidden border mb-4 border-gray-200 lg:mb-6">
             <div className="overflow-x-auto">
               <table className="min-w-full bg-white text-sm" {...getExplanationTableProps()}>
                 <thead>
