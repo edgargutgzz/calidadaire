@@ -115,7 +115,7 @@ export default function Index() {
       <div className="flex-grow mx-4 mt-6 lg:ml-40 lg:mr-40 lg:mt-10 lg:flex-grow lg:w-9/12">
 
         {/* Title and Intro text */}
-        <div className="mb-6 lg:mb-8">
+        <div className="mb-6 lg:mb-8 px-2">
           <h1 className="text-2xl mb-2 lg:text-4xl font-bold lg:mb-4">Apertura de Información</h1>
           <p className="text-sm lg:text-base">
             Buscamos impulsar la transparencia y la participación ciudadana en la toma de decisiones sobre la calidad del aire que respiramos.
