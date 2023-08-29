@@ -20,7 +20,7 @@ export default function Index() {
       <div className="flex-grow mx-4 mt-6 lg:ml-40 lg:mr-40 lg:mt-10 lg:flex-grow lg:w-9/12">
 
         {/* Title and Intro text */}
-        <div className="mb-6 lg:mb-8 px-2">
+        <div className="mb-6 lg:mb-8 px-1">
           <h1 className="text-2xl lg:text-4xl font-bold lg:mb-4">Preguntas Frecuentes</h1>
         </div>
 
