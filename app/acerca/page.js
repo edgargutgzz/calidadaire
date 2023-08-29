@@ -18,7 +18,7 @@ export default function Index() {
   return (
     <div className="flex flex-col lg:flex-row">
       <Navbar currentPage="acerca" />
-      <div className="flex-grow mx-4 mt-6 lg:ml-40 lg:mr-40 lg:mt-10 lg:flex-grow lg:w-9/12">
+      <div className="flex-grow mx-4 mt-6 mb-20 lg:ml-40 lg:mr-40 lg:mt-10 lg:flex-grow lg:w-9/12">
 
         {/* Aire Claro - Video */}
         <div className="mb-4 relative rounded-lg overflow-hidden" style={{ paddingBottom: "56.25%" }}> {/* 16:9 Aspect Ratio */}
@@ -152,10 +152,6 @@ export default function Index() {
             </div>
           )}
         </div>
-
-
-
-
 
         {/* Pregunta 6 */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4 lg:mb-6">
