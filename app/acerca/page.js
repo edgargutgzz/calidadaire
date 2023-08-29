@@ -125,7 +125,7 @@ export default function Index() {
           {isOpen7 && (
             <div className="mt-4 text-sm lg:text-base">
               <div className="relative mb-8">
-                <p className="text-sm lg:text-base mb-4">iPhone</p>
+                <p className="text-sm lg:text-base mb-2">iPhone</p>
                 <div style={{ height: '300px', position: 'relative' }} className="rounded-lg overflow-hidden">
                   <iframe 
                     className="absolute top-0 left-0 w-full h-full"
@@ -138,7 +138,7 @@ export default function Index() {
               </div>
 
               <div className="relative">
-                <p className="text-sm lg:text-base mb-4">Android</p> 
+                <p className="text-sm lg:text-base mb-2">Android</p> 
                 <div style={{ height: '300px', position: 'relative' }} className="rounded-lg overflow-hidden"> {/* Rounded corners */}
                   <iframe 
                     className="absolute top-0 left-0 w-full h-full"
