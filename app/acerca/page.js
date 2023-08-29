@@ -16,7 +16,7 @@ export default function Index() {
 
   return (
     <div className="flex flex-col lg:flex-row h-screen">
-      <Navbar currentPage="acerca-de" />
+      <Navbar currentPage="acerca" />
       <div className="flex-grow mx-4 mt-6 lg:ml-40 lg:mr-40 lg:mt-10 lg:flex-grow lg:w-9/12">
 
         {/* Title and Intro text */}
