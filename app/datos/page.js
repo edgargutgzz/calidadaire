@@ -215,7 +215,7 @@ export default function Index() {
 
         {/* Download button */}
         <div className="flex justify-end">
-          <div className="bg-white rounded p-2 shadow-md w-auto inline-flex">
+          <div className="bg-white rounded p-2 shadow-lg w-auto inline-flex">
             <button
               onClick={downloadData}
               className={`text-sm lg:text-base text-black font-bold flex items-center px-4 py-1 cursor-pointer ${isDownloading ? 'downloading' : ''}`}
