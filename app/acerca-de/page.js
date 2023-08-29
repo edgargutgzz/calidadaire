@@ -96,7 +96,7 @@ export default function Index() {
         {/* Pregunta 5 */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-6">
           <div onClick={() => setIsOpen2(!isOpen2)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
-            <p className='text-sm lg:text-base'>¿Quién es el Observatorio Ciudadano de la Calidad del Aire?</p>
+            <p className='text-sm lg:text-base pr-4'>¿Quién es el Observatorio Ciudadano de la Calidad del Aire?</p>
             <img
               src={isOpen2 ? "/up-arrow.png" : "/down-arrow.png"}
               alt="toggle"
