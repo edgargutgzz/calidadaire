@@ -40,7 +40,7 @@ export default function Index() {
 
         {/* Title */}
         <div className="mt-16">
-          <h1 className="text-2xl lg:text-3xl font-bold mb-8 lg:mb-8">Preguntas Frecuentes</h1>
+          <h1 className="text-2xl lg:text-3xl font-bold mb-4 lg:mb-8">Preguntas Frecuentes</h1>
         </div>
 
         {/* Pregunta 1 */}
