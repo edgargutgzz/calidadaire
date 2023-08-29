@@ -138,7 +138,7 @@ export default function Index() {
               </div>
 
               <div className="relative">
-                <p className="text-sm lg:text-base mb-4">Android</p> {/* New title */}
+                <p className="text-sm lg:text-base mb-4">Android</p> 
                 <div style={{ height: '300px', position: 'relative' }} className="rounded-lg overflow-hidden"> {/* Rounded corners */}
                   <iframe 
                     className="absolute top-0 left-0 w-full h-full"
