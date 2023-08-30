@@ -21,7 +21,7 @@ export default function Index() {
       <div className="flex-grow mx-4 mt-6 mb-20 lg:ml-40 lg:mr-40 lg:mt-10 lg:flex-grow lg:w-9/12">
 
         {/* Aire Claro - Video */}
-        <div className="mb-4 relative rounded-lg overflow-hidden lg:pb-[56.25%] pb-[56.25%]"> {/* Different aspect ratios for large and small screens */}
+        <div className="mb-4 relative md:pb-[56.25%] pb-[75%]"> 
           <iframe 
             className="absolute top-0 left-0 w-full h-full"
             src="https://www.youtube.com/embed/PLACEHOLDER" 
