@@ -55,7 +55,7 @@ export default function Index() {
   const explanationData = [
     { column: 'ID', description: 'Identificador único de cada medición.' },
     { column: 'Sensor ID', description: ' Identificador único de cada sensor.' },
-    { column: 'PM2.5', description: 'Promedio móvil de la última hora de PM2.5 ' },
+    { column: 'PM2.5', description: 'Promedio de la última hora de PM2.5 ' },
     { column: 'Temperature', description: 'Temperatura en grados Celsius.' },
     { column: 'Humidity', description: 'Humedad en porcentaje.' },
     { column: 'Timestamp', description: 'Día y hora de la medición.' },
