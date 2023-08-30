@@ -128,7 +128,7 @@ export default function Recomendaciones() {
           {/* Adultos Mayores */}
           <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
             <div className="flex items-center space-x-2">
-              <img src="/adultos_mayores.png" width={24} height={24} alt="Adultos Mayores Icon" />
+              <img src="/adultos_mayores2.png" width={24} height={24} alt="Adultos Mayores Icon" />
             </div>
             <p className="mt-2 text-sm lg:text-base">{getActivityRecommendation('adultos_mayores', nearestSensor.pm25)}</p>
           </div>
