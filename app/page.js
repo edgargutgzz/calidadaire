@@ -54,37 +54,37 @@ export default function Recomendaciones() {
 
     // Embarazadas
     if (activity === 'embarazadas') {
-      if (pm25 <= 25) return 'Es seguro salir a correr.';
-      if (pm25 <= 45) return 'Considera reducir el tiempo promedio que sales a correr.';
-      if (pm25 <= 79) return 'Evita salir a correr.';
-      if (pm25 <= 147) return 'No salgas a correr.';
+      if (pm25 <= 25) return 'Disfruta las actividades al aire libre.';
+      if (pm25 <= 45) return 'Reduce las actividades físicas vigorosas al aire libre.';
+      if (pm25 <= 79) return 'Evita las actividades físicas moderadas y vigorosas al aire libre.';
+      if (pm25 <= 147) return 'No realices actividades al aire libre. Acude al médico si presentas síntomas respiratorios o cardiacos.';
       return 'Permanece en interiores. Acude al médico si presentas síntomas respiratorios o cardiacos.';
     }
 
     // Menores
     if (activity === 'menores') {
-      if (pm25 <= 25) return 'Es seguro andar en bici.';
-      if (pm25 <= 45) return 'Considera reducir el tiempo promedio que andas en bici.';
-      if (pm25 <= 79) return 'Evita andar en bici.';
-      if (pm25 <= 147) return 'No andes en bici.';
+      if (pm25 <= 25) return 'Disfruta las actividades al aire libre.';
+      if (pm25 <= 45) return 'Reduce las actividades físicas vigorosas al aire libre.';
+      if (pm25 <= 79) return 'Evita las actividades físicas moderadas y vigorosas al aire libre.';
+      if (pm25 <= 147) return 'No realices actividades al aire libre. Acude al médico si presentas síntomas respiratorios o cardiacos.';
       return 'Permanece en interiores. Acude al médico si presentas síntomas respiratorios o cardiacos.';
     }
 
     // Adultos Mayores
     if (activity === 'adultos_mayores') {
-      if (pm25 <= 25) return 'Es seguro andar en bici.';
-      if (pm25 <= 45) return 'Considera reducir el tiempo promedio que andas en bici.';
-      if (pm25 <= 79) return 'Evita andar en bici.';
-      if (pm25 <= 147) return 'No andes en bici.';
+      if (pm25 <= 25) return 'Disfruta las actividades al aire libre.';
+      if (pm25 <= 45) return 'Reduce las actividades físicas vigorosas al aire libre.';
+      if (pm25 <= 79) return 'Evita las actividades físicas moderadas y vigorosas al aire libre.';
+      if (pm25 <= 147) return 'No realices actividades al aire libre. Acude al médico si presentas síntomas respiratorios o cardiacos.';
       return 'Permanece en interiores. Acude al médico si presentas síntomas respiratorios o cardiacos.';
     }
 
     // Adultos Mayores
     if (activity === 'condiciones_medicas') {
-      if (pm25 <= 25) return 'Es seguro andar en bici.';
-      if (pm25 <= 45) return 'Considera reducir el tiempo promedio que andas en bici.';
-      if (pm25 <= 79) return 'Evita andar en bici.';
-      if (pm25 <= 147) return 'No andes en bici.';
+      if (pm25 <= 25) return 'Disfruta las actividades al aire libre.';
+      if (pm25 <= 45) return 'Reduce las actividades físicas vigorosas al aire libre.';
+      if (pm25 <= 79) return 'Evita las actividades físicas moderadas y vigorosas al aire libre.';
+      if (pm25 <= 147) return 'No realices actividades al aire libre. Acude al médico si presentas síntomas respiratorios o cardiacos.';
       return 'Permanece en interiores. Acude al médico si presentas síntomas respiratorios o cardiacos.';
     }
 
@@ -138,8 +138,8 @@ export default function Recomendaciones() {
           {/* Condiciones Médicas */}
           <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
             <div className="flex items-center space-x-2">
-              <img src="corazon.png" width={28} height={28} alt="Emabarazadas Icon" />
               <img src="pulmon.png" width={28} height={28} alt="Emabarazadas Icon" />
+              <img src="corazon.png" width={28} height={28} alt="Emabarazadas Icon" />
             </div>
             <p className="mt-2 text-sm lg:text-sm font-semibold">Condiciones Médicas</p>
             <p className="mt-1 text-sm lg:text-base">{getActivityRecommendation('condiciones_medicas', nearestSensor.pm25)}</p>
