@@ -46,12 +46,12 @@ function QualityBar({ pm25 }) {
 // Index
 export default function Index() {
   const [nearestSensor, setNearestSensor] = useState(null);
-  const [selectedProfile, setSelectedProfile] = useState('vulnerable');
+  const [selectedProfile, setSelectedProfile] = useState('sensible');
 
   // Function to determine general recommendation based on PM2.5 value
   const getGeneralRecommendation = (pm25) => {
-    // Vulnerable
-    if (selectedProfile === 'vulnerable') {
+    // Sensible
+    if (selectedProfile === 'sensible') {
       if (pm25 <= 25) return 'Disfruta las actividades al aire libre.';
       if (pm25 > 25 && pm25 <= 45) return 'Considera reducir las actividades físicas vigorosas al aire libre.';
       if (pm25 > 45 && pm25 <= 79) return 'Evita las actividades físicas moderadas y vigorosas al aire libre.';
@@ -70,35 +70,35 @@ export default function Index() {
   // Function to determine activity recommendation based on PM2.5 value
   const getActivityRecommendation = (activity, pm25, profile) => {
     if (activity === 'correr') {
-      if (profile === 'vulnerable') {
+      if (profile === 'sensible') {
         if (pm25 <= 25) return 'Es seguro salir a correr.';
-        if (pm25 <= 45) return 'Con precaución.';
+        if (pm25 <= 45) return 'Considera reducir el tiempo promedio que sales a correr.';
         if (pm25 <= 79) return 'Evita salir a correr.';
-        if (pm25 <= 147) return 'Evita salir a correr.';
-        return 'Permanece en interiores.';
+        if (pm25 <= 147) return 'No salgas a correr.';
+        return 'Permanece en interiores. Acude al médico si presentas síntomas respiratorios o cardiacos.';
       }
       if (profile === 'general') {
         if (pm25 <= 25) return 'Es seguro salir a correr.';
         if (pm25 <= 45) return 'Es seguro salir a correr.';
-        if (pm25 <= 79) return 'Con precaución.';
+        if (pm25 <= 79) return 'Evitar salir a correr.';
         if (pm25 <= 147) return 'Evita salir a correr.';
-        return 'Permanece en interiores.';
+        return 'Permanece en interiores. Acude al médico si presentas síntomas respiratorios o cardiacos.';
       }
     }
     if (activity === 'bici') {
-      if (profile === 'vulnerable') {
+      if (profile === 'sensible') {
         if (pm25 <= 25) return 'Es seguro andar en bici.';
-        if (pm25 <= 45) return 'Con precaución.';
+        if (pm25 <= 45) return 'Considera reducir el tiempo promedio que andas en bici.';
         if (pm25 <= 79) return 'Evita andar en bici.';
-        if (pm25 <= 147) return 'Evita andar en bici.';
-        return 'Permanece en interiores.';
+        if (pm25 <= 147) return 'No andes en bici.';
+        return 'Permanece en interiores. Acude al médico si presentas síntomas respiratorios o cardiacos.';
       }
       if (profile === 'general') {
         if (pm25 <= 25) return 'Es seguro andar en bici.';
         if (pm25 <= 45) return 'Es seguro andar en bici.';
-        if (pm25 <= 79) return 'Con precaución.';
+        if (pm25 <= 79) return 'Evita andar en bici.';
         if (pm25 <= 147) return 'Evita andar en bici.';
-        return 'Permanece en interiores.';
+        return 'Permanece en interiores. Acude al médico si presentas síntomas respiratorios o cardiacos.';
       }
     }
     return 'N/A'; // default text in case of unexpected input
@@ -116,32 +116,32 @@ export default function Index() {
   // Function to render the cards based on the selected profile
   const renderCards = () => {
 
-     // Vulnerable
-    if (selectedProfile === 'vulnerable') {
+     // Sensible
+    if (selectedProfile === 'sensible') {
       return (
         <>
           {/* Recomendación General */}
           <div className={`bg-white flex items-center rounded-lg shadow-lg p-4 mb-4 mt-4 w-full ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
-            <p className="text-sm lg:text-base">{getGeneralRecommendation(nearestSensor.pm25)}</p>
+            <p className="text-sm lg:text-base font-semibold">{getGeneralRecommendation(nearestSensor.pm25)}</p>
           </div>
           {/* Caminar y Picnic / Terraza */}
-          {/* <div className="flex flex-row justify-between mt-2">  */}
+          <div className="flex flex-row justify-between mt-2"> 
             {/* Caminar */}
-            {/* <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
+            <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
               <div className="flex items-center space-x-2">
                 <img src="/walking-man.png" width={14} height={14} alt="Caminar Icon" />
               </div>
               <p className="mt-2 text-sm">Es seguro salir a caminar.</p>
-            </div> */}
+            </div>
             {/* Picnic / Terraza */}
-            {/* <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
+            <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
               <div className="flex items-center space-x-2">
                 <img src="picnic.png" width={24} height={24} alt="Correr Icon" />
               </div>
               <p className="mt-2 text-sm">Es seguro realizar .</p>
             </div>
-          </div> */}
-          {/* Correr and Bici */}
+          </div>
+          {/* Correr y Bici */}
           <div className="flex flex-row justify-between mt-2"> 
             {/* Correr */}
             <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
@@ -228,10 +228,10 @@ export default function Index() {
             </div>
             {/* Población */}
             <div className="fixed bottom-0 left-0 right-0 mb-16 pb-2 px-5 flex justify-between lg:pb-0 lg:px-0 lg:mx-20 lg:static lg:pt-6">
-              {/* Vulnerable */}
+              {/* Sensible */}
               <div 
-                className={`flex text-sm lg:text-base items-center justify-center rounded-3xl w-1/2 mr-2 p-2 cursor-pointer text-center shadow-lg lg:mr-12 ${selectedProfile === 'vulnerable' ? 'bg-black text-white' : 'bg-white shadow-lg border-transparent'}`}
-                onClick={() => setSelectedProfile('vulnerable')}>
+                className={`flex text-sm lg:text-base items-center justify-center rounded-3xl w-1/2 mr-2 p-2 cursor-pointer text-center shadow-lg lg:mr-12 ${selectedProfile === 'sensible' ? 'bg-black text-white' : 'bg-white shadow-lg border-transparent'}`}
+                onClick={() => setSelectedProfile('sensible')}>
                 Población Sensible
               </div>
               {/* General */}
