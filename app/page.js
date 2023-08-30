@@ -112,7 +112,7 @@ export default function Recomendaciones() {
             <div className="flex items-center space-x-2">
               <img src="/embarazadas.png" width={28} height={28} alt="Emabarazadas Icon" />
             </div>
-            <p className="mt-2 text-sm lg:text-sm font-semibold">Embarazadas</p>
+            <p className="mt-2 text-sm lg:text-sm font-semibold text-gray-500">Embarazadas</p>
             <p className="mt-1 text-sm lg:text-base">{getActivityRecommendation('embarazadas', nearestSensor.pm25)}</p>
           </div>
           {/* Menores */}
@@ -120,7 +120,7 @@ export default function Recomendaciones() {
             <div className="flex items-center space-x-2">
               <img src="/menores.png" width={28} height={28} alt="Emabarazadas Icon" />
             </div>
-            <p className="mt-2 text-sm lg:text-sm font-semibold">Menores de 12 años</p>
+            <p className="mt-2 text-sm lg:text-sm font-semibold text-gray-500">Menores de 12 años</p>
             <p className="mt-1 text-sm lg:text-base">{getActivityRecommendation('menores', nearestSensor.pm25)}</p>
           </div>
         </div>
