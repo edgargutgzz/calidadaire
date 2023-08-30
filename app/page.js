@@ -110,14 +110,14 @@ export default function Recomendaciones() {
           {/* Embarazadas */}
           <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
             <div className="flex items-center space-x-2">
-              <img src="/embarazadas.png" width={24} height={24} alt="Emabarazadas Icon" />
+              <img src="/embarazadas.png" width={26} height={26} alt="Emabarazadas Icon" />
             </div>
             <p className="mt-2 text-sm lg:text-base">{getActivityRecommendation('embarazadas', nearestSensor.pm25)}</p>
           </div>
           {/* Menores */}
           <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
             <div className="flex items-center space-x-2">
-              <img src="/menores_2.png" width={24} height={24} alt="Menores Icon" />
+              <img src="/menores_2.png" width={26} height={26} alt="Menores Icon" />
             </div>
             <p className="mt-2 text-sm lg:text-base">{getActivityRecommendation('menores', nearestSensor.pm25)}</p>
           </div>
@@ -128,15 +128,15 @@ export default function Recomendaciones() {
           {/* Adultos Mayores */}
           <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
             <div className="flex items-center space-x-2">
-              <img src="/adultos_mayores2.png" width={24} height={24} alt="Adultos Mayores Icon" />
+              <img src="/adultos_mayores2.png" width={26} height={26} alt="Adultos Mayores Icon" />
             </div>
             <p className="mt-2 text-sm lg:text-base">{getActivityRecommendation('adultos_mayores', nearestSensor.pm25)}</p>
           </div>
           {/* Condiciones Médicas */}
           <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
             <div className="flex items-center space-x-2">
-              <img src="/corazon2.png" width={24} height={24} alt="Corazon Icon" />
-              <img src="/pulmon.png" width={24} height={24} alt="Pulmon Icon" /> {/* Added line */}
+              <img src="/corazon2.png" width={26} height={26} alt="Corazon Icon" />
+              <img src="/pulmon.png" width={26} height={26} alt="Pulmon Icon" /> {/* Added line */}
             </div>
             <p className="mt-2 text-sm lg:text-base">{getActivityRecommendation('condiciones_medicas', nearestSensor.pm25)}</p>
           </div>
