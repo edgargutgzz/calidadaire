@@ -1,17 +1,19 @@
+"use client";
+
+import React, { useEffect } from 'react';
 import Head from 'next/head';
 import './globals.css'
-import Navbar from '../components/navbar'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
-  title: 'Aire Claro',
-  description: 'Cuida tu salud con mejor información de calidad de aire en Monterrey.'
-}
-
 export default function RootLayout({ children }) {
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }, []);
+
   return (
     <html lang="en">
       <Head>
