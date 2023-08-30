@@ -118,9 +118,10 @@ export default function Recomendaciones() {
           {/* Menores */}
           <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
             <div className="flex items-center space-x-2">
-              <p className="text-sm lg:text-sm font-semibold">Menores de 12 años</p>
+              <img src="/menores.png" width={26} height={26} alt="Emabarazadas Icon" />
             </div>
-            <p className="mt-2 text-sm lg:text-base">{getActivityRecommendation('menores', nearestSensor.pm25)}</p>
+            <p className="mt-2 text-sm lg:text-sm font-semibold">Menores de 12 años</p>
+            <p className="mt-1 text-sm lg:text-base">{getActivityRecommendation('menores', nearestSensor.pm25)}</p>
           </div>
         </div>
 
@@ -129,16 +130,19 @@ export default function Recomendaciones() {
           {/* Adultos Mayores */}
           <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
             <div className="flex items-center space-x-2">
-              <p className="text-sm lg:text-sm font-semibold">Adultos Mayores</p>
+              <img src="adultos_mayores.png" width={26} height={26} alt="Emabarazadas Icon" />
             </div>
-            <p className="mt-2 text-sm lg:text-base">{getActivityRecommendation('adultos_mayores', nearestSensor.pm25)}</p>
+            <p className="mt-2 text-sm lg:text-sm font-semibold">Adultos Mayores</p>
+            <p className="mt-1 text-sm lg:text-base">{getActivityRecommendation('adultos_mayores', nearestSensor.pm25)}</p>
           </div>
           {/* Condiciones Médicas */}
           <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
             <div className="flex items-center space-x-2">
-              <p className="text-sm lg:text-sm font-semibold">Condiciones Cardio / Respiratorias</p>
+              <img src="corazon.png" width={26} height={26} alt="Emabarazadas Icon" />
+              <img src="pulmon.png" width={26} height={26} alt="Emabarazadas Icon" />
             </div>
-            <p className="mt-2 text-sm lg:text-base">{getActivityRecommendation('condiciones_medicas', nearestSensor.pm25)}</p>
+            <p className="mt-2 text-sm lg:text-sm font-semibold">Condiciones Médicas</p>
+            <p className="mt-1 text-sm lg:text-base">{getActivityRecommendation('condiciones_medicas', nearestSensor.pm25)}</p>
           </div>
         </div>
 
