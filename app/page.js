@@ -4,8 +4,10 @@ import React, { useState } from 'react';
 import Navbar from '../components/navbar';
 import Mapa, {getMarkerColor} from '../components/mapa';
 
-// QualityBar
+// Calidad del Aire
 function QualityBar({ pm25 }) {
+
+  // Quality Bar
   const calculateLeft = () => {
     if (pm25 <= 25) return ((pm25 / 25) * 12) + 6;  // 0-25 range is 12% of total, shifted by half (6%)
     if (pm25 <= 45) return 22 + ((pm25 - 26) / 20) * 12 + 6;  // 26-45 range is 12% of total, shifted by half (6%)
@@ -14,14 +16,14 @@ function QualityBar({ pm25 }) {
     return 88 + 6; // for PM2.5 > 147, shifted by half (6%)
   };
   
-  // Function to determine quality text based on PM2.5 value
+  // Texto con nivel de calidad del aire
   const getQualityText = () => {
     if (pm25 <= 25) return "Buena";
     if (pm25 > 25 && pm25 <= 45) return "Aceptable";
     if (pm25 > 45 && pm25 <= 79) return "Mala";
     if (pm25 > 79 && pm25 <= 147) return "Muy Mala";
     if (pm25 > 147) return "Extremadamente Mala";
-    return "N/A";  // default text in case the value is null or undefined
+    return "No Disponible";  // default text in case the value is null or undefined
   };
 
   return (
@@ -43,68 +45,53 @@ function QualityBar({ pm25 }) {
   );
 }
 
-// Index
-export default function Index() {
+// Recomendaciones
+export default function Recomendaciones() {
   const [nearestSensor, setNearestSensor] = useState(null);
-  const [selectedProfile, setSelectedProfile] = useState('sensible');
 
-  // Function to determine general recommendation based on PM2.5 value
-  const getGeneralRecommendation = (pm25) => {
-    // Sensible
-    if (selectedProfile === 'sensible') {
-      if (pm25 <= 25) return 'Disfruta las actividades al aire libre.';
-      if (pm25 > 25 && pm25 <= 45) return 'Considera reducir las actividades físicas vigorosas al aire libre.';
-      if (pm25 > 45 && pm25 <= 79) return 'Evita las actividades físicas moderadas y vigorosas al aire libre.';
-      if (pm25 > 79 && pm25 <= 147) return 'No realices actividades al aire libre. Acude al médico si presentas síntomas respiratorios o cardiacos.';
-      return 'Permanece en interiores. Acude al médico si presentas síntomas respiratorios o cardiacos.'; // for PM2.5 > 147
+  // Usuarios
+  const getActivityRecommendation = (activity, pm25) => {
+
+    // Embarazadas
+    if (activity === 'embarazadas') {
+      if (pm25 <= 25) return 'Es seguro salir a correr.';
+      if (pm25 <= 45) return 'Considera reducir el tiempo promedio que sales a correr.';
+      if (pm25 <= 79) return 'Evita salir a correr.';
+      if (pm25 <= 147) return 'No salgas a correr.';
+      return 'Permanece en interiores. Acude al médico si presentas síntomas respiratorios o cardiacos.';
     }
 
-    // General
-    if (pm25 <= 25) return 'Disfruta las actividades al aire libre.';
-    if (pm25 > 25 && pm25 <= 45) return 'Disfruta las actividades al aire libre.';
-    if (pm25 > 45 && pm25 <= 79) return 'Es posible realizar actividades al aire libre. Si presentas síntomas como tos o falta de aire, toma más descansos y realiza actividades menos vigorosas.';
-    if (pm25 > 79 && pm25 <= 147) return 'Evita la actividad física vigorosa o prolongada al aire libre. ';
-    return 'Permanece en interiores. Reprograma tus actividades al aire libre y si presentas síntomas respiratorios o cardiacos acude al médico.'; // for PM2.5 > 147
+    // Menores
+    if (activity === 'menores') {
+      if (pm25 <= 25) return 'Es seguro andar en bici.';
+      if (pm25 <= 45) return 'Considera reducir el tiempo promedio que andas en bici.';
+      if (pm25 <= 79) return 'Evita andar en bici.';
+      if (pm25 <= 147) return 'No andes en bici.';
+      return 'Permanece en interiores. Acude al médico si presentas síntomas respiratorios o cardiacos.';
+    }
+
+    // Adultos Mayores
+    if (activity === 'adultos_mayores') {
+      if (pm25 <= 25) return 'Es seguro andar en bici.';
+      if (pm25 <= 45) return 'Considera reducir el tiempo promedio que andas en bici.';
+      if (pm25 <= 79) return 'Evita andar en bici.';
+      if (pm25 <= 147) return 'No andes en bici.';
+      return 'Permanece en interiores. Acude al médico si presentas síntomas respiratorios o cardiacos.';
+    }
+
+    // Adultos Mayores
+    if (activity === 'condiciones_medicas') {
+      if (pm25 <= 25) return 'Es seguro andar en bici.';
+      if (pm25 <= 45) return 'Considera reducir el tiempo promedio que andas en bici.';
+      if (pm25 <= 79) return 'Evita andar en bici.';
+      if (pm25 <= 147) return 'No andes en bici.';
+      return 'Permanece en interiores. Acude al médico si presentas síntomas respiratorios o cardiacos.';
+    }
+
+    return 'No disponible'; // default text in case of unexpected input
   };
 
-  // Function to determine activity recommendation based on PM2.5 value
-  const getActivityRecommendation = (activity, pm25, profile) => {
-    if (activity === 'correr') {
-      if (profile === 'sensible') {
-        if (pm25 <= 25) return 'Es seguro salir a correr.';
-        if (pm25 <= 45) return 'Considera reducir el tiempo promedio que sales a correr.';
-        if (pm25 <= 79) return 'Evita salir a correr.';
-        if (pm25 <= 147) return 'No salgas a correr.';
-        return 'Permanece en interiores. Acude al médico si presentas síntomas respiratorios o cardiacos.';
-      }
-      if (profile === 'general') {
-        if (pm25 <= 25) return 'Es seguro salir a correr.';
-        if (pm25 <= 45) return 'Es seguro salir a correr.';
-        if (pm25 <= 79) return 'Evitar salir a correr.';
-        if (pm25 <= 147) return 'Evita salir a correr.';
-        return 'Permanece en interiores. Acude al médico si presentas síntomas respiratorios o cardiacos.';
-      }
-    }
-    if (activity === 'bici') {
-      if (profile === 'sensible') {
-        if (pm25 <= 25) return 'Es seguro andar en bici.';
-        if (pm25 <= 45) return 'Considera reducir el tiempo promedio que andas en bici.';
-        if (pm25 <= 79) return 'Evita andar en bici.';
-        if (pm25 <= 147) return 'No andes en bici.';
-        return 'Permanece en interiores. Acude al médico si presentas síntomas respiratorios o cardiacos.';
-      }
-      if (profile === 'general') {
-        if (pm25 <= 25) return 'Es seguro andar en bici.';
-        if (pm25 <= 45) return 'Es seguro andar en bici.';
-        if (pm25 <= 79) return 'Evita andar en bici.';
-        if (pm25 <= 147) return 'Evita andar en bici.';
-        return 'Permanece en interiores. Acude al médico si presentas síntomas respiratorios o cardiacos.';
-      }
-    }
-    return 'N/A'; // default text in case of unexpected input
-  };
-
-  // Function to determine card's border color
+  // Color de recomendaciones
   const getBorderColor = (pm25) => {
     if (pm25 <= 25) return "custom-green";
     if (pm25 > 25 && pm25 <= 45) return "custom-yellow";
@@ -116,82 +103,46 @@ export default function Index() {
   // Function to render the cards based on the selected profile
   const renderCards = () => {
 
-     // Sensible
-    if (selectedProfile === 'sensible') {
-      return (
-        <>
-          {/* Recomendación General */}
-          <div className={`bg-white flex items-center rounded-lg shadow-lg p-4 mb-4 mt-4 w-full ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
-            <p className="text-sm lg:text-base font-semibold">{getGeneralRecommendation(nearestSensor.pm25)}</p>
+    return (
+      <>
+        {/* Embarazadas y Menores */}
+        <div className="flex flex-row justify-between mt-2"> 
+          {/* Embarazadas */}
+          <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
+            <div className="flex items-center space-x-2">
+              <img src="/embarazadas.png" width={24} height={24} alt="Emabarazadas Icon" />
+            </div>
+            <p className="mt-2 text-sm lg:text-base">{getActivityRecommendation('embarazadas', nearestSensor.pm25)}</p>
           </div>
-          {/* Caminar y Picnic / Terraza */}
-          <div className="flex flex-row justify-between mt-2"> 
-            {/* Caminar */}
-            <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
-              <div className="flex items-center space-x-2">
-                <img src="/walking-man.png" width={14} height={14} alt="Caminar Icon" />
-              </div>
-              <p className="mt-2 text-sm">Es seguro salir a caminar.</p>
+          {/* Menores */}
+          <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
+            <div className="flex items-center space-x-2">
+              <img src="/menores.png" width={24} height={24} alt="Menores Icon" />
             </div>
-            {/* Picnic / Terraza */}
-            <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
-              <div className="flex items-center space-x-2">
-                <img src="picnic.png" width={24} height={24} alt="Correr Icon" />
-              </div>
-              <p className="mt-2 text-sm">Es seguro realizar .</p>
-            </div>
+            <p className="mt-2 text-sm lg:text-base">{getActivityRecommendation('menores', nearestSensor.pm25)}</p>
           </div>
-          {/* Correr y Bici */}
-          <div className="flex flex-row justify-between mt-2"> 
-            {/* Correr */}
-            <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
-              <div className="flex items-center space-x-2">
-                <img src="/run.png" width={24} height={24} alt="Correr Icon" />
-              </div>
-              <p className="mt-2 text-sm lg:text-base">{getActivityRecommendation('correr', nearestSensor.pm25, selectedProfile)}</p>
-            </div>
-            {/* Bici */}
-            <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
-              <div className="flex items-center space-x-2">
-                <img src="/cycling.png" width={24} height={24} alt="Correr Icon" />
-              </div>
-              <p className="mt-2 text-sm lg:text-base">{getActivityRecommendation('bici', nearestSensor.pm25, selectedProfile)}</p>
-            </div>
-          </div>
-        </>
-      );
-    }
+        </div>
 
-    // General
-    if (selectedProfile === 'general') {
-      return (
-        <>
-          {/* Recomendación General */}
-          <div className={`bg-white flex items-center rounded-lg shadow-lg p-4 mb-4 mt-4 w-full ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
-            <p className="text-sm lg:text-base">{getGeneralRecommendation(nearestSensor.pm25)}</p>
-          </div>
-          {/* Correr y Bici */}
-          <div className="flex flex-row justify-between mt-2"> 
-            {/* Correr */}
-            <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
-              <div className="flex items-center space-x-2">
-                <img src="/run.png" width={24} height={24} alt="Correr Icon" />
-              </div>
-              <p className="mt-2 text-sm lg:text-base">Es seguro salir a correr.</p>
+        {/* Adultos Mayores y Condiciones Medicas */}
+        <div className="flex flex-row justify-between mt-2"> 
+          {/* Adultos Mayores */}
+          <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
+            <div className="flex items-center space-x-2">
+              <img src="/adultos_mayores.png" width={24} height={24} alt="Adultos Mayores Icon" />
             </div>
-            {/* Bici */}
-            <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
-              <div className="flex items-center space-x-2">
-                <img src="/cycling.png" width={24} height={24} alt="Correr Icon" />
-              </div>
-              <p className="mt-2 text-sm lg:text-base">Es seguro andar en bici.</p>
-            </div>
+            <p className="mt-2 text-sm lg:text-base">{getActivityRecommendation('adultos_mayores', nearestSensor.pm25)}</p>
           </div>
-        </>
-      );
-    }
+          {/* Condiciones Médicas */}
+          <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
+            <div className="flex items-center space-x-2">
+              <img src="/corazon.png" width={24} height={24} alt="Condiciones Medicas Icon" />
+            </div>
+            <p className="mt-2 text-sm lg:text-base">{getActivityRecommendation('condiciones_medicas', nearestSensor.pm25)}</p>
+          </div>
+        </div>
+      </>
+    );
 
-    return null;
   };
 
   return (
@@ -208,7 +159,7 @@ export default function Index() {
         {nearestSensor && (
           <div className="mx-4 lg:mx-0 mb-0 pb-4">
             {/* Quality Bar */}
-            <div className="bg-white rounded-lg shadow-lg p-4">
+            <div className="bg-white rounded-lg shadow-lg p-4 mb-6">
               <QualityBar pm25={nearestSensor.pm25} />
             </div>
             {renderCards()}
@@ -224,21 +175,6 @@ export default function Index() {
               <div className="flex items-center">
                 <img src="/clock.png" className="w-4 h-4" alt="Correr Icon" />
                 <p className="ml-2 text-xs lg:text-sm">Última actualización a las {nearestSensor.lastUpdated}.</p>
-              </div>
-            </div>
-            {/* Población */}
-            <div className="fixed bottom-0 left-0 right-0 mb-16 pb-2 px-5 flex justify-between lg:pb-0 lg:px-0 lg:mx-20 lg:static lg:pt-6">
-              {/* Sensible */}
-              <div 
-                className={`flex text-sm lg:text-base items-center justify-center rounded-3xl w-1/2 mr-2 p-2 cursor-pointer text-center shadow-lg lg:mr-12 ${selectedProfile === 'sensible' ? 'bg-black text-white' : 'bg-white shadow-lg border-transparent'}`}
-                onClick={() => setSelectedProfile('sensible')}>
-                Población Sensible
-              </div>
-              {/* General */}
-              <div 
-                className={`flex text-sm lg:text-base items-center justify-center rounded-3xl w-1/2 ml-2 p-2 cursor-pointer text-center shadow-lg lg:ml-12 ${selectedProfile === 'general' ? 'bg-black text-white' : 'bg-white shadow-lg border-transparent'}`}
-                onClick={() => setSelectedProfile('general')}>
-                Población General
               </div>
             </div>
           </div>
