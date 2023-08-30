@@ -154,8 +154,7 @@ export default function Recomendaciones() {
           {/* Condiciones Médicas */}
           <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
             <div className="flex items-center space-x-2">
-              <img src="/corazon2.png" width={26} height={26} alt="Corazon Icon" />
-              <img src="/pulmon.png" width={26} height={26} alt="Pulmon Icon" /> {/* Added line */}
+              <p className="text-sm lg:text-sm font-semibold">Condiciones Cardio / Respiratorias</p>
             </div>
             <p className="mt-2 text-sm lg:text-base">{getActivityRecommendation('condiciones_medicas', nearestSensor.pm25)}</p>
           </div>
