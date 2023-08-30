@@ -16,7 +16,7 @@ function QualityBar({ pm25 }) {
     return 88 + 6; // for PM2.5 > 147, shifted by half (6%)
   };
   
-  // Texto con nivel de calidad del aire
+  // Nivel de calidad del aire
   const getQualityText = () => {
     if (pm25 <= 25) return "Buena";
     if (pm25 > 25 && pm25 <= 45) return "Aceptable";
@@ -100,7 +100,7 @@ export default function Recomendaciones() {
     return "custom-purple"; // for PM2.5 > 147
   };
 
-  // Function to render the cards based on the selected profile
+  // Render Cards based on usuario
   const renderCards = () => {
 
     return (
@@ -141,6 +141,26 @@ export default function Recomendaciones() {
             <p className="mt-2 text-sm lg:text-base">{getActivityRecommendation('condiciones_medicas', nearestSensor.pm25)}</p>
           </div>
         </div>
+
+        {/* Adultos Mayores y Condiciones Medicas */}
+        <div className="flex flex-row justify-between mt-2"> 
+          {/* Adultos Mayores */}
+          <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
+            <div className="flex items-center space-x-2">
+              <p className="text-sm lg:text-sm font-semibold">Adultos Mayores</p>
+            </div>
+            <p className="mt-2 text-sm lg:text-base">{getActivityRecommendation('adultos_mayores', nearestSensor.pm25)}</p>
+          </div>
+          {/* Condiciones Médicas */}
+          <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
+            <div className="flex items-center space-x-2">
+              <img src="/corazon2.png" width={26} height={26} alt="Corazon Icon" />
+              <img src="/pulmon.png" width={26} height={26} alt="Pulmon Icon" /> {/* Added line */}
+            </div>
+            <p className="mt-2 text-sm lg:text-base">{getActivityRecommendation('condiciones_medicas', nearestSensor.pm25)}</p>
+          </div>
+        </div>
+
       </>
     );
 
