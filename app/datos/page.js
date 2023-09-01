@@ -169,7 +169,7 @@ export default function Index() {
         )}
 
         {/* Descripción - Button*/}
-        <div className="bg-white rounded-lg shadow-lg mb-4 p-4 lg:mb-6">
+        <div className="bg-white rounded-lg shadow-lg mb-6 p-4 lg:mb-8">
           <div onClick={() => setIsExplanationOpen(!isExplanationOpen)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p className='text-sm lg:text-base'>Descripción de Datos</p>
             <img 
