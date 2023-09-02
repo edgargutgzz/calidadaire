@@ -4,10 +4,10 @@ import Link from 'next/link';
 function Navbar({ currentPage }) {
   return (
     <nav style={{ boxShadow: '0 -4px 5px -2px rgba(0, 0, 0, 0.1)' }} className="bg-white z-10 fixed w-full bottom-0 flex-col shadow-lg lg:z-auto lg:w-3/12 lg:min-h-screen lg:static lg:flex lg:flex-col lg:py-10">
-      <div className="container mx-auto px-2 pt-3 pb-2 flex justify-around items-center h-full lg:flex-col lg:justify-start lg:items-start lg:px-6">
+      <div className="container mx-auto px-2 pt-3 pb-2 flex justify-around items-center h-full lg:flex-col lg:justify-start lg:items-start lg:pl-4 lg:pr-5">
 
         {/* Logo */}
-        <div className="lg:mb-12 lg:pl-4 hidden lg:block">
+        <div className="lg:mb-10 lg:pl-4 hidden lg:block">
           <img src="/aire_claro4.png" alt="Aire Claro" className="w-44" />
         </div>
         
