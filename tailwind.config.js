@@ -28,6 +28,9 @@ module.exports = {
           '70%': { transform: 'scale(1)', boxShadow: '0 0 0 10px rgba(66, 153, 225, 0)' },
           '100%': { transform: 'scale(0.95)', boxShadow: '0 0 0 0 rgba(66, 153, 225, 0)' },
         }
+      },
+      width: {
+        '44': '11rem'
       }
     },
   },
