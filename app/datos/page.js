@@ -122,10 +122,10 @@ export default function Index() {
         </div>
 
         {/* Descripción - Table */}
-        <div className="mb-2 lg:mb-8 px-1">
+        <div className="mb-2 lg:mb-4 px-1">
           <h1 className="text-lg lg:text-2xl font-bold lg:mb-4">Descripción de Datos</h1>
         </div>
-        <div className="rounded-lg overflow-hidden border mb-8 border-gray-200 lg:mb-6">
+        <div className="rounded-lg overflow-hidden border mb-8 border-gray-200 lg:mb-12">
           <div className="overflow-x-auto">
             <table className="min-w-full bg-white text-sm" {...getExplanationTableProps()}>
               <thead>
@@ -156,7 +156,7 @@ export default function Index() {
         </div>
 
        {/* Vista Previa - Table (Always Open) */}
-       <div className="mb-2 lg:mb-8 px-1">
+       <div className="mb-2 lg:mb-4 px-1">
           <h1 className="text-lg lg:text-2xl font-bold lg:mb-4">Vista Previa</h1>
         </div>
        <div className="rounded-lg mb-8 overflow-hidden border border-gray-200 lg:mb-6">
