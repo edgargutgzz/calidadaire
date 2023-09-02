@@ -8,7 +8,7 @@ function Navbar({ currentPage }) {
 
         {/* Logo */}
         <div className="lg:mb-10 lg:pl-4 hidden lg:block">
-          <img src="/aire_claro4.png" alt="Aire Claro" className="w-44" />
+          <img src="/aire_claro.png" alt="Aire Claro" className="w-44" />
         </div>
         
         {/* Home */}
