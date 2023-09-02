@@ -121,6 +121,19 @@ export default function Index() {
           </p>
         </div>
 
+        {/* Download button */}
+        <div className="flex justify-start mb-10">
+          <div className="bg-white rounded p-2 shadow-lg w-auto inline-flex">
+            <button
+              onClick={downloadData}
+              className={`text-sm lg:text-base text-black font-bold flex items-center px-4 py-1 cursor-pointer ${isDownloading ? 'downloading' : ''}`}
+            >
+              {isDownloading ? <span className="mr-2 flex items-center"><ClipLoader size={16} color={"#000000"} /></span> : <img src="/download.png" alt="Download" className="h-4 w-4 mr-2" />}
+              {isDownloading ? 'Descargando' : 'Descargar'}
+            </button>
+          </div>
+        </div>
+
         {/* Descripción - Table */}
         <div className="mb-2 lg:mb-4 px-1">
           <h1 className="text-lg lg:text-2xl font-bold lg:mb-4">Descripción de Datos</h1>
@@ -159,7 +172,7 @@ export default function Index() {
        <div className="mb-2 lg:mb-4 px-1">
           <h1 className="text-lg lg:text-2xl font-bold lg:mb-4">Vista Previa</h1>
         </div>
-       <div className="rounded-lg mb-8 overflow-hidden border border-gray-200 lg:mb-6">
+       <div className="rounded-lg mb-20 overflow-hidden border border-gray-200 lg:mb-6">
           <div className="overflow-x-auto">
             <table className="min-w-full bg-white text-sm" {...getTableProps()}>
               <thead>
@@ -189,18 +202,7 @@ export default function Index() {
           </div>
         </div>
 
-        {/* Download button */}
-        <div className="flex justify-end mb-20">
-          <div className="bg-white rounded p-2 shadow-lg w-auto inline-flex">
-            <button
-              onClick={downloadData}
-              className={`text-sm lg:text-base text-black font-bold flex items-center px-4 py-1 cursor-pointer ${isDownloading ? 'downloading' : ''}`}
-            >
-              {isDownloading ? <span className="mr-2 flex items-center"><ClipLoader size={16} color={"#000000"} /></span> : <img src="/download.png" alt="Download" className="h-4 w-4 mr-2" />}
-              {isDownloading ? 'Descargando' : 'Descargar'}
-            </button>
-          </div>
-        </div>
+
 
       </div>
     </div>
