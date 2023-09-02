@@ -7,8 +7,8 @@ function Navbar({ currentPage }) {
       <div className="container mx-auto px-2 pt-3 pb-2 flex justify-around items-center h-full lg:flex-col lg:justify-start lg:items-start lg:px-6">
 
         {/* Logo */}
-        <div className="lg:w-full lg:mb-10 lg:pl-4 hidden lg:block">
-          <img src="/aire_claro.png" alt="Aire Claro" className="w-40" />
+        <div className="lg:mb-10 lg:pl-4 hidden lg:block">
+          <img src="/aire_claro4.png" alt="Aire Claro" className="w-48" />
         </div>
         
         {/* Home */}
