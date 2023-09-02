@@ -19,8 +19,6 @@ const previewData = [
 
 export default function Index() {
   const [isDownloading, setIsDownloading] = useState(false);
-  const [isPreviewOpen, setIsPreviewOpen] = useState(false); 
-  const [isExplanationOpen, setIsExplanationOpen] = useState(false);
 
   const columns = React.useMemo(
     () => [
@@ -118,103 +116,81 @@ export default function Index() {
         <div className="mb-6 lg:mb-8 px-1">
           <h1 className="text-2xl mb-2 lg:text-4xl font-bold lg:mb-4">Apertura de Información</h1>
           <p className="text-sm lg:text-base">
-            Buscamos impulsar la transparencia y la participación ciudadana en la toma de decisiones sobre la calidad del aire que respiramos para proteger la salud de todas y todos.
-            Por esa razon es que publicamos los datos que se recolectan cada hora a través de los sensores ubicados en la Zona Metropolitana de Monterrey.
+            Buscamos impulsar la <strong>transparencia y la participación ciudadana</strong> en la toma de decisiones sobre la calidad del aire que respiramos para proteger la salud de todas y todos.
+            Por esa razon es que <strong>publicamos los datos</strong> que se recolectan cada hora a través de los sensores ubicados en la Zona Metropolitana de Monterrey.
           </p>
         </div>
 
-        {/* Vista Previa - Dropdown */}
-        <div className="bg-white mb-4 rounded-lg shadow-lg p-4 lg:mb-6">
-          <div onClick={() => setIsPreviewOpen(!isPreviewOpen)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
-            <p className='text-sm lg:text-base'>Vista Previa</p>
-            <img 
-              src={isPreviewOpen ? "/up-arrow.png" : "/down-arrow.png"} 
-              alt="toggle" 
-              className="h-3 w-3" 
-            />
-          </div>
-        </div>
-
-        {/* Vista Previa - Table */}
-        {isPreviewOpen && (
-          <div className="rounded-lg mb-4 overflow-hidden border border-gray-200 lg:mb-6">
-            <div className="overflow-x-auto"> {/* Add this wrapper */}
-              <table className="min-w-full bg-white text-sm" {...getTableProps()}>
-                <thead>
-                  {headerGroups.map(headerGroup => (
-                    <tr {...headerGroup.getHeaderGroupProps()}>
-                      {headerGroup.headers.map(column => (
-                        <th className="text-left py-2 px-4 border-b" {...column.getHeaderProps()}>{column.render('Header')}</th>
-                      ))}
-                    </tr>
-                  ))}
-                </thead>
-                <tbody {...getTableBodyProps()}>
-                  {rows.map(row => {
-                    prepareRow(row)
-                    return (
-                      <tr {...row.getRowProps()}>
-                        {row.cells.map(cell => {
-                          return (
-                            <td className="py-2 px-4 border-b" {...cell.getCellProps()}>{cell.render('Cell')}</td>
-                          )
-                        })}
-                      </tr>
-                    )
-                  })}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        )}
-
-        {/* Descripción - Button*/}
-        <div className="bg-white rounded-lg shadow-lg mb-6 p-4 lg:mb-8">
-          <div onClick={() => setIsExplanationOpen(!isExplanationOpen)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
-            <p className='text-sm lg:text-base'>Descripción de Datos</p>
-            <img 
-              src={isExplanationOpen ? "/up-arrow.png" : "/down-arrow.png"} 
-              alt="toggle" 
-              className="h-3 w-3" 
-            />
-          </div>
-        </div>
-
         {/* Descripción - Table */}
-        {isExplanationOpen && (
-          <div className="rounded-lg overflow-hidden border mb-4 border-gray-200 lg:mb-6">
-            <div className="overflow-x-auto">
-              <table className="min-w-full bg-white text-sm" {...getExplanationTableProps()}>
-                <thead>
-                  {explanationHeaderGroups.map(headerGroup => (
-                    <tr {...headerGroup.getHeaderGroupProps()}>
-                      {headerGroup.headers.map(column => (
-                        <th className="text-left py-2 px-4 border-b" {...column.getHeaderProps()}>{column.render('Header')}</th>
-                      ))}
+        <div className="mb-2 lg:mb-8 px-1">
+          <h1 className="text-lg lg:text-2xl font-bold lg:mb-4">Descripción de Datos</h1>
+        </div>
+        <div className="rounded-lg overflow-hidden border mb-8 border-gray-200 lg:mb-6">
+          <div className="overflow-x-auto">
+            <table className="min-w-full bg-white text-sm" {...getExplanationTableProps()}>
+              <thead>
+                {explanationHeaderGroups.map(headerGroup => (
+                  <tr {...headerGroup.getHeaderGroupProps()}>
+                    {headerGroup.headers.map(column => (
+                      <th className="text-left py-2 px-4 border-b" {...column.getHeaderProps()}>{column.render('Header')}</th>
+                    ))}
+                  </tr>
+                ))}
+              </thead>
+              <tbody {...getExplanationTableBodyProps()}>
+                {explanationRows.map(row => {
+                  prepareExplanationRow(row);
+                  return (
+                    <tr {...row.getRowProps()}>
+                      {row.cells.map(cell => {
+                        return (
+                          <td className="py-2 px-4 border-b" {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                        )
+                      })}
                     </tr>
-                  ))}
-                </thead>
-                <tbody {...getExplanationTableBodyProps()}>
-                  {explanationRows.map(row => {
-                    prepareExplanationRow(row);
-                    return (
-                      <tr {...row.getRowProps()}>
-                        {row.cells.map(cell => {
-                          return (
-                            <td className="py-2 px-4 border-b" {...cell.getCellProps()}>{cell.render('Cell')}</td>
-                          )
-                        })}
-                      </tr>
-                    )
-                  })}
-                </tbody>
-              </table>
-            </div>
+                  )
+                })}
+              </tbody>
+            </table>
           </div>
-        )}
+        </div>
+
+       {/* Vista Previa - Table (Always Open) */}
+       <div className="mb-2 lg:mb-8 px-1">
+          <h1 className="text-lg lg:text-2xl font-bold lg:mb-4">Vista Previa</h1>
+        </div>
+       <div className="rounded-lg mb-8 overflow-hidden border border-gray-200 lg:mb-6">
+          <div className="overflow-x-auto">
+            <table className="min-w-full bg-white text-sm" {...getTableProps()}>
+              <thead>
+                {headerGroups.map(headerGroup => (
+                  <tr {...headerGroup.getHeaderGroupProps()}>
+                    {headerGroup.headers.map(column => (
+                      <th className="text-left py-2 px-4 border-b" {...column.getHeaderProps()}>{column.render('Header')}</th>
+                    ))}
+                  </tr>
+                ))}
+              </thead>
+              <tbody {...getTableBodyProps()}>
+                {rows.map(row => {
+                  prepareRow(row)
+                  return (
+                    <tr {...row.getRowProps()}>
+                      {row.cells.map(cell => {
+                        return (
+                          <td className="py-2 px-4 border-b" {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                        )
+                      })}
+                    </tr>
+                  )
+                })}
+              </tbody>
+            </table>
+          </div>
+        </div>
 
         {/* Download button */}
-        <div className="flex justify-end">
+        <div className="flex justify-end mb-20">
           <div className="bg-white rounded p-2 shadow-lg w-auto inline-flex">
             <button
               onClick={downloadData}
