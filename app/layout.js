@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
       <Head>
         <meta property="og:title" content="Aire Claro" />
         <meta property="og:description" content="Cuida tu salud con la mejor información de calidad del aire de Monterrey." />
-        <meta property="og:image" content="/aire_claro.png" />
+        <meta property="og:image" content="/aire_claro2.png" />
         <meta property="og:image:width" content="600" />
         <meta property="og:image:height" content="314" />
         <meta property="og:url" content="http://www.aireclaro.com" />
