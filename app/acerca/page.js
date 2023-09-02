@@ -9,11 +9,10 @@ const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.
 export default function Index() {
   const [isOpen1, setIsOpen1] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
-  const [isOpen3, setIsOpen3] = useState(false);
+  const [isOpen3, setIsOpen3] = useState(true);
   const [isOpen4, setIsOpen4] = useState(false);
   const [isOpen5, setIsOpen5] = useState(false);
   const [isOpen6, setIsOpen6] = useState(false);
-  const [isOpen7, setIsOpen7] = useState(false);
 
   return (
     <div className="flex flex-col lg:flex-row">
@@ -63,7 +62,7 @@ export default function Index() {
         {/* Pregunta 2 */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4 lg:mb-6">
           <div onClick={() => setIsOpen4(!isOpen4)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
-            <p className='text-sm lg:text-base'>¿Cómo garantizan la precisión de sus recomendaciones?</p>
+            <p className='text-sm lg:text-base'>¿Cómo garantizan la precisión de las recomendaciones?</p>
             <img
               src={isOpen4 ? "/up-arrow.png" : "/down-arrow.png"}
               alt="toggle"
@@ -73,23 +72,6 @@ export default function Index() {
           {isOpen4 && (
             <p className="mt-4 text-sm lg:text-base">
               Medimos sólo las partículas más dañinas para tu salud de acuerdo a las condiciones climatológicas de la Zona Metropolitana de Monterrey.
-            </p>
-          )}
-        </div>
-
-        {/* Pregunta 3 */}
-        <div className="bg-white rounded-lg shadow-lg p-4 mb-4 lg:mb-6">
-          <div onClick={() => setIsOpen6(!isOpen6)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
-            <p className='text-sm lg:text-base'>¿Quién conforma la población sensible?</p>
-            <img
-              src={isOpen4 ? "/up-arrow.png" : "/down-arrow.png"}
-              alt="toggle"
-              className="h-3 w-3"
-            />
-          </div>
-          {isOpen6 && (
-            <p className="mt-4 text-sm lg:text-base">
-              Infantes, mujeres embarazadas, personas mayores o con padecimientos.
             </p>
           )}
         </div>
@@ -114,15 +96,15 @@ export default function Index() {
 
         {/* Pregunta 5 */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4 lg:mb-6">
-          <div onClick={() => setIsOpen7(!isOpen7)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
+          <div onClick={() => setIsOpen6(!isOpen6)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p className='text-sm lg:text-base'>¿Cómo agrego un ícono de enlace directo en mi celular?</p>
             <img 
-              src={isOpen7 ? "/up-arrow.png" : "/down-arrow.png"}
+              src={isOpen6 ? "/up-arrow.png" : "/down-arrow.png"}
               alt="toggle" 
               className="h-3 w-3" 
             />
           </div>
-          {isOpen7 && (
+          {isOpen6 && (
             <div className="mt-4 text-sm lg:text-base">
               <div className="relative mb-8">
                 <p className="text-sm lg:text-base mb-2">iPhone</p>
