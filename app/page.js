@@ -131,7 +131,7 @@ export default function Recomendaciones() {
           {/* Embarazadas */}
           <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
             <div className="flex items-center">
-              <img src="/embarazadas2.png" width={22} height={22} alt="Emabarazadas Icon" />
+              <img src="/embarazadas.png" width={30} height={30} alt="Emabarazadas Icon" />
             </div>
             <p className="mt-2 text-sm lg:text-sm font-semibold">Embarazadas</p>
             <p className="mt-1 text-sm lg:text-base">{getActivityRecommendation('embarazadas', nearestSensor.pm25)}</p>
@@ -139,7 +139,7 @@ export default function Recomendaciones() {
           {/* Condiciones Médicas */}
           <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
             <div className="flex items-center">
-              <img src="pulmon.png" width={30} height={30} alt="Emabarazadas Icon" />
+              <img className="mr-2" src="pulmon.png" width={30} height={30} alt="Emabarazadas Icon" />
               <img src="corazon.png" width={30} height={30} alt="Emabarazadas Icon" />
             </div>
             <p className="mt-2 text-sm lg:text-sm font-semibold">Condiciones Médicas</p>
