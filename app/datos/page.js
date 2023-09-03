@@ -118,8 +118,8 @@ export default function Index() {
         <div className="mb-6 lg:mb-8 px-1">
           <h1 className="text-2xl mb-2 lg:text-4xl font-bold lg:mb-4">Apertura de Información</h1>
           <p className="text-sm lg:text-base">
-            Buscamos impulsar la <strong>transparencia y la participación ciudadana</strong> en la toma de decisiones sobre la calidad del aire que respiramos para proteger la salud de las personas.
-            Por esa razon es que <strong>publicamos todos los datos</strong> que se recolectan cada hora a través de los sensores ubicados en la Zona Metropolitana de Monterrey.
+            Buscamos impulsar la transparencia y la participación ciudadana en la toma de decisiones sobre la calidad del aire que respiramos para proteger la salud de las personas.
+            Por esa razon es que publicamos todos los datos que se recolectan cada hora a través de los sensores ubicados en la Zona Metropolitana de Monterrey.
           </p>
         </div>
 
