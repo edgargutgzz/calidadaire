@@ -54,7 +54,7 @@ export default function Index() {
           </div>
           {isOpen3 && (
             <p className="mt-4 text-sm lg:text-base">
-              Aire Claro es la plataforma que muestra la calidad del aire en tiempo real de la Zona Metropolitana de Monterrey. <br />
+              Aire Claro es la plataforma que muestra la calidad del aire de la última hora registrada en cada sensor de la Zona Metropolitana de Monterrey. <br />
             </p>
           )}
         </div>
@@ -71,7 +71,10 @@ export default function Index() {
           </div>
           {isOpen4 && (
             <p className="mt-4 text-sm lg:text-base">
-              Medimos sólo las partículas más dañinas para tu salud de acuerdo a las condiciones climatológicas de la Zona Metropolitana de Monterrey.
+              <div className="py-1">Compartimos de forma oportuna las concentraciones de las partículas respirables más dañinas para tu salud (PM2.5) y el riesgo a la salud asociado por respirarlas, con base en el&nbsp;
+                <a href="https://www.gob.mx/cms/uploads/attachment/file/554425/comunicado_indice_calidad_aire_05_2020_FINAL_v3.pdf"
+                target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Índice de Aire y Salud</a> mexicano.
+              </div>
             </p>
           )}
         </div>
@@ -88,8 +91,8 @@ export default function Index() {
           </div>
           {isOpen1 && (
             <p className="mt-4 text-sm lg:text-base">
-              <div className="py-1">1. Las estaciones de monitoreo de la <a href="http://aire.nl.gob.mx/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Secretaría de Desarrollo Sustentable</a> del estado de Nuevo León.</div>
-              <div className="py-1">2. Las estaciones de monitoreo ciudadanas de <a href="https://www2.purpleair.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Purple Air</a>.</div>
+              <div className="py-1">1. Las estaciones de monitoreo&nbsp;<a href="http://aire.nl.gob.mx/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">SIMA</a> de la Secretaría de Desarrollo Sustentable del Estado de Nuevo León.</div>
+              <div className="py-1">2. Los sensores de bajo costo de <a href="https://www2.purpleair.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Purple Air</a>.</div>
             </p>
           )}
         </div>
