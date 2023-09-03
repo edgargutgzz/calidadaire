@@ -132,7 +132,7 @@ export default function Recomendaciones() {
             <div className="flex items-center space-x-2">
               <img src="adultos_mayores.png" width={30} height={30} alt="Adultos Mayores Icon" />
             </div>
-            <p className="mt-2 text-sm lg:text-sm font-semibold">Adultos Mayores de 60 años</p>
+            <p className="mt-2 text-sm lg:text-sm font-semibold">Adultos mayores de 60 años</p>
             <p className="mt-1 text-sm lg:text-base">{getActivityRecommendation('adultos_mayores', nearestSensor.pm25)}</p>
           </div>
           {/* Condiciones Médicas */}
