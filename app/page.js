@@ -105,7 +105,28 @@ export default function Recomendaciones() {
 
     return (
       <>
-        {/* Embarazadas y Menores */}
+
+        {/* Menores y Adultos Mayores */}
+        <div className="flex flex-row justify-between mt-2"> 
+          {/* Menores */}
+          <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
+            <div className="flex items-center space-x-2">
+              <img src="/menores.png" width={30} height={30} alt="Emabarazadas Icon" />
+            </div>
+            <p className="mt-2 text-sm lg:text-sm font-semibold">Menores de 12 años</p>
+            <p className="mt-1 text-sm lg:text-base">{getActivityRecommendation('menores', nearestSensor.pm25)}</p>
+          </div>
+          {/* Adultos Mayores */}
+          <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
+            <div className="flex items-center space-x-2">
+              <img src="adultos_mayores.png" width={30} height={30} alt="Adultos Mayores Icon" />
+            </div>
+            <p className="mt-2 text-sm lg:text-sm font-semibold">Adultos mayores de 60 años</p>
+            <p className="mt-1 text-sm lg:text-base">{getActivityRecommendation('adultos_mayores', nearestSensor.pm25)}</p>
+          </div>
+        </div>
+
+        {/* Embarazadas y Condiciones Médicas */}
         <div className="flex flex-row justify-between mt-2"> 
           {/* Embarazadas */}
           <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
@@ -114,26 +135,6 @@ export default function Recomendaciones() {
             </div>
             <p className="mt-2 text-sm lg:text-sm font-semibold">Embarazadas</p>
             <p className="mt-1 text-sm lg:text-base">{getActivityRecommendation('embarazadas', nearestSensor.pm25)}</p>
-          </div>
-          {/* Menores */}
-          <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
-            <div className="flex items-center space-x-2">
-              <img src="/menores.png" width={30} height={30} alt="Emabarazadas Icon" />
-            </div>
-            <p className="mt-2 text-sm lg:text-sm font-semibold">Menores de 12 años</p>
-            <p className="mt-1 text-sm lg:text-base">{getActivityRecommendation('menores', nearestSensor.pm25)}</p>
-          </div>
-        </div>
-
-        {/* Adultos Mayores y Condiciones Medicas */}
-        <div className="flex flex-row justify-between mt-2"> 
-          {/* Adultos Mayores */}
-          <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
-            <div className="flex items-center space-x-2">
-              <img src="adultos_mayores.png" width={30} height={30} alt="Adultos Mayores Icon" />
-            </div>
-            <p className="mt-2 text-sm lg:text-sm font-semibold">Adultos mayores de 60 años</p>
-            <p className="mt-1 text-sm lg:text-base">{getActivityRecommendation('adultos_mayores', nearestSensor.pm25)}</p>
           </div>
           {/* Condiciones Médicas */}
           <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 ml-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>

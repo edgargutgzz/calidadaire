@@ -19,8 +19,8 @@ export default function Index() {
       <Navbar currentPage="acerca" />
       <div className="flex-grow mx-4 mt-6 mb-20 lg:ml-40 lg:mr-40 lg:mt-10 lg:flex-grow lg:w-9/12">
 
-        {/* Aire Claro - Video */}
-        <div className="mb-4 relative rounded-lg overflow-hidden" style={{ paddingBottom: "56.25%" }}> {/* 16:9 Aspect Ratio */}
+        {/* Aire Claro - Video */}  
+        {/* <div className="mb-4 relative rounded-lg overflow-hidden" style={{ paddingBottom: "56.25%" }}> 
           <iframe 
             style={{
               position: "absolute",
@@ -35,10 +35,10 @@ export default function Index() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen
           ></iframe>
-        </div>
+        </div> */}
 
         {/* Preguntas Frecuentes */}
-        <div className="mt-8 lg:mt-16">
+        <div className="mt-0 lg:mt-0">
           <h1 className="text-xl lg:text-3xl font-bold mb-4 lg:mb-8 px-1">Preguntas Frecuentes</h1>
         </div>
 
@@ -182,7 +182,7 @@ export default function Index() {
           <h1 className="text-xl lg:text-3xl font-bold mb-4 lg:mb-8 px-1">Equipo</h1>
         </div>
 
-        {/* Team Member 2 - Selene Guajardo */}
+        {/* Team Member 1 - Selene Guajardo */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4 lg:mb-6">
           <div className="flex items-center">
             <img src="/profile_edgar.jpeg" alt="Selene Guajardo" className="w-12 h-12 rounded-full mr-4"/>
@@ -193,7 +193,7 @@ export default function Index() {
           </div>
         </div>
 
-        {/* Team Member 1 - Edgar Gutiérrez */}
+        {/* Team Member 2 - Edgar Gutiérrez */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4 lg:mb-6">
           <div className="flex items-center">
             <img src="/profile_edgar.jpeg" alt="Edgar Gutiérrez" className="w-12 h-12 rounded-full mr-4"/>
@@ -218,7 +218,7 @@ export default function Index() {
           </div>
         </div>
 
-        {/* Team Member 3 - Carlos R. García */}
+        {/* Team Member 4 - Carlos R. García */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4 lg:mb-6">
           <div className="flex items-center">
             <img src="/profile_edgar.jpeg" alt="Selene Guajardo" className="w-12 h-12 rounded-full mr-4"/>
@@ -228,7 +228,6 @@ export default function Index() {
             </div>
           </div>
         </div>
-
 
       </div>
     </div>
