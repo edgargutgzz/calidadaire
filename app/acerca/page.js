@@ -99,6 +99,28 @@ export default function Index() {
 
         {/* Pregunta 5 */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4 lg:mb-6">
+          <div onClick={() => setIsOpen2(!isOpen2)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
+            <p className='text-sm lg:text-base pr-4'>¿Quién es el Observatorio Ciudadano de la Calidad del Aire?</p>
+            <img
+              src={isOpen2 ? "/up-arrow.png" : "/down-arrow.png"}
+              alt="toggle"
+              className="h-3 w-3"
+            />
+          </div>
+          {isOpen2 && (
+            <>
+              <p className="mt-4 text-sm lg:text-base">
+                El <a href="https://observatoriodelaire.com/index.html" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">OCCAMM</a> es un organización de la sociedad civil que promueve información sobre el estado, causas y efectos de la contaminación del aire en la Zona Metropolitana de Monterrey.
+              </p>
+              <p className="mt-2 text-sm lg:text-base">
+                El observatorio es también quién evalúa la información que utiliza Aire Claro para brindar las mejores recomendaciones posibles.
+              </p>
+            </>
+          )}
+        </div>
+
+        {/* Pregunta 6 */}
+        <div className="bg-white rounded-lg shadow-lg p-4 mb-4 lg:mb-6">
           <div onClick={() => setIsOpen6(!isOpen6)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
             <p className='text-sm lg:text-base'>¿Cómo agrego un ícono de enlace directo en mi celular?</p>
             <img 
@@ -135,28 +157,6 @@ export default function Index() {
                 </div>
               </div>
             </div>
-          )}
-        </div>
-
-        {/* Pregunta 6 */}
-        <div className="bg-white rounded-lg shadow-lg p-4 mb-4 lg:mb-6">
-          <div onClick={() => setIsOpen2(!isOpen2)} className="mt-2 text-sm font-bold cursor-pointer flex justify-between items-center">
-            <p className='text-sm lg:text-base pr-4'>¿Quién es el Observatorio Ciudadano de la Calidad del Aire?</p>
-            <img
-              src={isOpen2 ? "/up-arrow.png" : "/down-arrow.png"}
-              alt="toggle"
-              className="h-3 w-3"
-            />
-          </div>
-          {isOpen2 && (
-            <>
-              <p className="mt-4 text-sm lg:text-base">
-                El <a href="https://observatoriodelaire.com/index.html" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">OCCAMM</a> es un organización de la sociedad civil que promueve información sobre el estado, causas y efectos de la contaminación del aire en la Zona Metropolitana de Monterrey.
-              </p>
-              <p className="mt-2 text-sm lg:text-base">
-                El observatorio es también quién evalúa la información que utiliza Aire Claro para brindar las mejores recomendaciones posibles.
-              </p>
-            </>
           )}
         </div>
 
