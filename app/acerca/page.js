@@ -37,7 +37,7 @@ export default function Index() {
           ></iframe>
         </div>
 
-        {/* Title */}
+        {/* Preguntas Frecuentes */}
         <div className="mt-8 lg:mt-16">
           <h1 className="text-xl lg:text-3xl font-bold mb-4 lg:mb-8 px-1">Preguntas Frecuentes</h1>
         </div>
@@ -176,6 +176,24 @@ export default function Index() {
             </p>
           )}
         </div>
+
+        {/* Equipo */}
+        <div className="mt-8 lg:mt-16">
+          <h1 className="text-xl lg:text-3xl font-bold mb-4 lg:mb-8 px-1">Equipo</h1>
+        </div>
+
+        {/* Team Member 1 - Edgar Gutiérrez */}
+        <div className="bg-white rounded-lg shadow-lg p-4 mb-4 lg:mb-6">
+          <div className="flex items-center">
+            <img src="/profile_edgar.jpeg" alt="Edgar Gutiérrez" className="w-12 h-12 rounded-full mr-4"/>
+            <div>
+              <p className="text-sm lg:text-base font-bold">Edgar Gutiérrez</p>
+              <p className="text-sm lg:text-base">Diseño y Desarrollo Web</p>
+            </div>
+          </div>
+        </div>
+
+
 
       </div>
     </div>
