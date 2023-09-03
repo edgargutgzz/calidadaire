@@ -182,6 +182,17 @@ export default function Index() {
           <h1 className="text-xl lg:text-3xl font-bold mb-4 lg:mb-8 px-1">Equipo</h1>
         </div>
 
+        {/* Team Member 2 - Selene Guajardo */}
+        <div className="bg-white rounded-lg shadow-lg p-4 mb-4 lg:mb-6">
+          <div className="flex items-center">
+            <img src="/profile_edgar.jpeg" alt="Selene Guajardo" className="w-12 h-12 rounded-full mr-4"/>
+            <div>
+              <p className="text-sm lg:text-base font-bold">Selene Guajardo</p>
+              <p className="text-sm lg:text-base">Directora del Observatorio Ciudadano de Calidad del Aire</p>
+            </div>
+          </div>
+        </div>
+
         {/* Team Member 1 - Edgar Gutiérrez */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4 lg:mb-6">
           <div className="flex items-center">
@@ -189,10 +200,34 @@ export default function Index() {
             <div>
               <p className="text-sm lg:text-base font-bold">Edgar Gutiérrez</p>
               <p className="text-sm lg:text-base">Diseño y Desarrollo Web</p>
+              {/* <p className="text-sm lg:text-base">
+                <a href="https://www.edgargtz.com/" className="text-blue-500 hover:underline">edgargtz.com</a>
+              </p> */}
             </div>
           </div>
         </div>
 
+        {/* Team Member 3 - Lucía Barrera */}
+        <div className="bg-white rounded-lg shadow-lg p-4 mb-4 lg:mb-6">
+          <div className="flex items-center">
+            <img src="/profile_edgar.jpeg" alt="Selene Guajardo" className="w-12 h-12 rounded-full mr-4"/>
+            <div>
+              <p className="text-sm lg:text-base font-bold">Lucía Barrera</p>
+              <p className="text-sm lg:text-base">Directora del Observatorio Ciudadano de Calidad del Aire</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Team Member 3 - Carlos R. García */}
+        <div className="bg-white rounded-lg shadow-lg p-4 mb-4 lg:mb-6">
+          <div className="flex items-center">
+            <img src="/profile_edgar.jpeg" alt="Selene Guajardo" className="w-12 h-12 rounded-full mr-4"/>
+            <div>
+              <p className="text-sm lg:text-base font-bold">Carlos R. García</p>
+              <p className="text-sm lg:text-base">Directora del Observatorio Ciudadano de Calidad del Aire</p>
+            </div>
+          </div>
+        </div>
 
 
       </div>
