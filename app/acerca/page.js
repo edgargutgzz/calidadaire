@@ -199,7 +199,7 @@ export default function Index() {
             <img src="/profile_edgar.jpeg" alt="Edgar Gutiérrez" className="w-12 h-12 rounded-full mr-4"/>
             <div>
               <p className="text-sm lg:text-base font-bold">Edgar Gutiérrez</p>
-              <p className="text-sm lg:text-base">Diseño y Desarrollo Web</p>
+              <p className="text-sm lg:text-base">Diseño y Desarrollo Web de Aire Claro</p>
               {/* <p className="text-sm lg:text-base">
                 <a href="https://www.edgargtz.com/" className="text-blue-500 hover:underline">edgargtz.com</a>
               </p> */}
@@ -210,7 +210,7 @@ export default function Index() {
         {/* Team Member 3 - Lucía Barrera */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4 lg:mb-6">
           <div className="flex items-center">
-            <img src="/profile_edgar.jpeg" alt="Selene Guajardo" className="w-12 h-12 rounded-full mr-4"/>
+            <div className="w-12 h-12 rounded-full mr-4 bg-gray-300"></div> 
             <div>
               <p className="text-sm lg:text-base font-bold">Lucía Barrera</p>
               <p className="text-sm lg:text-base">Miembro del Consejo Juvenil del OCCAMM</p>
@@ -218,13 +218,14 @@ export default function Index() {
           </div>
         </div>
 
-        {/* Team Member 4 - Carlos R. García */}
+
+        {/* Team Member 3 - Carlos R. García */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4 lg:mb-6">
           <div className="flex items-center">
-            <img src="/profile_edgar.jpeg" alt="Selene Guajardo" className="w-12 h-12 rounded-full mr-4"/>
+            <div className="w-12 h-12 rounded-full mr-4 bg-gray-300"></div>
             <div>
               <p className="text-sm lg:text-base font-bold">Carlos R. García</p>
-              <p className="text-sm lg:text-base">Directora del Observatorio Ciudadano de Calidad del Aire</p>
+              <p className="text-sm lg:text-base">Miembro del Consejo Juvenil del OCCAMM</p>
             </div>
           </div>
         </div>
