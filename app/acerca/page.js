@@ -54,7 +54,7 @@ export default function Index() {
           </div>
           {isOpen3 && (
             <p className="mt-4 text-sm lg:text-base">
-              Aire Claro es la plataforma que muestra la calidad del aire de la última hora registrada en cada sensor de la Zona Metropolitana de Monterrey. <br />
+              Aire Claro muestra la calidad del aire de la Zona Metropolitana de Monterrey y brinda recomendaciones oportunas para cuidar tu salud.<br />
             </p>
           )}
         </div>
