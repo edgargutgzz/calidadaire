@@ -121,7 +121,7 @@ export default function Recomendaciones() {
             <div className="flex items-center">
               <img src="adultos_mayores.png" width={30} height={30} alt="Adultos Mayores Icon" />
             </div>
-            <p className="mt-2 text-sm lg:text-sm font-semibold">Adultos mayores de 60 años</p>
+            <p className="mt-2 text-sm lg:text-sm font-semibold">Mayores de 60 años</p>
             <p className="mt-1 text-sm lg:text-base">{getActivityRecommendation('adultos_mayores', nearestSensor.pm25)}</p>
           </div>
         </div>
@@ -133,7 +133,7 @@ export default function Recomendaciones() {
             <div className="flex items-center">
               <img src="/embarazadas.png" width={22} height={22} alt="Emabarazadas Icon" />
             </div>
-            <p className="mt-2 text-sm lg:text-sm font-semibold">Embarazadas</p>
+            <p className="mt-2 text-sm lg:text-sm font-semibold">Personas Embarazadas</p>
             <p className="mt-1 text-sm lg:text-base">{getActivityRecommendation('embarazadas', nearestSensor.pm25)}</p>
           </div>
           {/* Condiciones Médicas */}
@@ -142,7 +142,7 @@ export default function Recomendaciones() {
               <img className="mr-1" src="pulmon.png" width={30} height={30} alt="Emabarazadas Icon" />
               <img src="corazon.png" width={30} height={30} alt="Emabarazadas Icon" />
             </div>
-            <p className="mt-2 text-sm lg:text-sm font-semibold">Condiciones Médicas</p>
+            <p className="mt-2 text-sm lg:text-sm font-semibold">Enfermedades cardiovasculares y/o respiratorias</p>
             <p className="mt-1 text-sm lg:text-base">{getActivityRecommendation('condiciones_medicas', nearestSensor.pm25)}</p>
           </div>
         </div>

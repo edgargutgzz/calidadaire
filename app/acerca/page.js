@@ -91,7 +91,7 @@ export default function Index() {
           </div>
           {isOpen1 && (
             <p className="mt-4 text-sm lg:text-base">
-              <div className="py-1">1. Las estaciones de monitoreo&nbsp;<a href="http://aire.nl.gob.mx/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">SIMA</a> de la Secretaría de Desarrollo Sustentable del Estado de Nuevo León.</div>
+              <div className="py-1">1. Las estaciones de monitoreo&nbsp;<a href="http://aire.nl.gob.mx/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">SIMA</a> de la Secretaría de Medio Ambiente de Nuevo León.</div>
               <div className="py-1">2. Los sensores de bajo costo de <a href="https://www2.purpleair.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Purple Air</a>.</div>
             </p>
           )}
@@ -113,7 +113,7 @@ export default function Index() {
                 El <a href="https://observatoriodelaire.com/index.html" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">OCCAMM</a> es un organización de la sociedad civil que promueve información sobre el estado, causas y efectos de la contaminación del aire en la Zona Metropolitana de Monterrey.
               </p>
               <p className="mt-2 text-sm lg:text-base">
-                El observatorio es también quién evalúa la información que utiliza Aire Claro para brindar las mejores recomendaciones posibles.
+                El Observatorio es también quién evalúa la información que utiliza Aire Claro para brindar las mejores recomendaciones posibles.
               </p>
             </>
           )}
@@ -185,10 +185,10 @@ export default function Index() {
         {/* Team Member 1 - Selene Guajardo */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4 lg:mb-6">
           <div className="flex items-center">
-            <img src="/profile_edgar.jpeg" alt="Selene Guajardo" className="w-12 h-12 rounded-full mr-4"/>
+            <img src="/profile_selene.jpg" alt="Selene Guajardo" className="w-12 h-12 rounded-full mr-4"/>
             <div>
               <p className="text-sm lg:text-base font-bold">Selene Guajardo</p>
-              <p className="text-sm lg:text-base">Directora del Observatorio Ciudadano de Calidad del Aire</p>
+              <p className="text-sm lg:text-base">Directora Ejecutiva del OCCAMM</p>
             </div>
           </div>
         </div>
@@ -213,7 +213,7 @@ export default function Index() {
             <img src="/profile_edgar.jpeg" alt="Selene Guajardo" className="w-12 h-12 rounded-full mr-4"/>
             <div>
               <p className="text-sm lg:text-base font-bold">Lucía Barrera</p>
-              <p className="text-sm lg:text-base">Directora del Observatorio Ciudadano de Calidad del Aire</p>
+              <p className="text-sm lg:text-base">Miembro del Consejo Juvenil del OCCAMM</p>
             </div>
           </div>
         </div>
