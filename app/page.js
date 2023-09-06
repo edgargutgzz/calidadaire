@@ -26,9 +26,23 @@ function QualityBar({ pm25 }) {
     return "No Disponible";  // default text in case the value is null or undefined
   };
 
+  // Recomendación de acuerdo al nivel de calidad del aire
+  const getRecommendedText = () => {
+    const textMap = {
+      "Buena": "Disfruta las actividades al aire libre.",
+      "Aceptable": "Disfruta las actividades al aire libre.",
+      "Mala": "Es posible realizar actividades al aire libre. Si presentas síntomas como tos o falta de aire, toma más descansos y realiza actividades menos vigorosas.",
+      "Muy Mala": "Evita la actividad física vigorosa o prolongada al aire libre.",
+      "Extremadamente Mala": "Permanece en interiores. Reprograma tus actividades al aire libre y si presentas síntomas respiratorios o cardiacos acude al médico."
+    };
+    return textMap[getQualityText()] || "No Disponible";  // Default text in case of unexpected input
+  };
+
+
   return (
     <>
       <div className="text-left font-semibold text-4xl">{getQualityText()}</div>
+      <div className="text-left text-base mt-2">{getRecommendedText()}</div> 
       <div className="relative flex min-h-[12px] rounded-lg overflow-hidden mt-4 mb-2">
         <div style={{ flexBasis: "12%" }} className="bg-custom-green" />
         <div style={{ flexBasis: "10%" }} className="bg-gradient-to-r from-custom-green to-custom-yellow" />
