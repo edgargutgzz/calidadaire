@@ -1,0 +1,16 @@
+id,sensor_id,nombre,municipio,lat,lon
+1,SE,Sureste,Guadalupe,25.66827,-100.24958
+2,NE,Noreste,San Nicolas de los Garza,25.74543,-100.25502
+3,CE,Centro,Monterrey,25.67602,-100.335847
+4,NO,Noroeste,Monterrey,25.75712,-100.365974
+5,SO,Suroeste,Santa Catarina,25.675356,-100.460037
+6,NO2,Noroeste 2,Garcia,25.783331,-100.585833
+7,Norte,Norte,Escobedo,25.80194,-100.343056
+8,NE2,Noreste 2,Apodaca,25.77722,-100.188055
+9,SE2,Sureste 2,Juárez,25.64611,-100.095555
+10,SO2,Suroeste 2,San Pedro Garza Garcia,25.66528,-100.412778
+11,SE3,Sureste 3,Cadereyta Jimenez,25.60087,-99.995334
+12,SUR,Sur,Monterrey,25.575383,-100.249371
+13,Norte2,Norte 2,San Nicolas de los Garza,25.729787,-100.310028
+14,NE3,Noreste 3,Pesqueria,25.791343,-100.078176
+15,NO3,Noroeste 3,Garcia,25.785307,-100.463958
