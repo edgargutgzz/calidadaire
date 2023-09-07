@@ -188,7 +188,7 @@ export default function Recomendaciones() {
             <div className="text-center text-gray-400 text-xs pb-1 pt-2 lg:pt-2 lg:text-sm">POBLACIÓN SENSIBLE</div>
             {renderCards()}
             {/* Location */}
-            <div className="bg-white rounded-lg shadow-lg p-4 mb-6 mt-4">
+            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 mt-4">
               <div className="flex items-center">
                 <img src="/navigation.png" className="w-4 h-4" alt="Correr Icon" />
                 <p className="ml-2 text-xs lg:text-sm">Calidad de aire en {nearestSensor.address}</p>
