@@ -142,7 +142,7 @@ export default function Recomendaciones() {
         </div>
 
         {/* Embarazadas y Condiciones Médicas */}
-        <div className="flex flex-row justify-between mt-2 mb-4"> 
+        <div className="flex flex-row justify-between mt-2 mb-2"> 
           {/* Embarazadas */}
           <div className={`bg-white rounded-lg shadow-lg p-4 mb-4 w-1/2 mr-2 ${getBorderColor(nearestSensor.pm25)} border-b-4`}>
             <div className="flex items-center">
