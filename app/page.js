@@ -42,9 +42,9 @@ function QualityBar({ pm25 }) {
   return (
     <>
       <div className="text-left text-gray-400 text-xs">CALIDAD DEL AIRE</div>
-      <div className="text-left font-semibold text-4xl mt-2">{getQualityText()}</div>
+      <div className="text-left font-semibold text-4xl mt-1">{getQualityText()}</div>
       <div className="text-left text-base mt-2">{getRecommendedText()}</div> 
-      <div className="relative flex min-h-[12px] rounded-lg overflow-hidden mt-4 mb-2">
+      <div className="relative flex min-h-[12px] rounded-lg overflow-hidden mt-4 mb-1">
         <div style={{ flexBasis: "12%" }} className="bg-custom-green" />
         <div style={{ flexBasis: "10%" }} className="bg-gradient-to-r from-custom-green to-custom-yellow" />
         <div style={{ flexBasis: "12%" }} className="bg-custom-yellow" />
