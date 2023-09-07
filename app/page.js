@@ -185,7 +185,7 @@ export default function Recomendaciones() {
               <QualityBar pm25={nearestSensor.pm25} />
             </div>
             {/* Recomendaciones */}
-            <div className="text-center text-gray-400 text-xs pb-2">POBLACIÓN SENSIBLE</div>
+            <div className="text-center text-gray-400 text-xs pb-2 pt-2">POBLACIÓN SENSIBLE</div>
             {renderCards()}
             {/* Location */}
             <div className="bg-white rounded-lg shadow-lg p-4 mb-4 mt-0">
