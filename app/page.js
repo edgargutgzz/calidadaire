@@ -41,8 +41,8 @@ function QualityBar({ pm25 }) {
 
   return (
     <>
-      <div className="text-left text-gray-400 text-xs">CALIDAD DEL AIRE</div>
-      <div className="text-left font-semibold text-4xl mt-1">{getQualityText()}</div>
+      <div className="text-left text-gray-400 text-xs lg:text-sm">CALIDAD DEL AIRE</div>
+      <div className="text-left font-semibold text-4xl lg:text-5xl mt-1">{getQualityText()}</div>
       <div className="text-left text-base mt-2">{getRecommendedText()}</div> 
       <div className="relative flex min-h-[12px] rounded-lg overflow-hidden mt-4 mb-1">
         <div style={{ flexBasis: "12%" }} className="bg-custom-green" />
@@ -128,7 +128,7 @@ export default function Recomendaciones() {
             <div className="flex items-center">
               <img src="/menores.png" width={30} height={30} alt="Emabarazadas Icon" />
             </div>
-            <p className="mt-2 text-sm lg:text-sm font-semibold">Menores de 12 años</p>
+            <p className="mt-2 text-sm lg:text-base font-semibold">Menores de 12 años</p>
             <p className="mt-1 text-sm lg:text-base">{getActivityRecommendation('menores', nearestSensor.pm25)}</p>
           </div>
           {/* Adultos Mayores */}
@@ -136,7 +136,7 @@ export default function Recomendaciones() {
             <div className="flex items-center">
               <img src="adultos_mayores.png" width={30} height={30} alt="Adultos Mayores Icon" />
             </div>
-            <p className="mt-2 text-sm lg:text-sm font-semibold">Mayores de 60 años</p>
+            <p className="mt-2 text-sm lg:text-base font-semibold">Mayores de 60 años</p>
             <p className="mt-1 text-sm lg:text-base">{getActivityRecommendation('adultos_mayores', nearestSensor.pm25)}</p>
           </div>
         </div>
@@ -148,7 +148,7 @@ export default function Recomendaciones() {
             <div className="flex items-center">
               <img src="/embarazadas.png" width={22} height={22} alt="Emabarazadas Icon" />
             </div>
-            <p className="mt-2 text-sm lg:text-sm font-semibold">Personas Embarazadas</p>
+            <p className="mt-2 text-sm lg:text-base font-semibold">Personas Embarazadas</p>
             <p className="mt-1 text-sm lg:text-base">{getActivityRecommendation('embarazadas', nearestSensor.pm25)}</p>
           </div>
           {/* Condiciones Médicas */}
@@ -157,7 +157,7 @@ export default function Recomendaciones() {
               <img className="mr-1" src="pulmon.png" width={30} height={30} alt="Emabarazadas Icon" />
               <img src="corazon.png" width={30} height={30} alt="Emabarazadas Icon" />
             </div>
-            <p className="mt-2 text-sm lg:text-sm font-semibold">Enfermedades cardiovasculares y/o respiratorias</p>
+            <p className="mt-2 text-sm lg:text-base font-semibold">Enfermedades cardiovasculares y/o respiratorias</p>
             <p className="mt-1 text-sm lg:text-base">{getActivityRecommendation('condiciones_medicas', nearestSensor.pm25)}</p>
           </div>
         </div>
@@ -185,7 +185,7 @@ export default function Recomendaciones() {
               <QualityBar pm25={nearestSensor.pm25} />
             </div>
             {/* Recomendaciones */}
-            <div className="text-center text-gray-400 text-xs pb-1 pt-0">POBLACIÓN SENSIBLE</div>
+            <div className="text-center text-gray-400 text-xs pb-1 pt-2 lg:pt-2 lg:text-sm">POBLACIÓN SENSIBLE</div>
             {renderCards()}
             {/* Location */}
             <div className="bg-white rounded-lg shadow-lg p-4 mb-4 mt-2">
