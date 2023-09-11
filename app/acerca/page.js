@@ -218,7 +218,6 @@ export default function Index() {
           </div>
         </div>
 
-
         {/* Team Member 4 - Carlos R. García */}
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4 lg:mb-6">
           <div className="flex items-center">
@@ -228,6 +227,11 @@ export default function Index() {
               <p className="text-sm lg:text-base">Miembro del Consejo Juvenil del OCCAMM</p>
             </div>
           </div>
+        </div>
+  
+        {/* Logo - OCCAMM */}
+        <div className="flex justify-center mt-4 lg:mt-8">
+          <img src="/logo_occamm.png" alt="Observatorio del Aire" className="h-18 w-auto"/>
         </div>
 
       </div>
