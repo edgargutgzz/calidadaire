@@ -231,7 +231,7 @@ export default function Index() {
   
         {/* Logo - OCCAMM */}
         <div className="flex justify-center mt-8 lg:mt-8">
-          <img src="/logo_occamm.png" alt="Observatorio del Aire" style={{ width: "300px", height: "auto" }}/>
+          <img src="/logo_occamm.png" alt="Observatorio del Aire" style={{ width: "280px", height: "auto" }}/>
         </div>
 
       </div>
