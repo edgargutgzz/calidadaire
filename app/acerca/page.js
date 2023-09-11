@@ -230,9 +230,9 @@ export default function Index() {
         </div>
   
         {/* OCCAMM */}
-        <div className="mt-16 mb-10 lg:mt-24 lg:mb-2 text-center">
+        <div className="mt-16 mb-8 lg:mt-24 lg:mb-0 text-center">
           <div className="flex items-center justify-center">
-            <div className="text-gray-400 text-xs lg:text-sm pl-0 pr-1">Un proyecto del</div>
+            <div className="text-gray-400 text-xs lg:text-sm pl-0 pr-1 lg:pr-4">Un proyecto del</div>
             <img src="/logo_occamm.png" alt="Observatorio del Aire" className="ml-4 w-[170px] lg:w-[220px]" />
           </div>
         </div>
