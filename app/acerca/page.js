@@ -230,10 +230,13 @@ export default function Index() {
         </div>
   
         {/* OCCAMM */}
-        <div className="mt-10 mb-6 lg:mt-16 text-center">
-          <div className="text-gray-400 text-xs lg:text-sm">Un proyecto del</div>
-          <img src="/logo_occamm2.png" alt="Observatorio del Aire" className="mx-auto mt-4 lg:mt-8" style={{ width: "180px", height: "auto" }} />
+        <div className="mt-12 mb-8 lg:mt-16 text-center">
+          <div className="flex items-center justify-center">
+            <div className="text-gray-400 text-xs lg:text-sm pl-2">Un proyecto del</div>
+            <img src="/logo_occamm.png" alt="Observatorio del Aire" className="ml-4" style={{ width: "180px", height: "auto" }} />
+          </div>
         </div>
+
 
 
       </div>
