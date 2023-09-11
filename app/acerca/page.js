@@ -230,8 +230,8 @@ export default function Index() {
         </div>
   
         {/* Logo - OCCAMM */}
-        <div className="flex justify-center mt-4 lg:mt-8">
-          <img src="/logo_occamm.png" alt="Observatorio del Aire" className="h-18 w-auto"/>
+        <div className="flex justify-center mt-8 lg:mt-8">
+          <img src="/logo_occamm.png" alt="Observatorio del Aire" style={{ width: "300px", height: "auto" }}/>
         </div>
 
       </div>
