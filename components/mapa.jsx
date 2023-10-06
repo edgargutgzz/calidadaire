@@ -15,13 +15,14 @@ const geocodingClient = mbxGeocoding({ accessToken: process.env.NEXT_PUBLIC_MAPB
 
 // Function to determine marker color based on PM2.5 value
 export function getMarkerColor(pm25) {
-  if (pm25 <= 25) return "bg-custom-green";  
-  if (pm25 > 25 && pm25 <= 45) return "bg-custom-yellow"; 
-  if (pm25 > 45 && pm25 <= 79) return "bg-custom-orange";  
-  if (pm25 > 79 && pm25 <= 147) return "bg-custom-red"; 
-  if (pm25 > 147) return "bg-custom-purple";  
+  if (pm25 <= 15) return "bg-custom-green";  // Aligned with "Buena"
+  if (pm25 > 15 && pm25 <= 25) return "bg-custom-yellow";  // Aligned with "Aceptable"
+  if (pm25 > 25 && pm25 <= 79) return "bg-custom-orange";  // Aligned with "Mala"
+  if (pm25 > 79 && pm25 <= 130) return "bg-custom-red";  // Aligned with "Muy Mala"
+  if (pm25 > 130) return "bg-custom-purple";  // Aligned with "Extremadamente Mala"
   return "bg-gray-500";  // default color in case the value is null or undefined
 }
+
 
 function calculateDistance(location1, location2) {
   const lat1 = location1.latitude;
@@ -57,9 +58,6 @@ export default function Mapa({ onNearestSensorChange }) {
   const [userAddress, setUserAddress] = useState(null);
   const [popupInfo, setPopupInfo] = useState(null);
   const [simaPopupInfo, setSimaPopupInfo] = useState(null);
-
-
-
 
   const formatHour = (date) => {
     let hour = date.getHours();

@@ -9,20 +9,20 @@ function QualityBar({ pm25 }) {
 
   // Quality Bar
   const calculateLeft = () => {
-    if (pm25 <= 25) return ((pm25 / 25) * 12) + 6;  // 0-25 range is 12% of total, shifted by half (6%)
-    if (pm25 <= 45) return 22 + ((pm25 - 26) / 20) * 12 + 6;  // 26-45 range is 12% of total, shifted by half (6%)
-    if (pm25 <= 79) return 44 + ((pm25 - 46) / 34) * 12 + 6;  // 46-79 range is 12% of total, shifted by half (6%)
-    if (pm25 <= 147) return 66 + ((pm25 - 80) / 68) * 12 + 6;  // 80-147 range is 12% of total, shifted by half (6%)
-    return 88 + 6; // for PM2.5 > 147, shifted by half (6%)
+    if (pm25 <= 15) return ((pm25 / 15) * 10) + 6;  // 0-15 range is 10% of total, shifted by half (6%)
+    if (pm25 <= 25) return 16 + ((pm25 - 16) / 10) * 10 + 6;  // 16-25 range is 10% of total, shifted by half (6%)
+    if (pm25 <= 79) return 32 + ((pm25 - 26) / 54) * 20 + 6;  // 26-79 range is 20% of total, shifted by half (6%)
+    if (pm25 <= 130) return 58 + ((pm25 - 80) / 51) * 20 + 6;  // 80-130 range is 20% of total, shifted by half (6%)
+    return 84 + 6;  // for PM2.5 > 130, shifted by half (6%)
   };
   
   // Nivel de calidad del aire
   const getQualityText = () => {
-    if (pm25 <= 25) return "Buena";
-    if (pm25 > 25 && pm25 <= 45) return "Aceptable";
-    if (pm25 > 45 && pm25 <= 79) return "Mala";
-    if (pm25 > 79 && pm25 <= 147) return "Muy Mala";
-    if (pm25 > 147) return "Extremadamente Mala";
+    if (pm25 <= 15) return "Buena";
+    if (pm25 > 15 && pm25 <= 25) return "Aceptable";
+    if (pm25 > 25 && pm25 <= 79) return "Mala";
+    if (pm25 > 79 && pm25 <= 130) return "Muy Mala";
+    if (pm25 > 130) return "Extremadamente Mala";
     return "No Disponible";  // default text in case the value is null or undefined
   };
 
@@ -69,37 +69,37 @@ export default function Recomendaciones() {
 
     // Embarazadas
     if (activity === 'embarazadas') {
-      if (pm25 <= 25) return 'Disfruta las actividades al aire libre.';
-      if (pm25 <= 45) return 'Reduce las actividades físicas vigorosas al aire libre.';
+      if (pm25 <= 15) return 'Disfruta las actividades al aire libre.';
+      if (pm25 <= 25) return 'Reduce las actividades físicas vigorosas al aire libre.';
       if (pm25 <= 79) return 'Evita las actividades físicas moderadas y vigorosas al aire libre.';
-      if (pm25 <= 147) return 'No realices actividades al aire libre. Acude al médico si presentas síntomas respiratorios o cardiacos.';
+      if (pm25 <= 130) return 'No realices actividades al aire libre. Acude al médico si presentas síntomas respiratorios o cardiacos.';
       return 'Permanece en interiores. Acude al médico si presentas síntomas respiratorios o cardiacos.';
     }
 
     // Menores
     if (activity === 'menores') {
-      if (pm25 <= 25) return 'Disfruta las actividades al aire libre.';
-      if (pm25 <= 45) return 'Reduce las actividades físicas vigorosas al aire libre.';
+      if (pm25 <= 15) return 'Disfruta las actividades al aire libre.';
+      if (pm25 <= 25) return 'Reduce las actividades físicas vigorosas al aire libre.';
       if (pm25 <= 79) return 'Evita las actividades físicas moderadas y vigorosas al aire libre.';
-      if (pm25 <= 147) return 'No realices actividades al aire libre. Acude al médico si presentas síntomas respiratorios o cardiacos.';
+      if (pm25 <= 130) return 'No realices actividades al aire libre. Acude al médico si presentas síntomas respiratorios o cardiacos.';
       return 'Permanece en interiores. Acude al médico si presentas síntomas respiratorios o cardiacos.';
     }
 
     // Adultos Mayores
     if (activity === 'adultos_mayores') {
-      if (pm25 <= 25) return 'Disfruta las actividades al aire libre.';
-      if (pm25 <= 45) return 'Reduce las actividades físicas vigorosas al aire libre.';
+      if (pm25 <= 15) return 'Disfruta las actividades al aire libre.';
+      if (pm25 <= 25) return 'Reduce las actividades físicas vigorosas al aire libre.';
       if (pm25 <= 79) return 'Evita las actividades físicas moderadas y vigorosas al aire libre.';
-      if (pm25 <= 147) return 'No realices actividades al aire libre. Acude al médico si presentas síntomas respiratorios o cardiacos.';
+      if (pm25 <= 130) return 'No realices actividades al aire libre. Acude al médico si presentas síntomas respiratorios o cardiacos.';
       return 'Permanece en interiores. Acude al médico si presentas síntomas respiratorios o cardiacos.';
     }
 
     // Adultos Mayores
     if (activity === 'condiciones_medicas') {
-      if (pm25 <= 25) return 'Disfruta las actividades al aire libre.';
-      if (pm25 <= 45) return 'Reduce las actividades físicas vigorosas al aire libre.';
+      if (pm25 <= 15) return 'Disfruta las actividades al aire libre.';
+      if (pm25 <= 25) return 'Reduce las actividades físicas vigorosas al aire libre.';
       if (pm25 <= 79) return 'Evita las actividades físicas moderadas y vigorosas al aire libre.';
-      if (pm25 <= 147) return 'No realices actividades al aire libre. Acude al médico si presentas síntomas respiratorios o cardiacos.';
+      if (pm25 <= 130) return 'No realices actividades al aire libre. Acude al médico si presentas síntomas respiratorios o cardiacos.';
       return 'Permanece en interiores. Acude al médico si presentas síntomas respiratorios o cardiacos.';
     }
 
@@ -108,12 +108,13 @@ export default function Recomendaciones() {
 
   // Color de recomendaciones
   const getBorderColor = (pm25) => {
-    if (pm25 <= 25) return "custom-green";
-    if (pm25 > 25 && pm25 <= 45) return "custom-yellow";
-    if (pm25 > 45 && pm25 <= 79) return "custom-orange";
-    if (pm25 > 79 && pm25 <= 147) return "custom-red";
-    return "custom-purple"; // for PM2.5 > 147
+    if (pm25 <= 15) return "custom-green";  // Aligned with "Buena"
+    if (pm25 > 15 && pm25 <= 25) return "custom-yellow";  // Aligned with "Aceptable"
+    if (pm25 > 25 && pm25 <= 79) return "custom-orange";  // Aligned with "Mala"
+    if (pm25 > 79 && pm25 <= 130) return "custom-red";  // Aligned with "Muy Mala"
+    return "custom-purple";  // for PM2.5 > 130, Aligned with "Extremadamente Mala"
   };
+
 
   // Render Cards based on usuario
   const renderCards = () => {
