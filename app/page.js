@@ -192,15 +192,22 @@ export default function Recomendaciones() {
             {/* Location */}
             <div className="bg-white rounded-lg shadow-lg p-4 mb-4 mt-2">
               <div className="flex items-center">
-                <img src="/navigation.png" className="w-4 h-4" alt="Correr Icon" />
+                <img src="/navigation.png" className="w-4 h-4" alt="Location Icon" />
                 <p className="ml-2 text-xs lg:text-sm">Calidad de aire en {nearestSensor.address}</p>
               </div>
             </div>
             {/* Hora */}
+            <div className="bg-white rounded-lg shadow-lg p-4 mb-4 mt-0">
+              <div className="flex items-center">
+                <img src="/clock.png" className="w-4 h-4" alt="Hora Icon" />
+                <p className="ml-2 text-xs lg:text-sm">Última actualización a las {nearestSensor.lastUpdated}</p>
+              </div>
+            </div>
+            {/* Nota aclaratoria */}
             <div className="bg-white rounded-lg shadow-lg p-4 mb-10 mt-0">
               <div className="flex items-center">
-                <img src="/clock.png" className="w-4 h-4" alt="Correr Icon" />
-                <p className="ml-2 text-xs lg:text-sm">Última actualización a las {nearestSensor.lastUpdated}</p>
+                <img src="/alert.png" className="w-4 h-4" alt="Alert Icon" />
+                <p className="ml-2 text-xs lg:text-sm">En condiciones de alta humedad o viento fuerte, los sensores sobreestiman o subestiman las concentraciones de partículas finas, respectivamente.</p>
               </div>
             </div>
           </div>
