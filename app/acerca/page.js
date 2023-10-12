@@ -75,6 +75,7 @@ export default function Index() {
                 <a href="https://www.gob.mx/cms/uploads/attachment/file/554425/comunicado_indice_calidad_aire_05_2020_FINAL_v3.pdf"
                 target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Índice de Aire y Salud</a> mexicano.
               </div>
+              <div className="py-1">Adicionalmente, utilizamos los rangos de color de los valores más protectores para PM2.5 del nuevo Índice Mexicano de Calidad del Aire y Riesgos a la Salud (NOM-172-SEMARNAT-2023) que entrarán en vigor a partir de enero de 2026.</div>
             </p>
           )}
         </div>
