@@ -183,9 +183,6 @@ export default function Index() {
             <div>
               <p className="text-sm lg:text-base font-bold">Edgar Gutiérrez</p>
               <p className="text-sm lg:text-base">Diseño y Desarrollo Web de Aire Claro</p>
-              {/* <p className="text-sm lg:text-base">
-                <a href="https://www.edgargtz.com/" className="text-blue-500 hover:underline">edgargtz.com</a>
-              </p> */}
             </div>
           </div>
         </div>
