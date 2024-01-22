@@ -19,24 +19,6 @@ export default function Index() {
       <Navbar currentPage="acerca" />
       <div className="flex-grow mx-4 mt-6 mb-20 lg:ml-40 lg:mr-40 lg:mt-10 lg:flex-grow lg:w-9/12">
 
-        {/* Aire Claro - Video */}  
-        {/* <div className="mb-4 relative rounded-lg overflow-hidden" style={{ paddingBottom: "56.25%" }}> 
-          <iframe 
-            style={{
-              position: "absolute",
-              top: "0",
-              left: "0",
-              width: "100%",
-              height: "100%",
-            }}
-            src="https://www.youtube.com/embed/PLACEHOLDER" 
-            title="YouTube video" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen
-          ></iframe>
-        </div> */}
-
         {/* Preguntas Frecuentes */}
         <div className="mt-0 lg:mt-0">
           <h1 className="text-xl lg:text-3xl font-bold mb-4 lg:mb-8 px-1">Preguntas Frecuentes</h1>
